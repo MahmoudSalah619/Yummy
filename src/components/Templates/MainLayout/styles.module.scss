@@ -1,0 +1,32 @@
+@import "styles/all";
+
+.mainContainer {
+  border-radius: 8;
+  overflow: "hidden";
+  width: "calc(50% - 8px)";
+  max-width: "calc(50% - 8px)";
+
+  .siderStyle {
+    text-align: center;
+    line-height: 120px;
+    color: "#fff";
+    background-color: #1677ff;
+  }
+
+  .headerStyle {
+    text-align: center;
+    color: "#fff";
+    height: 64;
+    padding-inline: 48;
+    line-height: 64px;
+    background-color: #4096ff;
+  }
+
+  .contentStyle {
+    text-align: center;
+    height: 100%;
+    line-height: 120px;
+    color: white;
+    background-color: #0958d9;
+  }
+}

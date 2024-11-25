@@ -1,0 +1,11 @@
+{
+  "main": "الرئيسية",
+  "Email_PlaceHolder": "أدخل بريدك الالكتروني",
+  "Email": "بريدك الالكتروني",
+  "Password": "كلمة المرور",
+  "Password_PlaceHolder": "أدخل كلمة المرور",
+  "Login": "تسجيل الدخول",
+  "Forget_Password": "نسيت كلمة المرور؟",
+  "Welcome Back!": "مرحبًا بعودتك!",
+  "Don’t have an account?": "ليس لديك حساب؟"
+}

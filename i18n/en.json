@@ -1,0 +1,12 @@
+{
+  "main": "main",
+  "Email_PlaceHolder": "Enter your email",
+  "Email": "Email",
+  "test_email": "username@company.com",
+  "Password": "Password",
+  "Password_PlaceHolder": "Enter your password",
+  "Login": "Log in",
+  "Forget_Password": "Forget your password?",
+  "Welcome Back!": "Welcome Back!",
+  "Don’t have an account?": "Don’t have an account?"
+}

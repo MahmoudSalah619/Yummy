@@ -1,0 +1,60 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: node:18.17.0
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+
+  before_script:
+    - npm install -f
+
+  script:
+    - npm run build
+
+  artifacts:
+    paths:
+      - build/
+
+  only:
+    - staging
+
+  when: manual
+
+  timeout: 20 minutes
+
+deploy-staging:
+  stage: deploy
+  image: alpine:latest
+
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
+    - apk add --update rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY_STAGING" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $VM_IP_ADDRESS_STAGING >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - rsync --delete-after -va build/ $SSH_USER_STAGING@$VM_IP_ADDRESS_STAGING:/var/www/html/kaj-medical/build/
+    - echo -e
+      "
+      cd /var/www/html/kaj-medical/;
+      rm package-lock.json;
+      git pull origin staging;
+      source ~/.nvm/nvm.sh;
+      nvm use node 18.17.0;
+      npm i -f;
+      " | ssh $SSH_USER_STAGING@$VM_IP_ADDRESS_STAGING
+
+  only:
+    - staging
+
+  when: manual
+
+  timeout: 20 minutes
