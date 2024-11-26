@@ -1,19 +1,29 @@
-import { ReactNode } from "react";
+import React from "react";
+import { ToastContainer } from "react-toastify";
 import styles from "./styles.module.scss";
-import { Layout } from "antd";
 
-const { Header, Footer, Sider, Content } = Layout;
-
-export default function MainLayout({ children }: { children: ReactNode }) {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Layout className={styles.mainContainer}>
-      <Sider width="25%" className={styles.siderStyle}>
-        Sider
-      </Sider>
-      <Layout>
-        <Header className={styles.headerStyle}>Header</Header>
-        <Content className={styles.contentStyle}>{children}</Content>
-      </Layout>
-    </Layout>
+    <div className={styles.mainContainer}>
+      {children}
+
+      <ToastContainer
+        closeButton={false}
+        position="top-center"
+        autoClose={30000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </div>
   );
 }
