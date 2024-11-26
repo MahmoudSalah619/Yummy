@@ -7,11 +7,11 @@ const { Header, Sider, Content } = Layout;
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
-    <Layout className={styles.mainContainer}>
+    <Layout>
       <Sider width="20%" className={styles.siderStyle}>
         <SidebarOrganism />
       </Sider>
-      <Layout>
+      <Layout className={styles.mainContainer}>
         <Header className={styles.headerStyle}>Header</Header>
         <Content className={styles.contentStyle}>{children}</Content>
       </Layout>

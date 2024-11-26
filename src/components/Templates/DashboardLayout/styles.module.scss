@@ -1,15 +1,17 @@
 @import "styles/all";
 
+.siderStyle {
+  position: fixed;
+
+  height: 100vh;
+  padding: 32px 24px;
+
+  background-color: $light;
+  border-right: 1px solid $grey200;
+}
+
 .mainContainer {
-  border-radius: 8;
-
-  .siderStyle {
-    height: 100vh;
-    padding: 32px 24px;
-    background-color: $light;
-    border-right: 1px solid $grey200;
-  }
-
+  margin-left: 20%;
   .headerStyle {
     height: 88px;
     padding: 0;
