@@ -1,8 +1,8 @@
 import Text from "../../Atoms/Text";
 
-function Dashboard() {
+function Home() {
   return (
-    <div>
+    <main>
       <Text color="RedCE" fontFamily="font700" fontSize={10}>
         Hello World
       </Text>
@@ -57,8 +57,8 @@ function Dashboard() {
       <Text color="RedCE" fontFamily="font700" fontSize={10}>
         Hello World
       </Text>
-    </div>
+    </main>
   );
 }
 
-export default Dashboard;
+export default Home;
