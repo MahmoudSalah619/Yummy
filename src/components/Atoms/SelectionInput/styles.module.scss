@@ -1,0 +1,39 @@
+@import "styles/all";
+
+.inputWithIconContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  background-color: $LightGray;
+  border-radius: 10px;
+
+  :global {
+    .ant-select-selection-item {
+      line-height: 1 !important;
+      word-break: break-word !important;
+      white-space: pre-line !important;
+    }
+  }
+}
+
+.prefixIcon {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+}
+
+.withPrefix :global {
+  .ant-select-selection-search,
+  .ant-select-selection-item {
+    padding-inline-start: 28px !important;
+  }
+}
+
+.loadingSpinner {
+  margin-block-start: -5px;
+  margin-inline-start: -5px;
+}

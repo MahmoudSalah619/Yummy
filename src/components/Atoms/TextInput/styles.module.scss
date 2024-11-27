@@ -1,0 +1,89 @@
+@import "styles/all";
+
+.container {
+  .inputContent {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    background-color: $LightGray;
+    border-radius: 10px;
+
+    .prefixIcon {
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      left: 25px;
+      transform: translate(-50%, -50%);
+    }
+
+    input {
+      height: 56px;
+    }
+
+    > input,
+    textarea {
+      resize: none;
+
+      width: 100%;
+      padding: 15px 19px;
+
+      color: $Dark;
+
+      background-color: $LightGray;
+      border: none !important;
+      border-radius: 10px;
+      outline: none;
+      &:active,
+      &:focus,
+      &:focus-within,
+      &:focus-visible {
+        border: none !important;
+        outline: none;
+      }
+    }
+  }
+
+  .withPrefix {
+    > input,
+    textarea {
+      padding-inline-start: 38px !important;
+    }
+  }
+
+  .disabled {
+    background-color: $LightGrey;
+    textarea,
+    input {
+      color: $LightGrey;
+    }
+    &:hover {
+      cursor: not-allowed;
+      * {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.errorMsg {
+  margin-bottom: 16px;
+  p {
+    line-height: 1;
+  }
+}
