@@ -14,6 +14,7 @@ export default function TextInputAtom({
   onChange,
   placeholder,
   label,
+  labelStyle,
   type = "text",
   status = "default",
   errorMsg,
@@ -35,7 +36,7 @@ export default function TextInputAtom({
     <>
       <div className={`${styles.container} ${containerStyle}`}>
         {!!label && (
-          <span className="d-block mb-2 Label100 White">{label}</span>
+          <span className={`${styles.label} ${labelStyle}`}>{label}</span>
         )}
 
         <div

@@ -1,0 +1,17 @@
+@import "styles/all";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+
+  padding-inline: 440px;
+}
+
+.medium {
+  margin-top: 80px;
+}
+.large {
+  margin-top: 160px;
+}
