@@ -4,15 +4,15 @@ import styles from "./styles.module.scss";
 import { CheckboxGroupProps } from "./types";
 import Text from "../../Atoms/Text";
 
-const CheckboxGroup = ({
+function CheckboxGroup({
   title,
   options,
   showSearch,
   onChange,
-}: CheckboxGroupProps) => {
+}: CheckboxGroupProps) {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
-  const handleCheckboxChange = (checkedValues: any) => {
+  const handleCheckboxChange = (checkedValues: string[]) => {
     setSelectedValues(checkedValues);
     if (onChange) onChange(checkedValues);
   };
@@ -31,13 +31,13 @@ const CheckboxGroup = ({
         onChange={handleCheckboxChange}
       >
         {options.map((option, index) => (
-          <Checkbox key={index} value={option}>
+          <Checkbox key={String(option + index)} value={option}>
             {option}
           </Checkbox>
         ))}
       </Checkbox.Group>
     </div>
   );
-};
+}
 
 export default CheckboxGroup;

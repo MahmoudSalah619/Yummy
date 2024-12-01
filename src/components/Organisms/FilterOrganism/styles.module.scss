@@ -1,20 +1,23 @@
 @import "styles/all";
 
 .filterContainer {
+  cursor: pointer;
+
   display: flex;
-  justify-content: space-between;
+  gap: 6px;
   align-items: center;
+  justify-content: space-between;
+
   padding: 10px 16px;
+
   border: 1px solid $grey200;
   border-radius: 8px;
-  gap: 6px;
-  cursor: pointer;
 }
 
 .drawer {
   .ant-drawer-content {
-    background-color: $light;
     padding: 16px;
+    background-color: $light;
   }
 
   .ant-drawer-header {
@@ -24,9 +27,9 @@
 
 .filterContent {
   h3 {
+    margin-bottom: 12px;
     font-size: 16px;
     font-weight: bold;
     color: $grey900;
-    margin-bottom: 12px;
   }
 }

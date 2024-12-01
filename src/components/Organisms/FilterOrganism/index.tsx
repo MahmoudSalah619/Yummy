@@ -6,7 +6,7 @@ import Text from "../../Atoms/Text";
 import FilterIcon from "@/src/assets/icons/home/filter.svg";
 import FilterPopover from "../../Molecules/FilterPopover";
 
-const FilterOrganism = () => {
+function FilterOrganism() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -33,6 +33,6 @@ const FilterOrganism = () => {
       </Drawer>
     </main>
   );
-};
+}
 
 export default FilterOrganism;

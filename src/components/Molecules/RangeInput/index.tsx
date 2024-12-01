@@ -5,7 +5,7 @@ interface RangeInputProps {
   title: string;
 }
 
-const RangeInput = ({ title }: RangeInputProps) => {
+function RangeInput({ title }: RangeInputProps) {
   return (
     <div className={styles.container}>
       <h3>{title}</h3>
@@ -16,6 +16,6 @@ const RangeInput = ({ title }: RangeInputProps) => {
       </Input.Group>
     </div>
   );
-};
+}
 
 export default RangeInput;

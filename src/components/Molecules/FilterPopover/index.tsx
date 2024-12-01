@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { Divider } from "antd";
 import CheckboxGroup from "../CheckboxGroup";
 import RangeInput from "../RangeInput";
 import styles from "./styles.module.scss";
 import { FilterPopoverProps } from "./types";
-import { Divider } from "antd";
 
-const FilterPopover = ({ className }: FilterPopoverProps) => {
+function FilterPopover({ className }: FilterPopoverProps) {
   const [orderStatus, setOrderStatus] = useState<string[]>([]);
   const [paymentMethod, setPaymentMethod] = useState<string[]>([]);
   const [customerName, setCustomerName] = useState<string[]>([]);
@@ -44,6 +44,6 @@ const FilterPopover = ({ className }: FilterPopoverProps) => {
       <button onClick={handleConfirm}>Confirm</button>
     </div>
   );
-};
+}
 
 export default FilterPopover;
