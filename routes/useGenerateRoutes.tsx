@@ -7,6 +7,7 @@ import ForgetPassword from "@/src/components/Pages/Auth/ForgetPassword";
 import SignUp from "@/src/components/Pages/Auth/SignUp";
 import OTP from "@/src/components/Pages/Auth/OTP";
 import ChangePassword from "@/src/components/Pages/Auth/ChangePassword";
+import SuccessPassChanged from "@/src/components/Pages/Auth/SuccessPassChanged";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -39,6 +40,14 @@ export default function useGenerateRoutes() {
       element: (
         <AuthLayout>
           <ChangePassword />
+        </AuthLayout>
+      ),
+    },
+    {
+      path: "/success-changed-password",
+      element: (
+        <AuthLayout>
+          <SuccessPassChanged />
         </AuthLayout>
       ),
     },
