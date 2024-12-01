@@ -4,6 +4,7 @@ import DashboardLayout from "@/src/components/Templates/DashboardLayout";
 import Login from "@/src/components/Pages/Auth/Login";
 import AuthLayout from "@/src/components/Templates/AuthLayout";
 import ForgetPassword from "@/src/components/Pages/Auth/ForgetPassword";
+import SignUp from "@/src/components/Pages/Auth/SignUp";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -28,6 +29,14 @@ export default function useGenerateRoutes() {
       element: (
         <AuthLayout>
           <ForgetPassword />
+        </AuthLayout>
+      ),
+    },
+    {
+      path: "/sign-up",
+      element: (
+        <AuthLayout>
+          <SignUp />
         </AuthLayout>
       ),
     },

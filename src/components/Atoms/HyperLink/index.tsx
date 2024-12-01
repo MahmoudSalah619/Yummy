@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 interface HyperLinkProps extends LinkProps {
   title: string;
-  fontSize: 12 | 14;
+  fontSize: 12 | 14 | 16;
 }
 
 function HyperLink({ title, fontSize, ...otherProps }: HyperLinkProps) {

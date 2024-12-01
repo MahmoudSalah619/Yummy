@@ -50,7 +50,7 @@ function Login() {
           <Text className={styles.signUpText}>
             Don’t have an account?
             <HyperLink
-              to="/"
+              to="/sign-up"
               title="Sign Up"
               fontSize={14}
               className={styles.space}
