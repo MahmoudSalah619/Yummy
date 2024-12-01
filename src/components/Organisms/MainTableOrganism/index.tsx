@@ -7,6 +7,7 @@ import { MainTableOrganismProps } from "./types";
 
 function MainTableOrganism({
   headerTitle,
+  headerClassName,
   columns,
   dataSource,
   pageSize = 10,
@@ -25,7 +26,9 @@ function MainTableOrganism({
 
   return (
     <section className={styles.mainTable}>
-      <TableHeader title={headerTitle}>{children}</TableHeader>
+      <TableHeader title={headerTitle} headerClassName={headerClassName}>
+        {children}
+      </TableHeader>
       <MainTable columns={columns} dataSource={paginatedData} />
       <div className={styles.paginationContainer}>
         <CustomPagination

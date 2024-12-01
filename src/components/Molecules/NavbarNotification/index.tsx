@@ -21,30 +21,6 @@ const notificationItems = [
   },
 ];
 
-const notificationContent = (
-  <div className={styles.notificationOverlay}>
-    <div className={styles.notificationHeader}>
-      <Text color="grey900" fontSize={18} fontFamily="font500">
-        Notifications
-      </Text>
-      <button className={styles.markAsRead}>
-        <Text color="orange500" fontSize={12} fontFamily="font500">
-          Mark all as read
-        </Text>
-      </button>
-    </div>
-    <div className={styles.notificationList}>
-      {notificationItems.map((item, index) => (
-        <NotificationItem
-          message={item.message}
-          productName={item.productName}
-          imageSrc={item.imageSrc}
-          isLast={index === notificationItems.length - 1}
-        />
-      ))}
-    </div>
-  </div>
-);
 function NavbarNotification() {
   const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 
@@ -56,6 +32,31 @@ function NavbarNotification() {
       document.body.style.overflow = "";
     }
   };
+
+  const notificationContent = (
+    <div className={styles.notificationOverlay}>
+      <div className={styles.notificationHeader}>
+        <Text color="grey900" fontSize={18} fontFamily="font500">
+          Notifications
+        </Text>
+        <button className={styles.markAsRead}>
+          <Text color="orange500" fontSize={12} fontFamily="font500">
+            Mark all as read
+          </Text>
+        </button>
+      </div>
+      <div className={styles.notificationList}>
+        {notificationItems.map((item, index) => (
+          <NotificationItem
+            message={item.message}
+            productName={item.productName}
+            imageSrc={item.imageSrc}
+            isLast={index === notificationItems.length - 1}
+          />
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <div className={styles.navbarNotificationContainer}>

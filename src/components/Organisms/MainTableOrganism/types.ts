@@ -13,6 +13,7 @@ export interface TableColumn {
 }
 export interface MainTableOrganismProps {
   headerTitle?: string;
+  headerClassName?: string;
   columns: TableColumn[];
   dataSource: TableRow[];
   pageSize?: number;

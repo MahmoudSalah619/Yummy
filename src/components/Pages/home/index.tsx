@@ -4,6 +4,7 @@ import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import Text from "../../Atoms/Text";
 import { TableRow } from "../../Organisms/MainTableOrganism/types";
+import FilterOrganism from "../../Organisms/FilterOrganism";
 
 function Home() {
   const columns = [
@@ -69,7 +70,10 @@ function Home() {
         headerTitle="Best Sellers"
         columns={columns}
         dataSource={data}
-      />
+        headerClassName={styles.headerContainer}
+      >
+        <FilterOrganism />
+      </MainTableOrganism>
     </main>
   );
 }

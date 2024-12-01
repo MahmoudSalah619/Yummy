@@ -1,0 +1,32 @@
+@import "styles/all";
+
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid $grey200;
+  border-radius: 8px;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.drawer {
+  .ant-drawer-content {
+    background-color: $light;
+    padding: 16px;
+  }
+
+  .ant-drawer-header {
+    background-color: $grey100;
+  }
+}
+
+.filterContent {
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: $grey900;
+    margin-bottom: 12px;
+  }
+}
