@@ -60,10 +60,10 @@
   }
 
   .disabled {
-    // background-color: $LightGrey;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+    // background-color: $LightGrey;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
     textarea,
     input {
-      // color: $LightGrey;colorcolorcolorcolorcolorcolorcolor
+      // color: $LightGrey;colorcolorcolorcolorcolorcolorcolorcolor
     }
     &:hover {
       cursor: not-allowed;
@@ -87,8 +87,13 @@
 }
 
 .errorMsg {
+  margin-top: 12px;
   margin-bottom: 16px;
   p {
     line-height: 1;
   }
+}
+
+.error {
+  border: 2px solid $red500;
 }

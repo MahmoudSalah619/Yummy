@@ -86,7 +86,9 @@ export default function TextInputAtom({
       </div>
       {errorMsg && (
         <div className={styles.errorMsg}>
-          <Text color="primary">{errorMsg}</Text>
+          <Text color="red500" fontSize={11} fontFamily="font500">
+            {errorMsg}
+          </Text>
         </div>
       )}
     </>
