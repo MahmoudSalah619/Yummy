@@ -22,7 +22,6 @@ const COLORS = {
   grey900: "#141211",
   darkGrey: "#B9B8BE",
   greyBg: "#F9F6EF99",
-  greyEF: "#EF4444",
   grey76: "#7676801F",
   // ---common
   dark: "#262626",
