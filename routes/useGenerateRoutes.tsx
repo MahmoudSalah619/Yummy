@@ -8,6 +8,7 @@ import SignUp from "@/src/components/Pages/Auth/SignUp";
 import OTP from "@/src/components/Pages/Auth/OTP";
 import ChangePassword from "@/src/components/Pages/Auth/ChangePassword";
 import SuccessPassChanged from "@/src/components/Pages/Auth/SuccessPassChanged";
+import SuccessSignUp from "@/src/components/Pages/Auth/SuccessSignUp";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -48,6 +49,14 @@ export default function useGenerateRoutes() {
       element: (
         <AuthLayout>
           <SuccessPassChanged />
+        </AuthLayout>
+      ),
+    },
+    {
+      path: "/success-signup",
+      element: (
+        <AuthLayout>
+          <SuccessSignUp />
         </AuthLayout>
       ),
     },
