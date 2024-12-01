@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "../../Atoms/Icon";
 import Text from "../../Atoms/Text";
 import styles from "./styles.module.scss";
@@ -7,13 +8,14 @@ function SidebarLink({
   icon,
   label,
   isActive,
-  onClick,
   className,
+  href,
 }: SidebarLinkProps) {
   return (
-    <button
+    <Link
       className={`${styles.navbarLink} ${className} ${isActive ? styles.active : ""}`}
-      onClick={onClick}
+      to={href}
+      replace
     >
       <Icon name={icon} size={24} className={styles.icon} />
       <Text
@@ -23,7 +25,7 @@ function SidebarLink({
       >
         {label}
       </Text>
-    </button>
+    </Link>
   );
 }
 

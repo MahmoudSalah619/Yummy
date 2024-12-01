@@ -1,0 +1,24 @@
+@import "styles/all";
+
+.mainTable {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  margin-bottom: 20px;
+}
+
+.paginationContainer {
+  padding-top: 14px;
+  padding-bottom: 18px;
+  padding-inline: 24px;
+
+  :global {
+    .ant-pagination {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

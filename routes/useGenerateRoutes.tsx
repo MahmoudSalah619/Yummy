@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
-import Dashboard from "@/src/components/Pages/dashboard";
+import Home from "@/src/components/Pages/home";
 import DashboardLayout from "@/src/components/Templates/DashboardLayout";
+import Products from "@/src/components/Pages/products";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -8,7 +9,15 @@ export default function useGenerateRoutes() {
       path: "/",
       element: (
         <DashboardLayout>
-          <Dashboard />
+          <Home />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products",
+      element: (
+        <DashboardLayout>
+          <Products />
         </DashboardLayout>
       ),
     },
