@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Checkbox, CheckboxProps } from "antd";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
@@ -8,6 +9,8 @@ import PasswordValidationRole from "@/src/components/Molecules/PasswordValidatio
 
 function SignUp() {
   const onChange: CheckboxProps["onChange"] = () => {};
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <Text className={styles.introText}>Create your merchant account</Text>
@@ -56,7 +59,11 @@ function SignUp() {
         {/* Buttton */}
 
         <div className={styles.btnContainer}>
-          <Button title="Sign Up" isFullWidth />
+          <Button
+            title="Sign Up"
+            isFullWidth
+            onClick={() => navigate("/otp")}
+          />
         </div>
 
         <div className={styles.signUpContainer}>

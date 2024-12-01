@@ -9,7 +9,8 @@ export interface CustomButtonProps
     | "dark"
     | "transparent-grey"
     | "transparent-error"
-    | "warning";
+    | "warning"
+    | "transparet";
 
   isFullWidth?: boolean;
   onClick?: () => void;

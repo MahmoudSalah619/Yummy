@@ -1,6 +1,8 @@
 @import "styles/all";
 
 .btn {
+  cursor: pointer;
+
   display: flex;
   gap: 4px;
   align-items: center;
@@ -14,6 +16,16 @@
   background-color: $primaryFF;
   p {
     color: $light !important;
+  }
+}
+.transparet {
+  padding: unset !important;
+  background-color: transparent;
+  p {
+    cursor: pointer;
+    font-size: 11px !important;
+    color: $primary !important;
+    text-decoration: underline;
   }
 }
 
@@ -35,11 +47,11 @@
 .transparent-error {
   background-color: $light;
 
-  // color: $ErrorRed400 !important;colorcolorcolor
+  // color: $ErrorRed400 !important;colorcolorcolorcolor
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-color
+  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-color
   p {
     color: $light !important;
   }
