@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { Checkbox, CheckboxProps } from "antd";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
 import TextInputAtom from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
+import HyperLink from "@/src/components/Atoms/HyperLink";
 
 function Login() {
   const onChange: CheckboxProps["onChange"] = () => {};
@@ -34,9 +34,11 @@ function Login() {
             Remember Me
           </Checkbox>
 
-          <Link to="/" className={styles.link}>
-            Forgot Password?
-          </Link>
+          <HyperLink
+            to="/forget-password"
+            title="Forgot Password?"
+            fontSize={12}
+          />
         </div>
         {/* Buttton */}
 
@@ -47,9 +49,12 @@ function Login() {
         <div className={styles.signUpContainer}>
           <Text className={styles.signUpText}>
             Don’t have an account?
-            <Link to="/" className={`${styles.link} ${styles.signUpLink}`}>
-              Sign Up
-            </Link>
+            <HyperLink
+              to="/"
+              title="Sign Up"
+              fontSize={14}
+              className={styles.space}
+            />
           </Text>
         </div>
       </form>

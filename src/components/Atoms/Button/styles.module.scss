@@ -17,7 +17,7 @@
   }
 }
 
-.grey {
+.dark {
   background-color: $grey900;
   p {
     color: $light !important;
@@ -35,11 +35,11 @@
 .transparent-error {
   background-color: $light;
 
-  // color: $ErrorRed400 !important;color
+  // color: $ErrorRed400 !important;colorcolor
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-color
+  // background-color: $WarningYellow600 !important;background-colorbackground-color
   p {
     color: $light !important;
   }

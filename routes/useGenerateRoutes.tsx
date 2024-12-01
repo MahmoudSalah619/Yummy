@@ -3,6 +3,7 @@ import Dashboard from "@/src/components/Pages/dashboard";
 import DashboardLayout from "@/src/components/Templates/DashboardLayout";
 import Login from "@/src/components/Pages/Auth/Login";
 import AuthLayout from "@/src/components/Templates/AuthLayout";
+import ForgetPassword from "@/src/components/Pages/Auth/ForgetPassword";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -19,6 +20,14 @@ export default function useGenerateRoutes() {
       element: (
         <AuthLayout>
           <Login />
+        </AuthLayout>
+      ),
+    },
+    {
+      path: "/forget-password",
+      element: (
+        <AuthLayout>
+          <ForgetPassword />
         </AuthLayout>
       ),
     },

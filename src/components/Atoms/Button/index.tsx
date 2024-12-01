@@ -8,7 +8,6 @@ function Button({
   customStyle,
   isFullWidth,
   onClick,
-  prefix,
   suffix,
   paddingBlock = 8,
   paddingInline = 14,
@@ -28,11 +27,10 @@ function Button({
       ${styles[paddingInlineClass]} 
       ${customStyle}`}
     >
-      {prefix}
+      {suffix}
       <Text fontFamily="font700" fontSize={16}>
         {title}
       </Text>
-      {suffix}
     </button>
   );
 }

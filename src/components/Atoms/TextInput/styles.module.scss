@@ -60,10 +60,10 @@
   }
 
   .disabled {
-    // background-color: $LightGrey;background-color
+    // background-color: $LightGrey;background-colorbackground-color
     textarea,
     input {
-      // color: $LightGrey;color
+      // color: $LightGrey;colorcolor
     }
     &:hover {
       cursor: not-allowed;
