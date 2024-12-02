@@ -29,11 +29,10 @@
       resize: none;
 
       width: 100%;
-      padding: 15px 19px;
+      padding-inline: 19px;
 
-      color: $Dark;
+      color: $dark;
 
-      background-color: $LightGray;
       border: none !important;
       border-radius: 10px;
       outline: none;
@@ -55,10 +54,10 @@
   }
 
   .disabled {
-    background-color: $LightGrey;
+    background-color: $LightGray;
     textarea,
     input {
-      color: $LightGrey;
+      color: $LightGray;
     }
     &:hover {
       cursor: not-allowed;
