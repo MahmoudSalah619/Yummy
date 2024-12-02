@@ -28,24 +28,6 @@
       justify-content: space-between;
     }
 
-    .checkboxStyle {
-      :global(.ant-checkbox-checked .ant-checkbox-inner) {
-        background-color: $primary !important;
-        border-color: $primary !important;
-      }
-
-      :global(.ant-checkbox-checked)::after {
-        border-color: $light !important;
-      }
-
-      &:hover {
-        :global(.ant-checkbox-checked .ant-checkbox-inner) {
-          background-color: $primary !important;
-          border-color: $primary !important;
-        }
-      }
-    }
-
     .signUpContainer {
       margin-top: 12px;
       .signUpText {

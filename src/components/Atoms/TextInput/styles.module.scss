@@ -60,10 +60,10 @@
   }
 
   .disabled {
-    // background-color: $LightGrey;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+    // background-color: $LightGrey;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
     textarea,
     input {
-      // color: $LightGrey;colorcolorcolorcolorcolorcolorcolorcolor
+      // color: $LightGrey;colorcolorcolorcolorcolorcolorcolorcolorcolorcolor
     }
     &:hover {
       cursor: not-allowed;
@@ -95,5 +95,5 @@
 }
 
 .error {
-  border: 2px solid $red500;
+  border: 1px solid $red500 !important;
 }

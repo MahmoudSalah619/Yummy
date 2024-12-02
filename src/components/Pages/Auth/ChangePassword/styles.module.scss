@@ -13,10 +13,7 @@
     text-align: center;
   }
   .formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-inline: 116px;
+    width: 328px;
     .emailInput {
       border: 1px solid $grey200;
     }
@@ -26,44 +23,6 @@
       margin-bottom: 12px;
     }
 
-    .rowContainer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .checkboxStyle {
-      :global(.ant-checkbox-checked .ant-checkbox-inner) {
-        background-color: $primary !important;
-        border-color: $primary !important;
-      }
-
-      :global(.ant-checkbox-checked)::after {
-        border-color: $light !important;
-      }
-
-      &:hover {
-        :global(.ant-checkbox-checked .ant-checkbox-inner) {
-          background-color: $primary !important;
-          border-color: $primary !important;
-        }
-      }
-    }
-
-    .signUpContainer {
-      margin-top: 12px;
-      .signUpText {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        color: $grey600;
-        text-align: center;
-
-        .space {
-          margin-inline-start: 4px;
-        }
-      }
-    }
     .btnContainer {
       display: flex;
       flex-direction: column;
@@ -74,6 +33,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-block: 20px;
     }
   }
 }

@@ -1,8 +1,9 @@
 @import "styles/all";
 
 .container {
+  width: 59%;
   .introText {
-    width: 52%;
+    width: 60%;
     margin-block: 32px;
     margin-inline: auto;
 
@@ -13,55 +14,13 @@
     text-align: center;
   }
   .formContainer {
-    padding-inline: 116px;
+    width: 329px;
+    margin: auto;
 
     .emailInput {
       border: 1px solid $grey200;
     }
 
-    .passwordContainer {
-      margin-top: 16px;
-      margin-bottom: 12px;
-    }
-
-    .rowContainer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .checkboxStyle {
-      :global(.ant-checkbox-checked .ant-checkbox-inner) {
-        background-color: $primary !important;
-        border-color: $primary !important;
-      }
-
-      :global(.ant-checkbox-checked)::after {
-        border-color: $light !important;
-      }
-
-      &:hover {
-        :global(.ant-checkbox-checked .ant-checkbox-inner) {
-          background-color: $primary !important;
-          border-color: $primary !important;
-        }
-      }
-    }
-
-    .signUpContainer {
-      margin-top: 12px;
-      .signUpText {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        color: $grey600;
-        text-align: center;
-
-        .space {
-          margin-inline-start: 4px;
-        }
-      }
-    }
     .btnContainer {
       margin-top: 16px;
     }

@@ -1,19 +1,25 @@
-import { OTPProps } from "antd/es/input/OTP";
 import { useEffect, useState } from "react";
 import { Input } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { useLocation, useNavigate } from "react-router-dom";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
 import Button from "@/src/components/Atoms/Button";
+import ValidationSchema, { Auth } from "@/constants/Validation";
 
 function OTP() {
   const navigate = useNavigate();
 
   const [timer, setTimer] = useState(0); // Timer state in seconds
+  const location = useLocation();
+  const forgetPassword = location.state?.forgetPassword || false;
+  console.log("🚀 ~ OTP ~ forgetPassword:", forgetPassword);
 
-  const sharedProps: OTPProps = {
-    // onChange,
-    // onInput,
+  const otpContainerStyle = {
+    columnGap: 16,
+    width: 328,
+    height: 57,
+    marginBottom: 20,
   };
 
   useEffect(() => {
@@ -33,27 +39,43 @@ function OTP() {
     setTimer(60); // Start 1-minute timer
   };
 
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Auth>();
+
+  const onSubmit: SubmitHandler<Auth> = (data) => {
+    console.log("Form Submitted:", data);
+    if (forgetPassword) {
+      navigate("/change-password");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Text className={styles.introText}>
         An authentication code has been sent to your email.
       </Text>
 
-      <form className={styles.formContainer}>
-        <Input.OTP
-          formatter={(str) => str.toUpperCase()}
-          {...sharedProps}
-          length={4}
-          className={styles.otpInput}
-          type="number"
-          size="large"
-          style={{
-            backgroundColor: "red",
-            columnGap: 16,
-            width: 328,
-            height: 57,
-            marginBottom: 20,
-          }}
+      <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="otp"
+          control={control}
+          defaultValue=""
+          rules={ValidationSchema.otp}
+          render={({ field }) => (
+            <Input.OTP
+              {...field}
+              formatter={(str) => str.toUpperCase()}
+              length={4}
+              className={styles.otpInput}
+              type="number"
+              size="large"
+              status={errors.otp ? "error" : ""}
+              style={otpContainerStyle}
+            />
+          )}
         />
 
         {timer === 0 ? (

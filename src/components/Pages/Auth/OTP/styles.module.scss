@@ -72,23 +72,6 @@
       display: flex;
       gap: 16px;
       justify-content: center; // Space between boxes
-      .inputBox {
-        width: 58px;
-        height: 58px;
-
-        font-size: 16px;
-        line-height: 58px;
-        text-align: center;
-
-        border: 1px solid $grey200;
-        border-radius: 8px; // Center text vertically
-
-        &:focus {
-          border-color: $primary;
-          outline: none;
-          box-shadow: 0 0 0 2px rgba($primary, 0.2);
-        }
-      }
     }
   }
 }
@@ -108,4 +91,12 @@ input[type="number"] {
 :global(.ant-otp-input) {
   width: 100% !important;
   height: 100% !important;
+}
+
+:global(
+    :where(
+        .css-dev-only-do-not-override-1x0dypw
+      ).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled)
+  ) {
+  border-color: $red500 !important;
 }

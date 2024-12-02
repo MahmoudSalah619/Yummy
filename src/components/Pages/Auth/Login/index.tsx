@@ -6,12 +6,7 @@ import styles from "./styles.module.scss";
 import TextInputAtom from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
 import HyperLink from "@/src/components/Atoms/HyperLink";
-import ValidationSchema from "@/constants/Validation";
-
-type FormValues = {
-  emailOrPhone: string;
-  password: string;
-};
+import ValidationSchema, { Auth } from "@/constants/Validation";
 
 function Login() {
   const onChange: CheckboxProps["onChange"] = () => {};
@@ -21,9 +16,9 @@ function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<Auth>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<Auth> = (data) => {
     console.log("Form Submitted:", data);
 
     navigate("/");
@@ -40,8 +35,6 @@ function Login() {
         <TextInputAtom
           containerStyle={styles.input}
           label="Phone Number or Email Address"
-          labelStyle={styles.labelStyle}
-          inputStyle={styles.test}
           status={errors.emailOrPhone?.message ? "error" : "default"}
           reactHookFormProps={{
             ...register("emailOrPhone", ValidationSchema.emailOrPhone),
