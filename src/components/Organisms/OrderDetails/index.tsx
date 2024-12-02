@@ -29,9 +29,9 @@ function OrderDetails() {
       {OrderDetailsArray.map((order, index) => {
         return (
           <OrderInfo
-            orderTitle={order.prop}
-            orderStatus={order.value}
-            markedStatus={index === 0 && true}
+            title={order.prop}
+            status={order.value}
+            isMarked={index === 0 && true}
           />
         );
       })}
