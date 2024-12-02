@@ -1,1 +1,48 @@
 @import "styles/all";
+
+.uploadDragger {
+  border: 1px solid $grey200;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+
+  :global {
+    .ant-upload-drag {
+      background-color: $light;
+      border: unset;
+    }
+  }
+
+  .customIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid $grey200;
+    margin-inline: auto;
+    margin-bottom: 12px;
+  }
+
+  .uploadText {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .fileList {
+    margin-top: 20px;
+
+    .ant-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ant-list-item-actions {
+      margin-left: 8px;
+    }
+  }
+}
