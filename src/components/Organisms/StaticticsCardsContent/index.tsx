@@ -2,12 +2,20 @@ import StaticticsCard from "../../Molecules/StaticticsCard";
 import styles from "./styles.module.scss";
 
 function StaticticsCardsContent() {
+  const Statictics = [
+    { id: "1", label: "Revenue", value: "EGP 100.280" },
+    { id: "2", label: "Orders", value: "1405" },
+    { id: "3", label: "Orders in Progress", value: "71" },
+    { id: "2", label: "avg Rating", value: "4.4" },
+  ];
+
   return (
     <div className={styles.staticticsContent}>
-      <StaticticsCard label="Total Orders" value="950" />
-      <StaticticsCard label="Total Orders" value="EGP 120.000" />
-      <StaticticsCard label="Total Orders" value="950" />
-      <StaticticsCard label="Total Orders" value="EGP 120.000" />
+      {Statictics.map((item) => {
+        return (
+          <StaticticsCard key={item.id} label={item.label} value={item.value} />
+        );
+      })}
     </div>
   );
 }
