@@ -3,6 +3,8 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import { CheckboxGroupProps } from "./types";
 import Text from "../../Atoms/Text";
+import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
+import Image from "../../Atoms/Image";
 
 function CheckboxGroup({
   title,
@@ -23,7 +25,13 @@ function CheckboxGroup({
         {title}
       </Text>
       {showSearch && (
-        <Input placeholder="Type to Search" className={styles.searchInput} />
+        <Input
+          prefix={
+            <Image src={SearchIcon} alt="search icon" width={20} height={20} />
+          }
+          placeholder="Type to Search"
+          className={styles.searchInput}
+        />
       )}
       <Checkbox.Group
         className={styles.checkboxGroup}

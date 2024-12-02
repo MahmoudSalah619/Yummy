@@ -1,1 +1,34 @@
 @import "styles/all";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+
+  .rangeInputContainer {
+    display: flex;
+    justify-content: space-between;
+
+    :hover {
+      border-color: $orange500 !important;
+    }
+
+    :focus {
+      border-color: $orange500 !important;
+    }
+  }
+
+  .rangeSeparator {
+    margin-inline-start: 8px;
+    margin-inline-end: 8px !important;
+
+    font-size: 28px;
+    font-weight: 400;
+    color: $grey500;
+  }
+
+  .rangeInput {
+    border-radius: 8px !important;
+  }
+}

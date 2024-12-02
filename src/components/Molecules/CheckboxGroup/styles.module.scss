@@ -1,32 +1,46 @@
 @import "styles/all";
 
-.checkboxGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  padding-top: 12px;
-  padding-bottom: 24px;
-
+.container {
   :global {
-    span {
-      font-size: 14px;
-      font-weight: 500;
-      color: $grey900;
-    }
-
-    .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+    .ant-input-outlined:hover {
       border-color: $orange500 !important;
     }
 
-    .ant-checkbox-checked {
-      .ant-checkbox-inner {
-        background-color: $orange500 !important;
-        border: 1px solid $orange500 !important;
-      }
+    .ant-input-outlined:focus-within {
+      border-color: $orange500 !important;
     }
   }
 
-  .checkboxValue {
+  .searchInput {
+    margin-top: 12px;
+    border-radius: 4px !important;
+  }
+
+  .checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding-top: 12px;
+    padding-bottom: 24px;
+
+    :global {
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: $grey900;
+      }
+
+      .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+        border-color: $orange500 !important;
+      }
+
+      .ant-checkbox-checked {
+        .ant-checkbox-inner {
+          background-color: $orange500 !important;
+          border: 1px solid $orange500 !important;
+        }
+      }
+    }
   }
 }

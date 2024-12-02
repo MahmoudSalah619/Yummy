@@ -1,5 +1,6 @@
 import { Input } from "antd";
 import styles from "./styles.module.scss";
+import Text from "../../Atoms/Text";
 
 interface RangeInputProps {
   title: string;
@@ -8,11 +9,13 @@ interface RangeInputProps {
 function RangeInput({ title }: RangeInputProps) {
   return (
     <div className={styles.container}>
-      <h3>{title}</h3>
-      <Input.Group compact className={styles.rangeInput}>
-        <Input placeholder="From" style={{ width: "45%" }} />
+      <Text fontFamily="font500" color="grey900" fontSize={16}>
+        {title}
+      </Text>
+      <Input.Group compact className={styles.rangeInputContainer}>
+        <Input className={styles.rangeInput} placeholder="From" />
         <span className={styles.rangeSeparator}> - </span>
-        <Input placeholder="To" style={{ width: "45%" }} />
+        <Input className={styles.rangeInput} placeholder="To" />
       </Input.Group>
     </div>
   );
