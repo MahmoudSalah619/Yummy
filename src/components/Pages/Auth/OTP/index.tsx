@@ -49,6 +49,8 @@ function OTP() {
     console.log("Form Submitted:", data);
     if (forgetPassword) {
       navigate("/change-password");
+    } else {
+      navigate("/merchant-info");
     }
   };
 

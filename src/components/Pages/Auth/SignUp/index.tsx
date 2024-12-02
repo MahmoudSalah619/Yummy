@@ -41,7 +41,11 @@ function SignUp() {
 
   const onSubmit: SubmitHandler<Auth> = (data) => {
     console.log("Password Changed Successfully:", data);
-    navigate("/otp"); // Redirect to a success page or another route
+    navigate("/otp", {
+      state: {
+        forgetPassword: false,
+      },
+    }); // Redirect to a success page or another route
   };
 
   return (
