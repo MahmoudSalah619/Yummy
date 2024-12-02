@@ -1,5 +1,5 @@
 import { useRoutes } from "react-router-dom";
-import Dashboard from "@/src/components/Pages/dashboard";
+import Home from "@/src/components/Pages/home";
 import DashboardLayout from "@/src/components/Templates/DashboardLayout";
 import Login from "@/src/components/Pages/Auth/Login";
 import AuthLayout from "@/src/components/Templates/AuthLayout";
@@ -10,6 +10,7 @@ import ChangePassword from "@/src/components/Pages/Auth/ChangePassword";
 import SuccessPassChanged from "@/src/components/Pages/Auth/SuccessPassChanged";
 import SuccessSignUp from "@/src/components/Pages/Auth/SuccessSignUp";
 import MerchantInfo from "@/src/components/Pages/Auth/MerchantInfo";
+import Products from "@/src/components/Pages/products";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -17,7 +18,15 @@ export default function useGenerateRoutes() {
       path: "/",
       element: (
         <DashboardLayout>
-          <Dashboard />
+          <Home />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products",
+      element: (
+        <DashboardLayout>
+          <Products />
         </DashboardLayout>
       ),
     },

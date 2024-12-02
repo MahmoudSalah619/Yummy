@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 import { LinkItem } from "./types";
 import SidebarLink from "../../Molecules/SidebarLink";
@@ -6,24 +6,21 @@ import OrangeLogo from "@/src/assets/icons/OrangeLogo";
 import Text from "../../Atoms/Text";
 
 function SidebarOrganism() {
-  const [activeKey, setActiveKey] = useState<string>("home");
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const generalLinks: LinkItem[] = [
-    { icon: "home", label: "Home", key: "home" },
-    { icon: "package", label: "Products", key: "products" },
-    { icon: "orders", label: "Orders", key: "orders" },
-    { icon: "promo", label: "Promo Codes", key: "promo" },
-    { icon: "brand-profile", label: "Brand Profile", key: "brand-profile" },
+    { icon: "home", label: "Home", href: "/" },
+    { icon: "package", label: "Products", href: "/products" },
+    { icon: "orders", label: "Orders", href: "/orders" },
+    { icon: "promo", label: "Promo Codes", href: "/promo" },
+    { icon: "brand-profile", label: "Brand Profile", href: "/brand-profile" },
   ];
 
   const supportLinks: LinkItem[] = [
-    { icon: "contact-us", label: "Contact us", key: "contact-us" },
-    { icon: "faq", label: "FAQ", key: "faq" },
+    { icon: "contact-us", label: "Contact us", href: "/contact-us" },
+    { icon: "faq", label: "FAQ", href: "/faq" },
   ];
-
-  const handleNavClick = (key: string) => {
-    setActiveKey(key);
-  };
 
   return (
     <aside>
@@ -36,11 +33,11 @@ function SidebarOrganism() {
         <div className={styles.sidebarLinks}>
           {generalLinks.map((link) => (
             <SidebarLink
-              key={link.key}
+              key={link.href}
               icon={link.icon}
               label={link.label}
-              isActive={activeKey === link.key}
-              onClick={() => handleNavClick(link.key)}
+              isActive={currentPath === link.href}
+              href={link.href}
             />
           ))}
         </div>
@@ -53,11 +50,11 @@ function SidebarOrganism() {
         <div className={styles.sidebarLinks}>
           {supportLinks.map((link) => (
             <SidebarLink
-              key={link.key}
+              key={link.href}
               icon={link.icon}
               label={link.label}
-              isActive={activeKey === link.key}
-              onClick={() => handleNavClick(link.key)}
+              isActive={currentPath === link.href}
+              href={link.href}
             />
           ))}
         </div>
@@ -67,6 +64,8 @@ function SidebarOrganism() {
         icon="signout"
         label="Sign out"
         className={styles.signoutContainer}
+        href="/"
+        isActive={currentPath === "/login"}
       />
     </aside>
   );

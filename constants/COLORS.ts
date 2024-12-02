@@ -22,7 +22,6 @@ const COLORS = {
   grey900: "#141211",
   darkGrey: "#B9B8BE",
   greyBg: "#F9F6EF99",
-  greyEF: "#EF4444",
   grey76: "#7676801F",
   // ---common
   dark: "#262626",
@@ -34,6 +33,7 @@ const COLORS = {
   // system message colors
   success: "#159F91",
   danger: "#FF193B",
+  ErrorRed400: "#F87171",
   // ---other---
   green500: "#10B981",
   green00: "#00CE15",
@@ -44,6 +44,10 @@ const COLORS = {
   blue00: "#0008CE",
   beigeFB: "#FBEEB5",
   yellowFE: "#FED049",
+  WarningYellow600: "#D97706",
+  black800: "#222223",
+  black1A: "#1A1A1A",
+  black33: "#333333",
 };
 
 export default COLORS;

@@ -1,0 +1,13 @@
+@import "styles/all";
+
+.productNameCell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
