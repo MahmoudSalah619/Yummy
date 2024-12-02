@@ -1,5 +1,9 @@
+import GeneralInfoOrganism from "../../Organisms/GeneralInfoOrganism";
+
 function Products() {
-  return <main>Products</main>;
+  return <main>
+    <GeneralInfoOrganism />
+  </main>;
 }
 
 export default Products;
