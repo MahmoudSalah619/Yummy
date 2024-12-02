@@ -11,6 +11,7 @@ function Button({
   suffix,
   paddingBlock = 8,
   paddingInline = 14,
+  disabled,
   ...otherProps
 }: CustomButtonProps) {
   const paddingBlockClass = `padding-block-${paddingBlock}`;
@@ -25,7 +26,9 @@ function Button({
       ${styles[variant]} 
       ${styles[paddingBlockClass]} 
       ${styles[paddingInlineClass]} 
+      ${disabled && styles.disabled}
       ${customStyle}`}
+      disabled={disabled}
     >
       {suffix}
       <Text fontFamily="font700" fontSize={16}>

@@ -4,6 +4,8 @@ export interface Auth {
   otp: string;
   newPassword: string;
   confirmPassword: string;
+  brandName: string;
+  phoneNumber: number;
 }
 
 const ValidationSchema = {
@@ -65,6 +67,26 @@ const ValidationSchema = {
         value === watch("newPassword") || "Passwords do not match",
     },
   }),
+
+  brandName: {
+    required: "Brand name is required",
+    minLength: {
+      value: 2,
+      message: "Brand name must be at least 2 characters long",
+    },
+    maxLength: {
+      value: 50,
+      message: "Brand name cannot exceed 50 characters",
+    },
+  },
+
+  phoneNumber: {
+    required: "Phone number is required",
+    pattern: {
+      value: /^\d{11}$/,
+      message: "Phone number must be 11 digits",
+    },
+  },
 };
 
 export default ValidationSchema;

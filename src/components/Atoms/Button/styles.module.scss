@@ -47,11 +47,11 @@
 .transparent-error {
   background-color: $light;
 
-  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolor
+  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
   p {
     color: $light !important;
   }
@@ -84,4 +84,8 @@
 
 .padding-inline-16 {
   padding-inline: 16px;
+}
+
+.disabled {
+  opacity: 0.5;
 }
