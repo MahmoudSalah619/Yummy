@@ -37,7 +37,9 @@
       resize: none;
 
       width: 100%;
-      padding: 15px 19px;
+      padding-inline: 19px;
+
+      color: $dark;
 
       border: none !important;
       border-radius: 8px;
@@ -60,10 +62,10 @@
   }
 
   .disabled {
-    // background-color: $LightGrey;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+    background-color: $LightGray;
     textarea,
     input {
-      // color: $LightGrey;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
+      color: $LightGray;
     }
     &:hover {
       cursor: not-allowed;

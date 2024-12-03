@@ -1,0 +1,21 @@
+@import "styles/all";
+
+.editor {
+  height: 181px;
+  font-family: inherit;
+  border-radius: 4px;
+  border-radius: 80px;
+
+  :global {
+    .ql-toolbar {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .ql-container {
+      height: 133px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+  }
+}
