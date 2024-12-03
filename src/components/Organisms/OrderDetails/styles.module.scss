@@ -1,0 +1,19 @@
+@import "styles/all.scss";
+
+.OrderDetailsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 15px;
+
+  background-color: $light;
+  border-radius: 23px;
+  border-radius: 1px solid $lightPrimary;
+
+  .OrderDetailsTitle {
+    margin: 0px 0 10px;
+    padding: 0 5px 15px;
+    border-bottom: 1px solid $lightPrimary;
+  }
+}
