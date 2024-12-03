@@ -13,9 +13,9 @@ function RangeInput({ title }: RangeInputProps) {
         {title}
       </Text>
       <Input.Group compact className={styles.rangeInputContainer}>
-        <Input className={styles.rangeInput} placeholder="From" />
+        <Input placeholder="From" />
         <span className={styles.rangeSeparator}> - </span>
-        <Input className={styles.rangeInput} placeholder="To" />
+        <Input placeholder="To" />
       </Input.Group>
     </div>
   );
