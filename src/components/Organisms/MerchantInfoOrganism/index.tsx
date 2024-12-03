@@ -15,8 +15,7 @@ const { Dragger } = Upload;
 function MerchantInfoOrganism() {
   const navigate = useNavigate();
   // eslint-disable-next-line
-  const [uploadedFiles, setUploadedFiles] = useState<UploadFile[]>([]);
-  console.log("🚀 ~ MerchantInfoOrganism ~ uploadedFiles:", uploadedFiles);
+  const [_, setUploadedFiles] = useState<UploadFile[]>([]);
   const [imageSrc, setImageSrc] = useState<string>(vector); // State for uploaded image URL
   const {
     register,
@@ -25,7 +24,6 @@ function MerchantInfoOrganism() {
     formState: { errors },
   } = useForm<Auth>();
 
-  console.log("🚀 ~ MerchantInfoOrganism ~ errors:", errors);
   const uploadProps = {
     name: "file",
     multiple: false,
