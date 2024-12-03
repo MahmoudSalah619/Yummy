@@ -17,5 +17,17 @@
       border-bottom-right-radius: 8px;
       border-bottom-left-radius: 8px;
     }
+
+    .ql-formats button:hover .ql-stroke {
+      stroke: $orange500;
+    }
+
+    .ql-formats .ql-picker-label:hover {
+      color: $orange500 !important;
+    }
+
+    .ql-formats .ql-picker-label:hover .ql-stroke {
+      stroke: $orange500 !important;
+    }
   }
 }

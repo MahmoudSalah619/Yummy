@@ -31,6 +31,14 @@ button {
   border-color: $orange500 !important;
 }
 
+.ant-select-outlined:hover .ant-select-selector {
+  border-color: $orange500 !important;
+}
+
+.ant-select-outlined:focus-within .ant-select-selector {
+  border-color: $orange500 !important;
+}
+
 .ant-input-outlined:focus-within {
   border-color: $orange500 !important;
 }

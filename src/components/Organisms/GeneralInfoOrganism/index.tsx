@@ -1,4 +1,4 @@
-import RichTextEditor from "../../Atoms/RichTextEditor";
+import RichTextEditor from "../../Molecules/RichTextEditor";
 import SelectionInputAtom from "../../Atoms/SelectionInput";
 import TextInputAtom from "../../Atoms/TextInput";
 import CardWrapper from "../../Wrappers/CardWrapper";
