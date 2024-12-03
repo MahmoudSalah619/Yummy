@@ -1,9 +1,14 @@
 @import "styles/all";
 
 .container {
-}
+  .divider {
+    margin: 0;
+    padding-bottom: 24px;
+  }
 
-.divider {
-  margin: 0;
-  padding-bottom: 24px;
+  .buttonsContainer {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+  }
 }

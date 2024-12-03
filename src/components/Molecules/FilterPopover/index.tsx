@@ -4,6 +4,7 @@ import CheckboxGroup from "../CheckboxGroup";
 import RangeInput from "../RangeInput";
 import styles from "./styles.module.scss";
 import { FilterPopoverProps } from "./types";
+import Button from "../../Atoms/Button";
 
 function FilterPopover({ className }: FilterPopoverProps) {
   const [orderStatus, setOrderStatus] = useState<string[]>([]);
@@ -51,7 +52,10 @@ function FilterPopover({ className }: FilterPopoverProps) {
 
       <Divider className={styles.divider} />
 
-      <button onClick={handleConfirm}>Confirm</button>
+      <div className={styles.buttonsContainer}>
+        <Button variant="transparent-grey" title="Clear all" isFullWidth />
+        <Button onClick={handleConfirm} title="Done" isFullWidth />
+      </div>
     </div>
   );
 }
