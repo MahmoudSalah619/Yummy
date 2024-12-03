@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 import vector from "@/src/assets/images/vector.png";
 import Button from "@/src/components/Atoms/Button";
 import ValidationSchema, { Auth } from "@/constants/Validation";
-import TextInputAtom from "../../Atoms/TextInput";
+import TextInput from "../../Atoms/TextInput";
 import ProfileImage from "../../Molecules/ProfileImage";
 
 const { Dragger } = Upload;
@@ -71,7 +71,7 @@ function MerchantInfoOrganism() {
           >
             <Button title="Upload" isFullWidth />
           </Dragger>
-          <TextInputAtom
+          <TextInput
             reactHookFormProps={{
               ...register("bio", ValidationSchema.bio),
             }}

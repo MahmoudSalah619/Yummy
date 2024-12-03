@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 import Image from "../Image";
 import Text from "../Text";
 
-export default function SelectionSearchInputAtom({
+export default function SelectionSearchInput({
   containerStyle,
   options,
   value,

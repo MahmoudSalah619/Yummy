@@ -3,7 +3,7 @@ import { Checkbox, CheckboxProps } from "antd";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
-import TextInputAtom from "@/src/components/Atoms/TextInput";
+import TextInput from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
 import HyperLink from "@/src/components/Atoms/HyperLink";
 import ValidationSchema, { Auth } from "@/constants/Validation";
@@ -31,7 +31,7 @@ export default function LoginOrganism() {
       </Text>
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-        <TextInputAtom
+        <TextInput
           containerStyle={styles.input}
           label="Phone Number or Email Address"
           status={errors.emailOrPhone?.message ? "error" : "default"}
@@ -40,7 +40,7 @@ export default function LoginOrganism() {
           }}
           errorMsg={errors.emailOrPhone?.message}
         />
-        <TextInputAtom
+        <TextInput
           containerStyle={`${styles.input} ${styles.passwordContainer}`}
           label="Password"
           isPasswordInput

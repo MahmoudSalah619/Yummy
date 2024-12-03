@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 import Text from "../Text";
 import Image from "../Image";
 
-export default function TextInputAtom({
+export default function TextInput({
   containerStyle,
   inputStyle,
   name,
@@ -40,7 +40,9 @@ export default function TextInputAtom({
         )}
 
         <div
-          className={`${styles.inputContent} ${styles[status]} ${inputStyle} ${prefixIcon ? styles.withPrefix : ""}`}
+          className={`${styles.inputContent} ${styles[status]} ${inputStyle} ${
+            prefixIcon ? styles.withPrefix : ""
+          }`}
         >
           {prefixIcon && (
             <Image

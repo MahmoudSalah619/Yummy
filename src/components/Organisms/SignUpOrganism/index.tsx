@@ -4,7 +4,7 @@ import { Checkbox, CheckboxProps } from "antd";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
-import TextInputAtom from "@/src/components/Atoms/TextInput";
+import TextInput from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
 import HyperLink from "@/src/components/Atoms/HyperLink";
 import PasswordValidationRole from "@/src/components/Molecules/PasswordValidationRole";
@@ -53,7 +53,7 @@ export default function SignUpOrganism() {
       <Text className={styles.introText}>Create your merchant account</Text>
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-        <TextInputAtom
+        <TextInput
           containerStyle={`${styles.input} ${styles.spaceTop}`}
           label="Brand Name"
           labelStyle={styles.labelStyle}
@@ -64,7 +64,7 @@ export default function SignUpOrganism() {
           }}
           errorMsg={errors.brandName?.message}
         />
-        <TextInputAtom
+        <TextInput
           containerStyle={`${styles.input} ${styles.spaceTop}`}
           label="Email Address"
           labelStyle={styles.labelStyle}
@@ -75,7 +75,7 @@ export default function SignUpOrganism() {
           }}
           errorMsg={errors.emailOrPhone?.message}
         />
-        <TextInputAtom
+        <TextInput
           containerStyle={`${styles.input} ${styles.spaceTop}`}
           label="Phone Number"
           labelStyle={styles.labelStyle}
@@ -86,7 +86,7 @@ export default function SignUpOrganism() {
           }}
           errorMsg={errors.phoneNumber?.message}
         />
-        <TextInputAtom
+        <TextInput
           containerStyle={`${styles.input} ${styles.passwordContainer}`}
           label="Password"
           isPasswordInput
