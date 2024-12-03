@@ -1,6 +1,6 @@
 import RichTextEditor from "../../Molecules/RichTextEditor";
-import SelectionInputAtom from "../../Atoms/SelectionInput";
-import TextInputAtom from "../../Atoms/TextInput";
+import SelectionInput from "../../Atoms/SelectionInput";
+import TextInput from "../../Atoms/TextInput";
 import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
 
@@ -14,7 +14,7 @@ function GeneralInfoOrganism() {
   return (
     <CardWrapper title="General Info">
       <div className={styles.inputsHolder}>
-        <TextInputAtom
+        <TextInput
           type="text"
           inputStyle={styles.input}
           containerStyle={styles.inputContainer}
@@ -28,13 +28,13 @@ function GeneralInfoOrganism() {
       </div>
 
       <div className={styles.selectionsHolder}>
-        <SelectionInputAtom
+        <SelectionInput
           containerStyle={styles.selectionContainerInput}
           label="Product Category"
           options={dummyOptions}
         />
 
-        <SelectionInputAtom
+        <SelectionInput
           containerStyle={styles.selectionContainerInput}
           label="Product Sub-Category"
           options={dummyOptions}

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
-import TextInputAtom from "@/src/components/Atoms/TextInput";
+import TextInput from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
 import PasswordValidationRole from "@/src/components/Molecules/PasswordValidationRole";
 import ValidationSchema, { Auth } from "@/constants/Validation";
@@ -42,7 +42,7 @@ export default function ChangPasswordOrganism() {
       <Text className={styles.introText}>Reset Your Password</Text>
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-        <TextInputAtom
+        <TextInput
           containerStyle={styles.input}
           label="New Password"
           type="password"
@@ -70,7 +70,7 @@ export default function ChangPasswordOrganism() {
           />
         </div>
 
-        <TextInputAtom
+        <TextInput
           containerStyle={styles.input}
           label="Confirm New Password"
           type="password"
