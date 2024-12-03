@@ -54,11 +54,12 @@ export default function TextInputAtom({
           {type === "textarea" ? (
             <textarea
               name={name}
-              className="TextPrimaryBlack"
+              className={styles.textArea}
               placeholder={placeholder}
               value={value}
               onChange={onChange}
               {...reactHookFormProps}
+              rows={7}
             />
           ) : (
             <input

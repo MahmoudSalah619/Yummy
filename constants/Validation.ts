@@ -1,3 +1,5 @@
+import { RcFile } from "antd/es/upload";
+
 export interface Auth {
   emailOrPhone: string;
   password: string;
@@ -6,6 +8,10 @@ export interface Auth {
   confirmPassword: string;
   brandName: string;
   phoneNumber: number;
+  bio: string;
+  brandIcon: RcFile | undefined | File;
+  commercialRegister: RcFile | undefined;
+  taxId: RcFile | undefined;
 }
 
 const ValidationSchema = {
@@ -86,6 +92,19 @@ const ValidationSchema = {
       value: /^\d{11}$/,
       message: "Phone number must be 11 digits",
     },
+  },
+
+  bio: {
+    required: "Bio is required",
+  },
+  brandIcon: {
+    required: "Brand icon is required",
+  },
+  commercialRegister: {
+    required: "Commercial Register document is required",
+  },
+  taxId: {
+    required: "Tax ID document is required",
   },
 };
 
