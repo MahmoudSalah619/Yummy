@@ -1,6 +1,15 @@
 @import "styles/all";
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $grey900;
+  }
   .inputContent {
     position: relative;
 
@@ -9,7 +18,6 @@
 
     width: 100%;
 
-    background-color: $LightGray;
     border-radius: 10px;
 
     .prefixIcon {
@@ -21,7 +29,7 @@
     }
 
     input {
-      height: 56px;
+      height: 44px;
     }
 
     > input,
@@ -33,8 +41,8 @@
 
       color: $dark;
 
-      border: none !important;
-      border-radius: 10px;
+      border: 1px solid $grey200 !important;
+      border-radius: 8px;
       outline: none;
       &:active,
       &:focus,
@@ -81,8 +89,13 @@
 }
 
 .errorMsg {
+  margin-top: 12px;
   margin-bottom: 16px;
   p {
     line-height: 1;
   }
+}
+
+.error {
+  border: 1px solid $red500 !important;
 }

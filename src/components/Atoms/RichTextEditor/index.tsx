@@ -10,12 +10,12 @@ interface RichTextEditorProps {
   containerStyle?: string;
 }
 
-const RichTextEditor = ({
+function RichTextEditor({
   value = "",
   onChange,
   label,
   containerStyle,
-}: RichTextEditorProps) => {
+}: RichTextEditorProps) {
   const [editorValue, setEditorValue] = useState(value);
 
   const handleChange = (content: string) => {
@@ -34,6 +34,6 @@ const RichTextEditor = ({
       />
     </div>
   );
-};
+}
 
 export default RichTextEditor;

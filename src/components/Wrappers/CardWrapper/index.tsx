@@ -2,7 +2,7 @@ import Text from "../../Atoms/Text";
 import styles from "./styles.module.scss";
 import { CardWrapperProps } from "./types";
 
-const CardWrapper = ({ children, title, className }: CardWrapperProps) => {
+function CardWrapper({ children, title, className }: CardWrapperProps) {
   return (
     <section className={`${styles.cardWrapper} ${className}`}>
       {!!title && (
@@ -13,6 +13,6 @@ const CardWrapper = ({ children, title, className }: CardWrapperProps) => {
       {children}
     </section>
   );
-};
+}
 
 export default CardWrapper;

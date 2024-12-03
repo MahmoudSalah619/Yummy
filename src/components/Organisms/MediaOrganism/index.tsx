@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Upload, message } from "antd";
+import { UploadFile } from "antd/es/upload/interface";
 import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import UploadIcon from "@/src/assets/icons/products/upload-cloud.svg";
 import Image from "../../Atoms/Image";
-import { UploadFile } from "antd/es/upload/interface";
 
 const { Dragger } = Upload;
 
-const MediaOrganism = () => {
+function MediaOrganism() {
+  // eslint-disable-next-line
   const [_, setUploadedFiles] = useState<UploadFile[]>([]);
 
   const uploadProps = {
@@ -51,6 +52,6 @@ const MediaOrganism = () => {
       </Dragger>
     </CardWrapper>
   );
-};
+}
 
 export default MediaOrganism;

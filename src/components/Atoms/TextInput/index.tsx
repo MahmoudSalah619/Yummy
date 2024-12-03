@@ -14,6 +14,7 @@ export default function TextInputAtom({
   onChange,
   placeholder,
   label,
+  labelStyle,
   type = "text",
   status = "default",
   errorMsg,
@@ -35,7 +36,7 @@ export default function TextInputAtom({
     <>
       <div className={`${styles.container} ${containerStyle}`}>
         {!!label && (
-          <span className="d-block mb-2 Label100 White">{label}</span>
+          <span className={`${styles.label} ${labelStyle}`}>{label}</span>
         )}
 
         <div
@@ -53,11 +54,12 @@ export default function TextInputAtom({
           {type === "textarea" ? (
             <textarea
               name={name}
-              className="TextPrimaryBlack"
+              className={styles.textArea}
               placeholder={placeholder}
               value={value}
               onChange={onChange}
               {...reactHookFormProps}
+              rows={7}
             />
           ) : (
             <input
@@ -85,7 +87,9 @@ export default function TextInputAtom({
       </div>
       {errorMsg && (
         <div className={styles.errorMsg}>
-          <Text color="primary">{errorMsg}</Text>
+          <Text color="red500" fontSize={11} fontFamily="font500">
+            {errorMsg}
+          </Text>
         </div>
       )}
     </>

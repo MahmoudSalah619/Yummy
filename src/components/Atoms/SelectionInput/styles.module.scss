@@ -2,10 +2,8 @@
 
 .inputWithIconContainer {
   position: relative;
-
   display: flex;
   align-items: center;
-
   border-radius: 10px;
   :global {
     .ant-select-selection-item {

@@ -1,10 +1,10 @@
 @import "styles/all";
 
 .uploadDragger {
-  border: 1px solid $grey200;
-  border-radius: 8px;
   padding: 20px;
   text-align: center;
+  border: 1px solid $grey200;
+  border-radius: 8px;
 
   :global {
     .ant-upload-drag {
@@ -15,21 +15,23 @@
 
   .customIcon {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     width: 40px;
     height: 40px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid $grey200;
-    margin-inline: auto;
     margin-bottom: 12px;
+    margin-inline: auto;
+    padding: 10px;
+
+    border: 1px solid $grey200;
+    border-radius: 8px;
   }
 
   .uploadText {
     display: flex;
-    justify-content: center;
     gap: 4px;
+    justify-content: center;
   }
 
   .fileList {
@@ -37,8 +39,8 @@
 
     .ant-list-item {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .ant-list-item-actions {

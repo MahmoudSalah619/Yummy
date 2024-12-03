@@ -4,7 +4,7 @@ import TextInputAtom from "../../Atoms/TextInput";
 import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
 
-const GeneralInfoOrganism = () => {
+function GeneralInfoOrganism() {
   const dummyOptions = [
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
@@ -42,6 +42,6 @@ const GeneralInfoOrganism = () => {
       </div>
     </CardWrapper>
   );
-};
+}
 
 export default GeneralInfoOrganism;
