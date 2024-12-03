@@ -9,6 +9,7 @@ export interface TextInputAtomProps {
   value?: string;
   placeholder?: string;
   label?: string;
+  labelStyle?: string;
   isPasswordInput?: boolean;
   type?: "password" | "textarea" | "text" | "number";
   status?: "default" | "error" | "disabled";

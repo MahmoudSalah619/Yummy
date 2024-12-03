@@ -3,11 +3,11 @@
 import { Select } from "antd";
 import { SelectionInputAtomProps } from "./types";
 import styles from "./styles.module.scss";
-import ARROW_DOWN from "/public/Images/arrow-down.svg";
+import ARROW_DOWN from "@/src/assets/icons/arrow-down.svg";
 import Image from "../Image";
 import Text from "../Text";
 
-export default function SelectionInputAtom({
+export default function SelectionInput({
   containerStyle,
   onChange,
   options,
@@ -51,7 +51,7 @@ export default function SelectionInputAtom({
           <Select
             showSearch={showSearch}
             mode={mode || undefined}
-            className={`selectInput ${styles[size]} ${styles[mode]} w-100`}
+            className={`${styles[size]} ${styles[mode]} w-100`}
             getPopupContainer={(trigger: HTMLElement | null) => {
               return (
                 (trigger?.parentNode as HTMLElement) ??
