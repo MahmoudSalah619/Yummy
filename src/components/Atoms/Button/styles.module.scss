@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: center;
 
+  width: fit-content;
+
   border-radius: 8px;
 }
 
@@ -47,11 +49,11 @@
 .transparent-error {
   background-color: $light;
 
-  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
+  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
   p {
     color: $light !important;
   }
