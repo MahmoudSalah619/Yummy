@@ -12,6 +12,8 @@ function Button({
   paddingBlock = 8,
   paddingInline = 14,
   disabled,
+  fontSize = 16,
+  fontFamily = "font500",
   ...otherProps
 }: CustomButtonProps) {
   const paddingBlockClass = `padding-block-${paddingBlock}`;
@@ -31,7 +33,7 @@ function Button({
       disabled={disabled}
     >
       {suffix}
-      <Text fontFamily="font700" fontSize={16}>
+      <Text fontFamily={fontFamily} fontSize={fontSize}>
         {title}
       </Text>
     </button>
