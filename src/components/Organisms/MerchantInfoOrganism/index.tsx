@@ -6,9 +6,9 @@ import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
 import vector from "@/src/assets/images/vector.png";
 import Button from "@/src/components/Atoms/Button";
-import Image from "@/src/components/Atoms/Image";
 import ValidationSchema, { Auth } from "@/constants/Validation";
-import TextInputAtom from "../../Atoms/TextInput";
+import TextInput from "../../Atoms/TextInput";
+import ProfileImage from "../../Molecules/ProfileImage";
 
 const { Dragger } = Upload;
 
@@ -55,16 +55,7 @@ function MerchantInfoOrganism() {
       <Text className={styles.introText}>Start your brand now</Text>
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.imgContainer}>
-          <Image
-            src={imageSrc}
-            alt="vector"
-            width={83}
-            height={83}
-            className={styles.img}
-          />
-        </div>
-
+        <ProfileImage src={imageSrc} />
         {/* Buttton */}
 
         <div className={styles.btnContainer}>
@@ -80,7 +71,7 @@ function MerchantInfoOrganism() {
           >
             <Button title="Upload" isFullWidth />
           </Dragger>
-          <TextInputAtom
+          <TextInput
             reactHookFormProps={{
               ...register("bio", ValidationSchema.bio),
             }}

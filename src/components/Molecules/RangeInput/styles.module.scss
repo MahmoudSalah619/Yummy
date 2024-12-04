@@ -9,14 +9,6 @@
   .rangeInputContainer {
     display: flex;
     justify-content: space-between;
-
-    :hover {
-      border-color: $orange500 !important;
-    }
-
-    :focus {
-      border-color: $orange500 !important;
-    }
   }
 
   .rangeSeparator {

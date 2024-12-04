@@ -64,7 +64,7 @@ function SidebarOrganism() {
         icon="signout"
         label="Sign out"
         className={styles.signoutContainer}
-        href="/"
+        href="/login"
         isActive={currentPath === "/login"}
       />
     </aside>

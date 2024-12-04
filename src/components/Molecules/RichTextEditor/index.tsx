@@ -2,6 +2,7 @@ import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import styles from "./styles.module.scss";
+import Text from "../../Atoms/Text";
 
 interface RichTextEditorProps {
   value?: string;
@@ -25,7 +26,11 @@ function RichTextEditor({
 
   return (
     <div className={`${styles.container} ${containerStyle}`}>
-      {label && <span className="d-block mb-2 Label100 White">{label}</span>}
+      {!!label && (
+        <Text color="grey900" fontFamily="font500" fontSize={14}>
+          {label}
+        </Text>
+      )}
       <ReactQuill
         theme="snow"
         value={editorValue}

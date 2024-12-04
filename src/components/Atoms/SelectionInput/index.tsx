@@ -7,7 +7,7 @@ import ARROW_DOWN from "@/src/assets/icons/arrow-down.svg";
 import Image from "../Image";
 import Text from "../Text";
 
-export default function SelectionInputAtom({
+export default function SelectionInput({
   containerStyle,
   onChange,
   options,
