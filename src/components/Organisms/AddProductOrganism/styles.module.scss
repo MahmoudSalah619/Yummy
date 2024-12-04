@@ -1,0 +1,19 @@
+@import "styles/all";
+
+.productNameCell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .activeFilterButton {
+    background-color: $orange500 !important;
+    color: $light !important;
+    border-color: $orange500 !important;
+  }
+}
