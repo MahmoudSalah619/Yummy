@@ -1,17 +1,14 @@
-@import "styles/all";
+@import "styles/all.scss";
 
-.cardWrapper {
+.container {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
 
-  padding: 32px 24px;
+  width: fit-content;
+  padding: 24px;
 
   background-color: $light;
   border: 1px solid $grey200;
   border-radius: 12px;
-}
-
-.noPadding {
-  padding: 32px 0;
 }
