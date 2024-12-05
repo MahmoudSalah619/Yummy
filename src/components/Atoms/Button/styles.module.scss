@@ -48,12 +48,13 @@
 
 .transparent-error {
   background-color: $light;
-
-  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
+  p {
+    color: $ErrorRed400 !important;
+  }
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+  background-color: $WarningYellow600 !important;
   p {
     color: $light !important;
   }
