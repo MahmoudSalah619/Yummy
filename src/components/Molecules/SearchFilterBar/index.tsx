@@ -1,10 +1,9 @@
-import { Input } from "antd";
 import styles from "./styles.module.scss";
-import Image from "../../Atoms/Image";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import SelectionInput from "../../Atoms/SelectionInput";
 import TextInput from "../../Atoms/TextInput";
-const SearchFilterBar = () => {
+
+function SearchFilterBar() {
   const dummyOptions = [
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
@@ -36,6 +35,6 @@ const SearchFilterBar = () => {
       />
     </section>
   );
-};
+}
 
 export default SearchFilterBar;

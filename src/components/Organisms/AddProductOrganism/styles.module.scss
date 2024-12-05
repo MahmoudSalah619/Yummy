@@ -11,9 +11,29 @@
   flex-direction: column;
   gap: 24px;
 
+  :global {
+    .ant-btn {
+      border-radius: 0px;
+    }
+  }
+
   .activeFilterButton {
-    background-color: $orange500 !important;
     color: $light !important;
+    background-color: $orange500 !important;
     border-color: $orange500 !important;
+
+    :hover {
+      color: $light !important;
+    }
+  }
+
+  .firstFilterButton {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .lastFilterButton {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
 }
