@@ -53,3 +53,8 @@ button {
     border: 1px solid $orange500 !important;
   }
 }
+
+.ant-btn:hover {
+  color: $orange500 !important;
+  border-color: $orange500 !important;
+}
