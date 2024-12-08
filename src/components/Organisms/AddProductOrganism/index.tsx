@@ -7,24 +7,17 @@ import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import StatusIndicator from "../../Molecules/StatusIndicator";
 import DateTimeDisplay from "../../Molecules/DateTimeDisplay";
 import ProductName from "../../Molecules/ProductName";
-import {
-  STATUS_VIEW_ALL,
-  STATUS_PUBLISHED,
-  STATUS_IN_REVIEW,
-  STATUS_REJECTED,
-  STATUS_IN_DRAFT,
-  STATUS_INACTIVE,
-} from "@/constants/Status";
+import Status from "@/constants/Status";
 
 function AddProductOrganism() {
-  const [activeFilter, setActiveFilter] = useState(STATUS_VIEW_ALL);
+  const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
 
   const filters = [
-    { key: STATUS_VIEW_ALL, label: "View all" },
-    { key: STATUS_PUBLISHED, label: "Published" },
-    { key: STATUS_IN_REVIEW, label: "In review" },
-    { key: STATUS_REJECTED, label: "Rejected" },
-    { key: STATUS_IN_DRAFT, label: "In draft" },
+    { key: Status.VIEW_ALL, label: "View all" },
+    { key: Status.PUBLISHED, label: "Published" },
+    { key: Status.IN_REVIEW, label: "In review" },
+    { key: Status.REJECTED, label: "Rejected" },
+    { key: Status.IN_DRAFT, label: "In draft" },
   ];
 
   const columns = [
@@ -92,19 +85,19 @@ function AddProductOrganism() {
     stock: "1234",
     status:
       i % 5 === 0
-        ? STATUS_PUBLISHED
+        ? Status.PUBLISHED
         : i % 5 === 1
-          ? STATUS_IN_REVIEW
+          ? Status.IN_REVIEW
           : i % 5 === 2
-            ? STATUS_REJECTED
+            ? Status.REJECTED
             : i % 5 === 3
-              ? STATUS_IN_DRAFT
-              : STATUS_INACTIVE,
+              ? Status.IN_DRAFT
+              : Status.INACTIVE,
     revenue: "EGP 123,456",
   }));
 
   const filteredData =
-    activeFilter === STATUS_VIEW_ALL
+    activeFilter === Status.VIEW_ALL
       ? allData
       : allData.filter((item) => item.status === activeFilter);
 

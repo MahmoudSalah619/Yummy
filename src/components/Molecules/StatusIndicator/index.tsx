@@ -7,29 +7,23 @@ import InDraftIcon from "@/src/assets/icons/products/delete-icon.svg";
 import InactiveIcon from "@/src/assets/icons/products/inactive.svg";
 import styles from "./styles.module.scss";
 import { StatusIndicatorProps } from "./types";
-import {
-  STATUS_PUBLISHED,
-  STATUS_IN_REVIEW,
-  STATUS_REJECTED,
-  STATUS_IN_DRAFT,
-  STATUS_INACTIVE,
-} from "@/constants/Status";
+import Status from "@/constants/Status";
 
 function StatusIndicator({ status }: StatusIndicatorProps) {
   const iconMap: { [key: string]: string } = {
-    [STATUS_PUBLISHED]: PublishedIcon,
-    [STATUS_IN_REVIEW]: InReviewIcon,
-    [STATUS_REJECTED]: RejectedIcon,
-    [STATUS_IN_DRAFT]: InDraftIcon,
-    [STATUS_INACTIVE]: InactiveIcon,
+    [Status.PUBLISHED]: PublishedIcon,
+    [Status.IN_REVIEW]: InReviewIcon,
+    [Status.REJECTED]: RejectedIcon,
+    [Status.IN_DRAFT]: InDraftIcon,
+    [Status.INACTIVE]: InactiveIcon,
   };
 
   const statusStyleMap: { [key: string]: string } = {
-    [STATUS_PUBLISHED]: styles.published,
-    [STATUS_IN_REVIEW]: styles.inReview,
-    [STATUS_REJECTED]: styles.rejected,
-    [STATUS_IN_DRAFT]: styles.inDraft,
-    [STATUS_INACTIVE]: styles.inactive,
+    [Status.PUBLISHED]: styles.published,
+    [Status.IN_REVIEW]: styles.inReview,
+    [Status.REJECTED]: styles.rejected,
+    [Status.IN_DRAFT]: styles.inDraft,
+    [Status.INACTIVE]: styles.inactive,
   };
 
   return (
