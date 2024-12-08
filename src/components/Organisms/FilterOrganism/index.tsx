@@ -28,6 +28,7 @@ function FilterOrganism() {
         onClose={toggleDrawer}
         open={isDrawerOpen}
         className={styles.drawer}
+        width={480}
       >
         <FilterPopover />
       </Drawer>

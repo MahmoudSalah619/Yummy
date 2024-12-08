@@ -9,6 +9,8 @@ function SidebarOrganism() {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  const firstSegment = `/${currentPath.split("/")[1]}`;
+
   const generalLinks: LinkItem[] = [
     { icon: "home", label: "Home", href: "/" },
     { icon: "package", label: "Products", href: "/products" },
@@ -36,7 +38,7 @@ function SidebarOrganism() {
               key={link.href}
               icon={link.icon}
               label={link.label}
-              isActive={currentPath === link.href}
+              isActive={firstSegment === link.href}
               href={link.href}
             />
           ))}
@@ -53,7 +55,7 @@ function SidebarOrganism() {
               key={link.href}
               icon={link.icon}
               label={link.label}
-              isActive={currentPath === link.href}
+              isActive={firstSegment === link.href}
               href={link.href}
             />
           ))}
@@ -64,8 +66,8 @@ function SidebarOrganism() {
         icon="signout"
         label="Sign out"
         className={styles.signoutContainer}
-        href="/"
-        isActive={currentPath === "/login"}
+        href="/login"
+        isActive={firstSegment === "/login"}
       />
     </aside>
   );

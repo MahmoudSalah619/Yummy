@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 import Text from "../Text";
 import Image from "../Image";
 
-export default function TextInputAtom({
+export default function TextInput({
   containerStyle,
   inputStyle,
   name,
@@ -14,6 +14,7 @@ export default function TextInputAtom({
   onChange,
   placeholder,
   label,
+  labelStyle,
   type = "text",
   status = "default",
   errorMsg,
@@ -35,11 +36,13 @@ export default function TextInputAtom({
     <>
       <div className={`${styles.container} ${containerStyle}`}>
         {!!label && (
-          <span className="d-block mb-2 Label100 White">{label}</span>
+          <span className={`${styles.label} ${labelStyle}`}>{label}</span>
         )}
 
         <div
-          className={`${styles.inputContent} ${styles[status]} ${inputStyle} ${prefixIcon ? styles.withPrefix : ""}`}
+          className={`${styles.inputContent} ${styles[status]} ${inputStyle} ${
+            prefixIcon ? styles.withPrefix : ""
+          }`}
         >
           {prefixIcon && (
             <Image
@@ -53,11 +56,12 @@ export default function TextInputAtom({
           {type === "textarea" ? (
             <textarea
               name={name}
-              className="TextPrimaryBlack"
+              className={styles.textArea}
               placeholder={placeholder}
               value={value}
               onChange={onChange}
               {...reactHookFormProps}
+              rows={7}
             />
           ) : (
             <input
@@ -85,7 +89,9 @@ export default function TextInputAtom({
       </div>
       {errorMsg && (
         <div className={styles.errorMsg}>
-          <Text color="primary">{errorMsg}</Text>
+          <Text color="red500" fontSize={11} fontFamily="font500">
+            {errorMsg}
+          </Text>
         </div>
       )}
     </>

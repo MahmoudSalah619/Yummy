@@ -1,0 +1,14 @@
+@import "styles/all";
+
+.container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  .selectionContainerInput {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 30%;
+  }
+}
