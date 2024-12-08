@@ -1,0 +1,32 @@
+@import "styles/all";
+
+.statusIndicator {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  width: fit-content;
+  padding: 2px 8px;
+
+  border-radius: 999px;
+}
+
+.published {
+  color: #28a745 !important;
+}
+
+.inReview {
+  color: #ff9800 !important;
+}
+
+.rejected {
+  color: #f44336 !important;
+}
+
+.inDraft {
+  color: #9e9e9e !important;
+}
+
+.inactive {
+  color: #6c757d !important;
+}

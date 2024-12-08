@@ -3,10 +3,10 @@ import { Button } from "antd";
 import SearchFilterBar from "../../Molecules/SearchFilterBar";
 import styles from "./styles.module.scss";
 import MainTableOrganism from "@/src/components/Organisms/MainTableOrganism";
-import { TableRow } from "@/src/components/Organisms/MainTableOrganism/types";
-import Image from "@/src/components/Atoms/Image";
-import Text from "@/src/components/Atoms/Text";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
+import StatusIndicator from "../../Molecules/StatusIndicator";
+import DateTimeDisplay from "../../Molecules/DateTimeDisplay";
+import ProductName from "../../Molecules/ProductName";
 
 function AddProductOrganism() {
   const [activeFilter, setActiveFilter] = useState("view-all");
@@ -24,19 +24,8 @@ function AddProductOrganism() {
       title: "Product Name",
       dataIndex: "productName",
       key: "productName",
-      render: (text: string, record: TableRow) => (
-        <div className={styles.productNameCell}>
-          <Image
-            src={AvatarImage}
-            alt={record.productName}
-            width={30}
-            height={30}
-            className={styles.productImage}
-          />
-          <Text fontSize={14} fontFamily="font500" color="dark">
-            {text}
-          </Text>
-        </div>
+      render: (text: string) => (
+        <ProductName text={text} AvatarImage={AvatarImage} />
       ),
     },
     {
@@ -48,11 +37,13 @@ function AddProductOrganism() {
       title: "Created on",
       dataIndex: "createdOn",
       key: "createdOn",
+      render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
       title: "Published on",
       dataIndex: "publishedOn",
       key: "publishedOn",
+      render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
       title: "Price",
@@ -73,6 +64,7 @@ function AddProductOrganism() {
       title: "Status",
       dataIndex: "status",
       key: "status",
+      render: (status: string) => <StatusIndicator status={status} />,
     },
     {
       title: "Revenue",
@@ -85,12 +77,11 @@ function AddProductOrganism() {
     key: (i + 1).toString(),
     productName: `Product ${i + 1}`,
     category: "Men, Hoodies",
-    createdOn: "Created on",
-    publishedOn: "Published on",
+    createdOn: "20 May 2024 12:00 PM",
+    publishedOn: "20 May 2024 12:00 PM",
     price: "1234",
     orders: "1234",
     stock: "1234",
-    // these are just placeholders for now
     status:
       i % 5 === 0
         ? "Published"
@@ -100,7 +91,7 @@ function AddProductOrganism() {
             ? "Rejected"
             : i % 5 === 3
               ? "In draft"
-              : "Published",
+              : "Inactive",
     revenue: "EGP 123,456",
   }));
 
