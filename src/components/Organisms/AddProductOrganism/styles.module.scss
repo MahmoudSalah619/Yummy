@@ -1,0 +1,39 @@
+@import "styles/all";
+
+.productNameCell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  :global {
+    .ant-btn {
+      border-radius: 0px;
+    }
+  }
+
+  .activeFilterButton {
+    color: $light !important;
+    background-color: $orange500 !important;
+    border-color: $orange500 !important;
+
+    &:hover {
+      color: $light !important;
+    }
+  }
+
+  .firstFilterButton {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .lastFilterButton {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}

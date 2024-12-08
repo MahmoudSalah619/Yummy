@@ -11,6 +11,7 @@ import SuccessPassChanged from "@/src/components/Pages/Auth/SuccessPassChanged";
 import SuccessSignUp from "@/src/components/Pages/Auth/SuccessSignUp";
 import MerchantInfo from "@/src/components/Pages/Auth/MerchantInfo";
 import Products from "@/src/components/Pages/products";
+import AddProduct from "@/src/components/Pages/products/AddProduct";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -27,6 +28,14 @@ export default function useGenerateRoutes() {
       element: (
         <DashboardLayout>
           <Products />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products/add-product",
+      element: (
+        <DashboardLayout>
+          <AddProduct />
         </DashboardLayout>
       ),
     },
