@@ -31,14 +31,10 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
       <Image
         src={iconMap[status] || InactiveIcon}
         alt={status}
-        width={20}
-        height={20}
+        width={12}
+        height={12}
       />
-      <Text
-        fontSize={12}
-        fontFamily="font500"
-        className={statusStyleMap[status] || styles.inactive}
-      >
+      <Text fontSize={12} fontFamily="font500">
         {status}
       </Text>
     </div>
