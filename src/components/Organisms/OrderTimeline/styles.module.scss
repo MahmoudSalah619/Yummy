@@ -20,7 +20,6 @@
       width: 15px;
       height: 15px;
 
-      background-color: $primary;
       border-radius: 50%;
     }
     &::after {
@@ -32,8 +31,6 @@
 
       width: 3px;
       height: 16px;
-
-      background-color: $primary;
     }
     p {
       margin-bottom: 13px;
@@ -42,6 +39,22 @@
     &:last-of-type {
       &::after {
         display: none;
+      }
+    }
+    &.Done {
+      &::before {
+        background-color: $primary;
+      }
+      &::after {
+        background-color: $primary;
+      }
+    }
+    &.pending {
+      &:before {
+        background-color: $grey400;
+      }
+      &:after {
+        background-color: $grey400;
       }
     }
   }
