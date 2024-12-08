@@ -13,7 +13,7 @@ const COLORS = {
   // ---grey---
   gray700: "#344054",
   gray200: "#EAECF0",
-  gray50F9: "#F9FAFB",
+  gray50: "#F9FAFB",
   grey50: "#FAF9F9",
   grey100: "#F0EEEE",
   grey200: "#E1DEDD",
