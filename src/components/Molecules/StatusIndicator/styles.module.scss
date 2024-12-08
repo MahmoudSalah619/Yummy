@@ -12,7 +12,12 @@
 }
 
 .published {
-  color: #28a745 !important;
+  background-color: $success50;
+  border: 1px solid $success200;
+
+  p {
+    color: $success700 !important;
+  }
 }
 
 .inReview {
@@ -20,7 +25,12 @@
 }
 
 .rejected {
-  color: #f44336 !important;
+  background-color: $error50;
+  border: 1px solid $error200;
+
+  p {
+    color: $error700 !important;
+  }
 }
 
 .inDraft {
@@ -28,5 +38,10 @@
 }
 
 .inactive {
-  color: #6c757d !important;
+  background-color: $gray50;
+  border: 1px solid $gray200;
+
+  p {
+    color: $gray700 !important;
+  }
 }
