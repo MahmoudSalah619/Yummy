@@ -3,20 +3,21 @@ import { Button } from "antd";
 import SearchFilterBar from "../../Molecules/SearchFilterBar";
 import styles from "./styles.module.scss";
 import MainTableOrganism from "@/src/components/Organisms/MainTableOrganism";
-import { TableRow } from "@/src/components/Organisms/MainTableOrganism/types";
-import Image from "@/src/components/Atoms/Image";
-import Text from "@/src/components/Atoms/Text";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
+import StatusIndicator from "../../Molecules/StatusIndicator";
+import DateTimeDisplay from "../../Molecules/DateTimeDisplay";
+import ProductName from "../../Molecules/ProductName";
+import Status from "@/constants/Status";
 
 function AddProductOrganism() {
-  const [activeFilter, setActiveFilter] = useState("view-all");
+  const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
 
   const filters = [
-    { key: "view-all", label: "View all" },
-    { key: "published", label: "Published" },
-    { key: "in-review", label: "In review" },
-    { key: "rejected", label: "Rejected" },
-    { key: "in-draft", label: "In draft" },
+    { key: Status.VIEW_ALL, label: "View all" },
+    { key: Status.PUBLISHED, label: "Published" },
+    { key: Status.IN_REVIEW, label: "In review" },
+    { key: Status.REJECTED, label: "Rejected" },
+    { key: Status.IN_DRAFT, label: "In draft" },
   ];
 
   const columns = [
@@ -24,19 +25,8 @@ function AddProductOrganism() {
       title: "Product Name",
       dataIndex: "productName",
       key: "productName",
-      render: (text: string, record: TableRow) => (
-        <div className={styles.productNameCell}>
-          <Image
-            src={AvatarImage}
-            alt={record.productName}
-            width={30}
-            height={30}
-            className={styles.productImage}
-          />
-          <Text fontSize={14} fontFamily="font500" color="dark">
-            {text}
-          </Text>
-        </div>
+      render: (text: string) => (
+        <ProductName text={text} AvatarImage={AvatarImage} />
       ),
     },
     {
@@ -48,11 +38,13 @@ function AddProductOrganism() {
       title: "Created on",
       dataIndex: "createdOn",
       key: "createdOn",
+      render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
       title: "Published on",
       dataIndex: "publishedOn",
       key: "publishedOn",
+      render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
       title: "Price",
@@ -73,6 +65,7 @@ function AddProductOrganism() {
       title: "Status",
       dataIndex: "status",
       key: "status",
+      render: (status: string) => <StatusIndicator status={status} />,
     },
     {
       title: "Revenue",
@@ -85,29 +78,28 @@ function AddProductOrganism() {
     key: (i + 1).toString(),
     productName: `Product ${i + 1}`,
     category: "Men, Hoodies",
-    createdOn: "Created on",
-    publishedOn: "Published on",
+    createdOn: "20 May 2024 12:00 PM",
+    publishedOn: "20 May 2024 12:00 PM",
     price: "1234",
     orders: "1234",
     stock: "1234",
-    // these are just placeholders for now
     status:
       i % 5 === 0
-        ? "Published"
+        ? Status.PUBLISHED
         : i % 5 === 1
-          ? "In review"
+          ? Status.IN_REVIEW
           : i % 5 === 2
-            ? "Rejected"
+            ? Status.REJECTED
             : i % 5 === 3
-              ? "In draft"
-              : "Published",
+              ? Status.IN_DRAFT
+              : Status.INACTIVE,
     revenue: "EGP 123,456",
   }));
 
   const filteredData =
-    activeFilter === "view-all"
+    activeFilter === Status.VIEW_ALL
       ? allData
-      : allData.filter((item) => item.status.toLowerCase() === activeFilter);
+      : allData.filter((item) => item.status === activeFilter);
 
   const handleFilterChange = (key: string) => {
     setActiveFilter(key);
