@@ -58,3 +58,21 @@ button {
   color: $orange500 !important;
   border-color: $orange500 !important;
 }
+
+.ant-picker {
+  visibility: hidden !important;
+}
+
+.ant-picker-dropdown {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    li {
+      font-size: 14px;
+      font-weight: 500;
+      color: $grey900;
+    }
+  }
+}

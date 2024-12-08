@@ -5,6 +5,7 @@ import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import Text from "../../Atoms/Text";
 import { TableRow } from "../../Organisms/MainTableOrganism/types";
 import FilterOrganism from "../../Organisms/FilterOrganism";
+import SelectDates from "../../Molecules/DatePicker";
 
 function Home() {
   const columns = [
@@ -73,6 +74,7 @@ function Home() {
         headerClassName={styles.headerContainer}
       >
         <FilterOrganism />
+        <SelectDates />
       </MainTableOrganism>
     </main>
   );
