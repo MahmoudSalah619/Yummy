@@ -6,6 +6,7 @@ function FilterButtons({
   filters,
   activeFilter,
   onFilterChange,
+  isGrayButtons,
 }: FilterButtonsProps) {
   return (
     <div>
@@ -21,6 +22,8 @@ function FilterButtons({
               activeFilter === filter.key && styles.activeFilterButton
             } ${firstItem && styles.firstFilterButton} ${
               lastItem && styles.lastFilterButton
+            } ${
+              activeFilter === filter.key && isGrayButtons && styles.grayButtons
             }`}
           >
             {filter.label}

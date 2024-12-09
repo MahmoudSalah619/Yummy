@@ -19,6 +19,16 @@
   }
 }
 
+.grayButtons {
+  color: $grey700 !important;
+  background-color: $grey50 !important;
+  border-color: $grey200 !important;
+
+  &:hover {
+    color: $grey700 !important;
+  }
+}
+
 .firstFilterButton {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;

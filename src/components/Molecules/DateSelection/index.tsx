@@ -60,7 +60,7 @@ const rangePresets: TimeRangePickerProps["presets"] = [
   },
 ];
 
-function SelectDates() {
+function DateSelection() {
   const [selectedRange, setSelectedRange] = useState<
     [Dayjs | null, Dayjs | null]
   >([dayjs().startOf("day"), dayjs().endOf("day")]);
@@ -114,12 +114,12 @@ function SelectDates() {
   );
 
   return (
-    <>
+    <div>
       <RangePicker
         open={open}
         value={selectedRange}
         presets={rangePresets}
-        style={{ visibility: "hidden", width: 0 }}
+        style={{ visibility: "hidden", width: 0, position: "absolute" }}
         renderExtraFooter={() => customFooterContent}
         placement="bottomRight"
         onCalendarChange={handleCalendarChange}
@@ -133,8 +133,8 @@ function SelectDates() {
           <Image src={SelectDate} alt="Select Date" width={20} height={20} />
         }
       />
-    </>
+    </div>
   );
 }
 
-export default SelectDates;
+export default DateSelection;

@@ -7,6 +7,7 @@ import OrdersBarChart from "../../Molecules/OrdersLineChart";
 import RevenueLineChart from "../../Molecules/RevenueLineChart";
 import StaticticsCardsContent from "../../Organisms/StaticticsCardsContent";
 import PageHeader from "../../Molecules/PageHeader";
+import DateSelection from "../../Molecules/DateSelection";
 
 function Home() {
   const columns = [
@@ -59,6 +60,7 @@ function Home() {
     <main className={styles.container}>
       <PageHeader title="Dashboard">
         <FilterOrganism />
+        <DateSelection />
       </PageHeader>
 
       <StaticticsCardsContent />

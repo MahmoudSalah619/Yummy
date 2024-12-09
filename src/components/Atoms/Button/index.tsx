@@ -14,6 +14,7 @@ function Button({
   disabled,
   fontSize = 16,
   fontFamily = "font500",
+  fontColor,
   ...otherProps
 }: CustomButtonProps) {
   const paddingBlockClass = `padding-block-${paddingBlock}`;
@@ -33,7 +34,7 @@ function Button({
       disabled={disabled}
     >
       {suffix}
-      <Text fontFamily={fontFamily} fontSize={fontSize}>
+      <Text fontFamily={fontFamily} fontSize={fontSize} color={fontColor}>
         {title}
       </Text>
     </button>
