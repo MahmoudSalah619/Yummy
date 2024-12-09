@@ -1,10 +1,13 @@
 import styles from "./styles.module.scss";
-import Image from "../../Atoms/Image";
 import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
-import Text from "../../Atoms/Text";
-import { TableRow } from "../../Organisms/MainTableOrganism/types";
 import FilterOrganism from "../../Organisms/FilterOrganism";
+import ProductName from "../../Molecules/ProductName";
+import OrdersBarChart from "../../Molecules/OrdersLineChart";
+import RevenueLineChart from "../../Molecules/RevenueLineChart";
+import StaticticsCardsContent from "../../Organisms/StaticticsCardsContent";
+import PageHeader from "../../Molecules/PageHeader";
+import DatePicker from "../../Molecules/DatePicker";
 
 function Home() {
   const columns = [
@@ -12,19 +15,8 @@ function Home() {
       title: "Product Name",
       dataIndex: "productName",
       key: "productName",
-      render: (text: string, record: TableRow) => (
-        <div className={styles.productNameCell}>
-          <Image
-            src={AvatarImage}
-            alt={record.productName}
-            width={30}
-            height={30}
-            className={styles.productImage}
-          />
-          <Text fontSize={14} fontFamily="font500" color="dark">
-            {text}
-          </Text>
-        </div>
+      render: (text: string) => (
+        <ProductName text={text} AvatarImage={AvatarImage} />
       ),
     },
     {
@@ -65,7 +57,19 @@ function Home() {
   }));
 
   return (
-    <main>
+    <main className={styles.container}>
+      <PageHeader title="Dashboard">
+        <FilterOrganism />
+        <DatePicker />
+      </PageHeader>
+
+      <StaticticsCardsContent />
+
+      <div className={styles.chartContainer}>
+        <RevenueLineChart />
+        <OrdersBarChart />
+      </div>
+
       <MainTableOrganism
         headerTitle="Best Sellers"
         columns={columns}

@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: center;
 
+  width: fit-content;
+
   border-radius: 8px;
 }
 
@@ -24,8 +26,6 @@
   p {
     cursor: pointer;
     font-size: 11px !important;
-    color: $primary !important;
-    text-decoration: underline;
   }
 }
 
@@ -46,12 +46,13 @@
 
 .transparent-error {
   background-color: $light;
-
-  // color: $ErrorRed400 !important;colorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolorcolor
+  p {
+    color: $ErrorRed400 !important;
+  }
 }
 
 .warning {
-  // background-color: $WarningYellow600 !important;background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color
+  background-color: $WarningYellow600 !important;
   p {
     color: $light !important;
   }
