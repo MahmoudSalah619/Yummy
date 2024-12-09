@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import FontFamily from "@/constants/FontFamily";
+import COLORS from "@/constants/COLORS";
 
 export interface CustomButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -21,4 +22,5 @@ export interface CustomButtonProps
   disabled?: boolean;
   fontSize?: number;
   fontFamily?: keyof typeof FontFamily;
+  fontColor?: keyof typeof COLORS;
 }

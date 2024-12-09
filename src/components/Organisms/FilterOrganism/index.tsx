@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Drawer } from "antd";
 import styles from "./styles.module.scss";
 import Image from "../../Atoms/Image";
-import Text from "../../Atoms/Text";
 import FilterIcon from "@/src/assets/icons/home/filter.svg";
 import FilterPopover from "../../Molecules/FilterPopover";
+import Button from "../../Atoms/Button";
 
 function FilterOrganism() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -15,12 +15,14 @@ function FilterOrganism() {
 
   return (
     <main>
-      <button onClick={toggleDrawer} className={styles.filterContainer}>
-        <Image src={FilterIcon} alt="filter icon" width={20} height={20} />
-        <Text fontFamily="font500" color="grey900" fontSize={14}>
-          Filters
-        </Text>
-      </button>
+      <Button
+        onClick={toggleDrawer}
+        title="Filters"
+        suffix={
+          <Image src={FilterIcon} alt="filter icon" width={20} height={20} />
+        }
+        variant="transparent-grey"
+      />
 
       <Drawer
         title="Filter"

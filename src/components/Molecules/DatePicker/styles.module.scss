@@ -1,0 +1,18 @@
+@import "styles/all";
+
+.customFooterContent {
+  display: flex;
+  gap: 12px;
+  height: 44px;
+  margin-block: 20px;
+
+  .rangeInput {
+    width: 136px;
+  }
+}
+
+.rangePicker {
+  position: absolute;
+  width: 0;
+  visibility: hidden;
+}

@@ -3,8 +3,9 @@ import SelectionInput from "../../Atoms/SelectionInput";
 import TextInput from "../../Atoms/TextInput";
 import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
+import { GeneralInfoOrganismProps } from "./types";
 
-function GeneralInfoOrganism() {
+function GeneralInfoOrganism({ showProductStatus }: GeneralInfoOrganismProps) {
   const dummyOptions = [
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
@@ -14,6 +15,14 @@ function GeneralInfoOrganism() {
   return (
     <CardWrapper title="General Info">
       <div className={styles.inputsHolder}>
+        {!!showProductStatus && (
+          <SelectionInput
+            containerStyle={`${styles.selectionContainerInput} ${styles.productStatus}`}
+            label="Product Status"
+            options={dummyOptions}
+          />
+        )}
+
         <TextInput
           type="text"
           inputStyle={styles.input}

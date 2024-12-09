@@ -20,11 +20,15 @@
   display: flex;
   gap: 32px;
   justify-content: space-between;
+}
 
-  .selectionContainerInput {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-  }
+.selectionContainerInput {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.productStatus {
+  width: 30%;
 }
