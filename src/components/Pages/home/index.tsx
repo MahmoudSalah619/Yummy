@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import FilterOrganism from "../../Organisms/FilterOrganism";
-import SelectDates from "../../Molecules/DatePicker";
 import ProductName from "../../Molecules/ProductName";
 
 function Home() {
@@ -54,15 +53,6 @@ function Home() {
 
   return (
     <main>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          marginBottom: 20,
-        }}
-      >
-        <SelectDates />
-      </div>
       <MainTableOrganism
         headerTitle="Best Sellers"
         columns={columns}

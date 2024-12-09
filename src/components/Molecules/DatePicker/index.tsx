@@ -7,6 +7,8 @@ import { useSearchParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import RangeInput from "../RangeInput";
 import Button from "../../Atoms/Button";
+import SelectDate from "@/src/assets/icons/home/select-date.svg";
+import Image from "../../Atoms/Image";
 
 const { RangePicker } = DatePicker;
 
@@ -126,6 +128,10 @@ function SelectDates() {
         className={styles.button}
         onClick={() => setOpen((prevState) => !prevState)}
         title="Select Dates"
+        variant="transparent-grey"
+        suffix={
+          <Image src={SelectDate} alt="Select Date" width={20} height={20} />
+        }
       />
     </>
   );
