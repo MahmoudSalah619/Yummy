@@ -6,9 +6,9 @@ import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import styles from "./styles.module.scss";
 import StatusIndicator from "../../Molecules/StatusIndicator";
 import PageHeader from "../../Molecules/PageHeader";
-import DateSelection from "../../Molecules/DateSelection";
 import StaticticsCard from "../../Molecules/StaticticsCard";
 import Button from "../../Atoms/Button";
+import DatePicker from "../../Molecules/DatePicker";
 
 function Orders() {
   const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
@@ -128,7 +128,7 @@ function Orders() {
           isGrayButtons
         />
 
-        <DateSelection />
+        <DatePicker />
       </div>
 
       <div className={styles.staticticsContainer}>

@@ -11,6 +11,12 @@ function MainTable({
   dataSource: TableRow[];
   rowOnClick?: () => void;
 }) {
+  const handleRowClick = () => {
+    if (rowOnClick) {
+      rowOnClick();
+    }
+  };
+
   return (
     <Table
       columns={columns}
@@ -19,11 +25,7 @@ function MainTable({
       className={styles.table}
       onRow={() => {
         return {
-          onClick: () => {
-            if (rowOnClick) {
-              rowOnClick();
-            }
-          },
+          onClick: handleRowClick,
         };
       }}
     />
