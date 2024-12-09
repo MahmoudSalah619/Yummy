@@ -6,16 +6,16 @@ import PriceAndQuantityOrganism from "@/src/components/Organisms/PriceAndQuantit
 import PageHeader from "@/src/components/Molecules/PageHeader";
 import Button from "@/src/components/Atoms/Button";
 
-function AddProduct() {
+function EditProduct() {
   return (
     <main className={styles.container}>
-      <PageHeader title="Add Product">
+      <PageHeader title="Edit Product">
         <Button title="Discard Changes" variant="transparent-error" />
         <Button title="Save Changes" variant="transparent-grey" />
         <Button title="Publish" />
       </PageHeader>
 
-      <GeneralInfoOrganism />
+      <GeneralInfoOrganism showProductStatus />
 
       <MediaOrganism />
 
@@ -36,4 +36,4 @@ function AddProduct() {
   );
 }
 
-export default AddProduct;
+export default EditProduct;

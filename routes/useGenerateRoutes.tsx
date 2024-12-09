@@ -12,6 +12,9 @@ import SuccessSignUp from "@/src/components/Pages/Auth/SuccessSignUp";
 import MerchantInfo from "@/src/components/Pages/Auth/MerchantInfo";
 import Products from "@/src/components/Pages/products";
 import AddProduct from "@/src/components/Pages/products/AddProduct";
+import ProductDetails from "@/src/components/Pages/products/ProductDetails";
+import EditProduct from "@/src/components/Pages/products/EditProduct";
+import Orders from "@/src/components/Pages/orders";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -36,6 +39,30 @@ export default function useGenerateRoutes() {
       element: (
         <DashboardLayout>
           <AddProduct />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products/product-details",
+      element: (
+        <DashboardLayout>
+          <ProductDetails />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products/edit-product",
+      element: (
+        <DashboardLayout>
+          <EditProduct />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/orders",
+      element: (
+        <DashboardLayout>
+          <Orders />
         </DashboardLayout>
       ),
     },

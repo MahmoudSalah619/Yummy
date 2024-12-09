@@ -14,6 +14,7 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
     [Status.PUBLISHED]: PublishedIcon,
     [Status.IN_REVIEW]: InReviewIcon,
     [Status.REJECTED]: RejectedIcon,
+    [Status.CANCELLED]: RejectedIcon,
     [Status.IN_DRAFT]: InDraftIcon,
     [Status.INACTIVE]: InactiveIcon,
   };
@@ -22,6 +23,7 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
     [Status.PUBLISHED]: styles.published,
     [Status.IN_REVIEW]: styles.inReview,
     [Status.REJECTED]: styles.rejected,
+    [Status.CANCELLED]: styles.rejected,
     [Status.IN_DRAFT]: styles.inDraft,
     [Status.INACTIVE]: styles.inactive,
   };

@@ -1,9 +1,9 @@
-import AddProductOrganism from "../../Organisms/AddProductOrganism";
+import ProductOrganism from "../../Organisms/ProductOrganism";
 
 function Products() {
   return (
     <main>
-      <AddProductOrganism />
+      <ProductOrganism />
     </main>
   );
 }

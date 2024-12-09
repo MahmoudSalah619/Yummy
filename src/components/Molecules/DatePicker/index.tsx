@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DatePicker } from "antd";
+import { DatePicker as DatePickerANTD } from "antd";
 import type { TimeRangePickerProps } from "antd";
 import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
@@ -10,7 +10,7 @@ import Button from "../../Atoms/Button";
 import SelectDate from "@/src/assets/icons/home/select-date.svg";
 import Image from "../../Atoms/Image";
 
-const { RangePicker } = DatePicker;
+const { RangePicker } = DatePickerANTD;
 
 const rangePresets: TimeRangePickerProps["presets"] = [
   { label: "Today", value: [dayjs().startOf("day"), dayjs().endOf("day")] },
@@ -60,7 +60,7 @@ const rangePresets: TimeRangePickerProps["presets"] = [
   },
 ];
 
-function SelectDates() {
+function DatePicker() {
   const [selectedRange, setSelectedRange] = useState<
     [Dayjs | null, Dayjs | null]
   >([dayjs().startOf("day"), dayjs().endOf("day")]);
@@ -114,12 +114,12 @@ function SelectDates() {
   );
 
   return (
-    <>
+    <div>
       <RangePicker
         open={open}
         value={selectedRange}
         presets={rangePresets}
-        style={{ visibility: "hidden", width: 0 }}
+        className={styles.rangePicker}
         renderExtraFooter={() => customFooterContent}
         placement="bottomRight"
         onCalendarChange={handleCalendarChange}
@@ -133,8 +133,8 @@ function SelectDates() {
           <Image src={SelectDate} alt="Select Date" width={20} height={20} />
         }
       />
-    </>
+    </div>
   );
 }
 
-export default SelectDates;
+export default DatePicker;
