@@ -11,6 +11,9 @@ const COLORS = {
 
   // Neutral Colors
   // ---grey---
+  gray700: "#344054",
+  gray200: "#EAECF0",
+  gray50: "#F9FAFB",
   grey50: "#FAF9F9",
   grey100: "#F0EEEE",
   grey200: "#E1DEDD",
@@ -32,8 +35,14 @@ const COLORS = {
   transparent: "transparent",
   // system message colors
   success: "#159F91",
+  success700: "#067647",
+  success200: "#ABEFC6",
+  success50: "#ECFDF3",
   danger: "#FF193B",
   ErrorRed400: "#F87171",
+  error700: "#B42318",
+  error200: "#FECDCA",
+  error50: "#FEF3F2",
   // ---other---
   green500: "#10B981",
   green00: "#00CE15",

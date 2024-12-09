@@ -12,6 +12,7 @@ function MainTableOrganism({
   dataSource,
   pageSize = 10,
   children,
+  rowOnClick,
 }: MainTableOrganismProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -29,7 +30,11 @@ function MainTableOrganism({
       <TableHeader title={headerTitle} headerClassName={headerClassName}>
         {children}
       </TableHeader>
-      <MainTable columns={columns} dataSource={paginatedData} />
+      <MainTable
+        columns={columns}
+        dataSource={paginatedData}
+        rowOnClick={rowOnClick}
+      />
       <div className={styles.paginationContainer}>
         <CustomPagination
           total={dataSource?.length}

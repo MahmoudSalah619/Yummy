@@ -1,13 +1,9 @@
-import styles from "./styles.module.scss";
-import GeneralInfoOrganism from "../../Organisms/GeneralInfoOrganism";
-import MediaOrganism from "../../Organisms/MediaOrganism";
+import ProductOrganism from "../../Organisms/ProductOrganism";
 
 function Products() {
   return (
-    <main className={styles.container}>
-      <GeneralInfoOrganism />
-
-      <MediaOrganism />
+    <main>
+      <ProductOrganism />
     </main>
   );
 }

@@ -4,17 +4,17 @@ import styles from "./styles.module.scss";
 
 function PageHeader({
   title,
-  buttons,
+  children,
 }: {
   title: string;
-  buttons?: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <div className={styles.container}>
       <Text fontSize={36} fontFamily="font500" color="grey900">
         {title}
       </Text>
-      {buttons}
+      <div className={styles.childrenContainer}>{children}</div>
     </div>
   );
 }
