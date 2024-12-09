@@ -3,6 +3,10 @@ import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import FilterOrganism from "../../Organisms/FilterOrganism";
 import ProductName from "../../Molecules/ProductName";
+import OrdersBarChart from "../../Molecules/OrdersLineChart";
+import RevenueLineChart from "../../Molecules/RevenueLineChart";
+import StaticticsCardsContent from "../../Organisms/StaticticsCardsContent";
+import PageHeader from "../../Molecules/PageHeader";
 
 function Home() {
   const columns = [
@@ -52,7 +56,16 @@ function Home() {
   }));
 
   return (
-    <main>
+    <main className={styles.container}>
+      <PageHeader title="Dashboard">Hello WOrld</PageHeader>
+
+      <StaticticsCardsContent />
+
+      <div className={styles.chartContainer}>
+        <RevenueLineChart />
+        <OrdersBarChart />
+      </div>
+
       <MainTableOrganism
         headerTitle="Best Sellers"
         columns={columns}

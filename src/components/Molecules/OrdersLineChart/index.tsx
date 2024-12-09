@@ -3,7 +3,7 @@ import COLORS from "@/constants/COLORS";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 
-function OrdersBarChart({ data }: { data: [] }) {
+function OrdersBarChart({ data }: { data?: [] }) {
   const fakeData = [
     { month: "Jan", orders: 2400 },
     { month: "Feb", orders: 1398 },
