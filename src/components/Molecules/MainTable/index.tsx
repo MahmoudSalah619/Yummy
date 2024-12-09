@@ -5,9 +5,11 @@ import { TableColumn, TableRow } from "../../Organisms/MainTableOrganism/types";
 function MainTable({
   columns,
   dataSource,
+  rowOnClick,
 }: {
   columns: TableColumn[];
   dataSource: TableRow[];
+  rowOnClick: () => void;
 }) {
   return (
     <Table
@@ -15,6 +17,13 @@ function MainTable({
       dataSource={dataSource}
       pagination={false}
       className={styles.table}
+      onRow={() => {
+        return {
+          onClick: () => {
+            rowOnClick();
+          },
+        };
+      }}
     />
   );
 }

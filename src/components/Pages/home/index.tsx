@@ -73,6 +73,7 @@ function Home() {
         columns={columns}
         dataSource={data}
         headerClassName={styles.headerContainer}
+        rowOnClick={() => console.log("row clicked")}
       >
         <FilterOrganism />
       </MainTableOrganism>

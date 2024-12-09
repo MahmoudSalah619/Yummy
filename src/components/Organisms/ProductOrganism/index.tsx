@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 import SearchFilterBar from "../../Molecules/SearchFilterBar";
 import styles from "./styles.module.scss";
 import MainTableOrganism from "@/src/components/Organisms/MainTableOrganism";
@@ -8,8 +8,12 @@ import StatusIndicator from "../../Molecules/StatusIndicator";
 import DateTimeDisplay from "../../Molecules/DateTimeDisplay";
 import ProductName from "../../Molecules/ProductName";
 import Status from "@/constants/Status";
+import PageHeader from "../../Molecules/PageHeader";
+import Button from "../../Atoms/Button";
+import FilterButtons from "../../Molecules/FilterButtons";
 
-function AddProductOrganism() {
+function ProductOrganism() {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
 
   const filters = [
@@ -107,36 +111,28 @@ function AddProductOrganism() {
 
   return (
     <section className={styles.container}>
+      <PageHeader title="Products">
+        <Button title="Export as CSV" variant="transparent-grey" />
+        <Button title="Import as CSV" variant="transparent-grey" />
+        <Button title="Add Product" onClick={() => navigate("add-product")} />
+      </PageHeader>
+
       <SearchFilterBar />
 
       <MainTableOrganism
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}
+        rowOnClick={() => navigate("product-details")}
       >
-        <div>
-          {filters.map((filter, index) => {
-            const firstItem = index === 0;
-            const lastItem = index === filters.length - 1;
-
-            return (
-              <Button
-                key={filter.key}
-                onClick={() => handleFilterChange(filter.key)}
-                className={`${
-                  activeFilter === filter.key && styles.activeFilterButton
-                } ${firstItem && styles.firstFilterButton} ${
-                  lastItem && styles.lastFilterButton
-                }`}
-              >
-                {filter.label}
-              </Button>
-            );
-          })}
-        </div>
+        <FilterButtons
+          filters={filters}
+          activeFilter={activeFilter}
+          onFilterChange={handleFilterChange}
+        />
       </MainTableOrganism>
     </section>
   );
 }
 
-export default AddProductOrganism;
+export default ProductOrganism;

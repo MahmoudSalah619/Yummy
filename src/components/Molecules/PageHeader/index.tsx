@@ -14,7 +14,7 @@ function PageHeader({
       <Text fontSize={36} fontFamily="font500" color="grey900">
         {title}
       </Text>
-      {children}
+      <div className={styles.childrenContainer}>{children}</div>
     </div>
   );
 }
