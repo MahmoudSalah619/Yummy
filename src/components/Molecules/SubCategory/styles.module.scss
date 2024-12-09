@@ -1,0 +1,34 @@
+@import "styles/all";
+.SubCategoryLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid $grey;
+  .title {
+    font-weight: bolder;
+    color: $grey500 !important;
+  }
+  .buttons {
+    display: flex;
+    gap: 5px;
+    button {
+      padding: 5px;
+      font-weight: bold;
+    }
+    .view {
+      background-color: transparent !important;
+      p {
+        color: $black !important;
+      }
+    }
+    .edit {
+      background-color: transparent !important;
+      p {
+        color: $primary !important;
+      }
+    }
+  }
+}
