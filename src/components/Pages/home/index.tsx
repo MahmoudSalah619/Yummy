@@ -57,7 +57,9 @@ function Home() {
 
   return (
     <main className={styles.container}>
-      <PageHeader title="Dashboard">Hello WOrld</PageHeader>
+      <PageHeader title="Dashboard">
+        <FilterOrganism />
+      </PageHeader>
 
       <StaticticsCardsContent />
 
