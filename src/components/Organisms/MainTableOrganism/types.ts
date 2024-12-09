@@ -18,7 +18,7 @@ export interface MainTableOrganismProps {
   dataSource: TableRow[];
   pageSize?: number;
   children?: ReactNode;
-  rowOnClick: () => void;
+  rowOnClick?: () => void;
 }
 
 export interface CustomPaginationProps {

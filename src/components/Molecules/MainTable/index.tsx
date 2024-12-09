@@ -9,7 +9,7 @@ function MainTable({
 }: {
   columns: TableColumn[];
   dataSource: TableRow[];
-  rowOnClick: () => void;
+  rowOnClick?: () => void;
 }) {
   return (
     <Table
@@ -20,7 +20,9 @@ function MainTable({
       onRow={() => {
         return {
           onClick: () => {
-            rowOnClick();
+            if (rowOnClick) {
+              rowOnClick();
+            }
           },
         };
       }}
