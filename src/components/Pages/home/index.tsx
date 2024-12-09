@@ -54,6 +54,15 @@ function Home() {
 
   return (
     <main>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: 20,
+        }}
+      >
+        <SelectDates />
+      </div>
       <MainTableOrganism
         headerTitle="Best Sellers"
         columns={columns}
@@ -61,7 +70,6 @@ function Home() {
         headerClassName={styles.headerContainer}
       >
         <FilterOrganism />
-        <SelectDates />
       </MainTableOrganism>
     </main>
   );

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DatePicker } from "antd";
 import type { TimeRangePickerProps } from "antd";
 import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
+import { useSearchParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import RangeInput from "../RangeInput";
 import Button from "../../Atoms/Button";
@@ -62,25 +63,51 @@ function SelectDates() {
     [Dayjs | null, Dayjs | null]
   >([dayjs().startOf("day"), dayjs().endOf("day")]);
   const [open, setOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [rangeInputValues, setRangeInputValues] = useState({
+    from: "",
+    to: "",
+  });
 
-  const handleRangeChange = (dates: null | (Dayjs | null)[]) => {
+  const handleCalendarChange = (dates: null | (Dayjs | null)[]) => {
     setSelectedRange(dates as [Dayjs | null, Dayjs | null]);
-    console.log("Selected Range:", dates);
+    console.log(searchParams);
   };
+
+  const handleApply = () => {
+    if (selectedRange) {
+      const [end, start] = selectedRange;
+      setSearchParams({
+        startDate: start?.format("YYYY-MM-DD") || "",
+        endDate: end?.format("YYYY-MM-DD") || "",
+      });
+    }
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    if (selectedRange) {
+      const [toDate, fromDate] = selectedRange;
+      setRangeInputValues({
+        from: fromDate?.format("MMM D, YYYY") || "",
+        to: toDate?.format("MMM D, YYYY") || "",
+      });
+    }
+  }, [selectedRange]);
 
   const customFooterContent = (
     <div className={styles.customFooterContent}>
       <RangeInput
         inputClassName={styles.rangeInput}
-        fromValue={selectedRange?.[0]?.format("MMM D, YYYY") || ""}
-        toValue={selectedRange?.[1]?.format("MMM D, YYYY") || ""}
+        fromValue={rangeInputValues.from}
+        toValue={rangeInputValues.to}
       />
       <Button
         title="Cancel"
         variant="transparent-grey"
         onClick={() => setOpen(false)}
       />
-      <Button title="Apply" onClick={() => setOpen(false)} />
+      <Button title="Apply" onClick={handleApply} />
     </div>
   );
 
@@ -90,9 +117,10 @@ function SelectDates() {
         open={open}
         value={selectedRange}
         presets={rangePresets}
-        onChange={handleRangeChange}
         style={{ visibility: "hidden", width: 0 }}
         renderExtraFooter={() => customFooterContent}
+        placement="bottomRight"
+        onCalendarChange={handleCalendarChange}
       />
       <Button
         className={styles.button}
