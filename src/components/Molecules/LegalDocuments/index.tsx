@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Text from "../../Atoms/Text";
 import styles from "./styles.module.scss";
 import legalDoc from "@/src/assets/images/legalDoc.png";
 import DocumentUploader from "../DocumentUploader";
+import CardWrapper from "../../Wrappers/CardWrapper";
 
 function LegalDocuments() {
   const [documents, setDocuments] = useState([
@@ -27,10 +27,7 @@ function LegalDocuments() {
   };
 
   return (
-    <div className={styles.container}>
-      <Text fontSize={22} color="grey900" fontFamily="font500">
-        Legal Documents
-      </Text>
+    <CardWrapper title="Legal Documents">
       <div className={styles.infoContainer}>
         {documents.map((doc, index) => (
           <DocumentUploader
@@ -44,7 +41,7 @@ function LegalDocuments() {
           />
         ))}
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 
