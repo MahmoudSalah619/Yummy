@@ -53,6 +53,7 @@ const COLORS = {
   blue00: "#0008CE",
   beigeFB: "#FBEEB5",
   yellowFE: "#FED049",
+  yellow400: "#FBBF24",
   WarningYellow600: "#D97706",
   black800: "#222223",
   black1A: "#1A1A1A",
