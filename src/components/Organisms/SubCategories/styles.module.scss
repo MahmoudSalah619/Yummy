@@ -1,0 +1,35 @@
+@import "styles/all";
+
+.SubCategoriesContent {
+  .SubCategoriesHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    .titleStyle {
+      font-weight: bold;
+    }
+    .btn {
+      padding: 0 !important;
+      background-color: transparent !important;
+      p {
+        font-weight: bold;
+        color: $dark !important;
+      }
+    }
+    .FiltersBtn {
+      position: relative;
+      padding: 8px 15px 8px 30px;
+      border: 1px solid $grey400;
+      border-radius: 5px;
+      img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+  .categoriesList {
+    margin-bottom: 30px;
+  }
+}
