@@ -1,4 +1,10 @@
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  XAxis,
+} from "recharts";
 import styles from "./styles.module.scss";
 import COLORS from "@/constants/COLORS";
 import Text from "../../Atoms/Text";
@@ -24,22 +30,24 @@ function RevenueLineChart({ data }: { data?: [] }) {
       <Text fontFamily="font500" fontSize={22} color="grey900">
         Revenue
       </Text>
-      <AreaChart width={493} height={135} data={data || fakeData}>
-        <CartesianGrid
-          strokeDasharray={0}
-          strokeOpacity={0.3}
-          vertical={false}
-        />
-        <XAxis dataKey="month" axisLine={false} tickLine={false} />
-        <Area
-          type="monotone"
-          dataKey="orders"
-          stroke={COLORS.primaryFF}
-          strokeWidth={2}
-          fill={COLORS.primaryFF}
-          fillOpacity={0.09}
-        />
-      </AreaChart>
+      <ResponsiveContainer>
+        <AreaChart height={135} data={data || fakeData}>
+          <CartesianGrid
+            strokeDasharray={0}
+            strokeOpacity={0.3}
+            vertical={false}
+          />
+          <XAxis dataKey="month" axisLine={false} tickLine={false} />
+          <Area
+            type="monotone"
+            dataKey="orders"
+            stroke={COLORS.primaryFF}
+            strokeWidth={2}
+            fill={COLORS.primaryFF}
+            fillOpacity={0.09}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
   );
 }
