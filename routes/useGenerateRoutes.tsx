@@ -15,6 +15,7 @@ import AddProduct from "@/src/components/Pages/products/AddProduct";
 import ProductDetails from "@/src/components/Pages/products/ProductDetails";
 import EditProduct from "@/src/components/Pages/products/EditProduct";
 import Orders from "@/src/components/Pages/orders";
+import OrderDetailsPage from "@/src/components/Pages/orders/OrderDetails";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -63,6 +64,14 @@ export default function useGenerateRoutes() {
       element: (
         <DashboardLayout>
           <Orders />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/orders/order-details",
+      element: (
+        <DashboardLayout>
+          <OrderDetailsPage />
         </DashboardLayout>
       ),
     },
