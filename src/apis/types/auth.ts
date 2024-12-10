@@ -21,7 +21,7 @@ export interface User {
   last_name: string;
   phone: string;
   is_new: boolean;
-  role: "admin" | "booking_team" | "finance" | "company_admin";
+  user_type: "admin" | "seller";
 }
 
 export interface ForgotPasswordResponse {
