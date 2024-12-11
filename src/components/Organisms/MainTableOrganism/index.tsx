@@ -8,6 +8,7 @@ import { MainTableOrganismProps } from "./types";
 function MainTableOrganism({
   headerTitle,
   headerClassName,
+  showPagination = true,
   columns,
   dataSource,
   pageSize = 10,
@@ -35,14 +36,16 @@ function MainTableOrganism({
         dataSource={paginatedData}
         rowOnClick={rowOnClick}
       />
-      <div className={styles.paginationContainer}>
-        <CustomPagination
-          total={dataSource?.length}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
-      </div>
+      {showPagination && (
+        <div className={styles.paginationContainer}>
+          <CustomPagination
+            total={dataSource?.length}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        </div>
+      )}
     </section>
   );
 }

@@ -131,3 +131,92 @@ button {
 .ant-picker-cell-inner::before {
   border: none !important;
 }
+
+// Bootstrap
+:root {
+  /* Common spacing variables */
+  --gap-small: 8px;
+  --gap-medium: 16px;
+  --gap-large: 32px;
+  --justify-center: center;
+  --justify-space-between: space-between;
+  --align-center: center;
+}
+/* Flex container - default */
+.flex {
+  display: flex;
+}
+
+/* Row container */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Column container */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center alignment for both axis */
+.flex-center {
+  display: flex;
+  align-items: var(--align-center);
+  justify-content: var(--justify-center);
+}
+
+/* Space-between alignment */
+.flex-space-between {
+  display: flex;
+  align-items: var(--align-center);
+  justify-content: var(--justify-space-between);
+}
+
+/* Gap utilities */
+.flex-gap-small {
+  gap: var(--gap-small);
+}
+
+.flex-gap-medium {
+  gap: var(--gap-medium);
+}
+
+.flex-gap-large {
+  gap: var(--gap-large);
+}
+
+/* Wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* No wrap */
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+/* Align items - start */
+.flex-align-start {
+  align-items: flex-start;
+}
+
+/* Align items - end */
+.flex-align-end {
+  align-items: flex-end;
+}
+
+/* Justify content - start */
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+/* Justify content - end */
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+/* flex grow 1 */
+.flex-grow-1 {
+  flex-grow: 1;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Status from "@/constants/Status";
+import useGetUserInfo from "@/hooks/useGetUserInfo";
 import FilterButtons from "../../Molecules/FilterButtons";
 import MainTableOrganism from "../../Organisms/MainTableOrganism";
 import styles from "./styles.module.scss";
@@ -11,9 +12,23 @@ import Button from "../../Atoms/Button";
 import DatePicker from "../../Molecules/DatePicker";
 
 function Orders() {
+  const { role } = useGetUserInfo();
   const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
   const [activeDateFilter, setActiveDateFilter] = useState("12months");
   const navigate = useNavigate();
+
+  const statistics = {
+    seller: [
+      { label: "Total Orders", value: "950" },
+      { label: "Ordered Items", value: "1450" },
+    ],
+    admin: [
+      { label: "Total Orders", value: "950" },
+      { label: "Ordered Items", value: "1450" },
+      { label: "Avg. order value", value: "EGP 1450" },
+      { label: "Returns", value: "3" },
+    ],
+  };
 
   const filters = [
     { key: Status.VIEW_ALL, label: "View all" },
@@ -139,8 +154,9 @@ function Orders() {
       </div>
 
       <div className={styles.staticticsContainer}>
-        <StaticticsCard label="Total Orders" value="950" />
-        <StaticticsCard label="Ordered Items" value="1405" />
+        {statistics[role].map((item) => (
+          <StaticticsCard label={item.label} value={item.value} />
+        ))}
       </div>
 
       <MainTableOrganism

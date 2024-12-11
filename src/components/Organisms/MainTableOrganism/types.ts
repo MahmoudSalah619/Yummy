@@ -14,6 +14,7 @@ export interface TableColumn {
 export interface MainTableOrganismProps {
   headerTitle?: string;
   headerClassName?: string;
+  showPagination?: boolean;
   columns: TableColumn[];
   dataSource: TableRow[];
   pageSize?: number;
