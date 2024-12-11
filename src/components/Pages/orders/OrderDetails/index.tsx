@@ -4,6 +4,7 @@ import FilterOrganism from "@/src/components/Organisms/FilterOrganism";
 import DatePicker from "@/src/components/Molecules/DatePicker";
 import styles from "./styles.module.scss";
 import ItemsInOrder from "@/src/components/Organisms/ItemsInOrder";
+import OrderTimeline from "@/src/components/Organisms/OrderTimeLine";
 
 function OrderDetailsPage() {
   return (
@@ -14,6 +15,7 @@ function OrderDetailsPage() {
       </PageHeader>
       <OrderDetails />
       <ItemsInOrder />
+      <OrderTimeline />
     </div>
   );
 }

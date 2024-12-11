@@ -19,7 +19,7 @@ function OrderSummary() {
         return (
           <div className={styles.orderInfo_line}>
             <Text>{item.prop}</Text>
-            <Text>{item.value}</Text>
+            <Text>EGP {item.value}</Text>
           </div>
         );
       })}
