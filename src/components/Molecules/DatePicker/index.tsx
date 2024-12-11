@@ -132,6 +132,8 @@ function DatePicker() {
         suffix={
           <Image src={SelectDate} alt="Select Date" width={20} height={20} />
         }
+        fontFamily="font500"
+        fontSize={14}
       />
     </div>
   );

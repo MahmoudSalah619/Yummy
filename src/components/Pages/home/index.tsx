@@ -59,8 +59,8 @@ function Home() {
   return (
     <main className={styles.container}>
       <PageHeader title="Dashboard">
-        <FilterOrganism />
         <DatePicker />
+        <FilterOrganism />
       </PageHeader>
 
       <StaticticsCardsContent />

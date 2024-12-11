@@ -1,5 +1,6 @@
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import COLORS from "@/constants/COLORS";
+import FontFamily from "@/constants/FontFamily";
 import { TextProps } from "./types";
 
 export default function Text({
@@ -7,7 +8,7 @@ export default function Text({
   i18nKey,
   className,
   fontSize = 14,
-  fontFamily = "font400",
+  fontFamily = "font500",
   color = "dark",
   lineHeight,
   ...otherProps
@@ -17,7 +18,7 @@ export default function Text({
   const textStyle = {
     color: COLORS[color],
     fontSize,
-    fontFamily,
+    fontFamily: FontFamily[fontFamily],
     lineHeight,
   };
 

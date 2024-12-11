@@ -3,10 +3,10 @@ import styles from "./styles.module.scss";
 
 function StaticticsCardsContent() {
   const Statictics = [
-    { id: "1", label: "Revenue", value: "EGP 100.280" },
+    { id: "1", label: "Revenue", value: "EGP 100,280" },
     { id: "2", label: "Orders", value: "1405" },
-    { id: "3", label: "Orders in Progress", value: "71" },
-    { id: "2", label: "avg Rating", value: "4.4" },
+    { id: "3", label: "Orders in progress", value: "71" },
+    { id: "2", label: "Avg. Rating", value: "4.4" },
   ];
 
   return (

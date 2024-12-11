@@ -13,7 +13,7 @@ function ProductName({ AvatarImage, text }: ProductNameProps) {
         height={30}
         className={styles.productImage}
       />
-      <Text fontSize={14} fontFamily="font500" color="dark">
+      <Text fontSize={14} fontFamily="font400" color="dark">
         {text}
       </Text>
     </div>
