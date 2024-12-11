@@ -30,6 +30,8 @@ button {
 
 .ant-input-outlined:hover {
   border-color: $orange500 !important;
+  outline: none !important;
+  box-shadow: unset !important;
 }
 
 .ant-select-outlined:hover .ant-select-selector {
@@ -131,4 +133,16 @@ button {
 
 .ant-picker-cell-inner::before {
   border: none !important;
+}
+
+.ant-checkbox-inner:after {
+  background-color: unset !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  background-color: $orange500 !important;
+  border-color: $orange500 !important;
+}
+.ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: $orange500 !important;
 }
