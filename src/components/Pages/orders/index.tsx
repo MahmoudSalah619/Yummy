@@ -69,7 +69,14 @@ function Orders() {
       key: "actions",
       render: () => (
         <div className={styles.actions}>
-          <Button title="View" variant="transparet" fontColor="dark" />
+          <Button
+            title="View"
+            variant="transparet"
+            fontColor="dark"
+            onClick={() => {
+              navigate("/orders/order-details");
+            }}
+          />
           <Button
             title="Edit"
             variant="transparet"

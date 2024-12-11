@@ -7,18 +7,20 @@
   gap: 15px;
   justify-content: space-between;
 
-  padding: 20px 20px 20px 90px;
+  padding: 26px 20px 26px 88px;
 
   font-weight: bold;
+
+  border-bottom: 1px solid $grey400;
   .ImageContent {
     position: absolute;
-    top: 11px;
+    top: 17px;
     left: 0;
   }
   .FirstLine {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 1px;
     justify-content: space-between;
     .BorderBtn {
       border-radius: 5px;
