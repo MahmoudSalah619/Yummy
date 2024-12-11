@@ -11,15 +11,4 @@
   background-color: $light;
   border: 1px solid $lightPrimary;
   border-radius: 10px;
-
-  p {
-    font-family: "Helvetica Neue", Helvetica !important;
-    &:first-of-type {
-      font-size: 13px !important;
-      color: $grey700;
-    }
-    &:last-of-type {
-      font-weight: bold;
-    }
-  }
 }
