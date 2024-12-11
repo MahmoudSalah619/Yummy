@@ -5,6 +5,7 @@ import OrangeLogo from "@/src/assets/icons/OrangeLogo";
 import Text from "../../Atoms/Text";
 import useGetUserInfo from "@/hooks/useGetUserInfo";
 import { generalLinks, supportLinks } from "./links";
+import logoutHandler from "@/utils/logoutHandler";
 
 function SidebarOrganism() {
   const { role } = useGetUserInfo();
@@ -60,6 +61,7 @@ function SidebarOrganism() {
         icon="signout"
         label="Sign out"
         className={styles.signoutContainer}
+        onClick={logoutHandler}
         href="/login"
         isActive={firstSegment === "/login"}
       />

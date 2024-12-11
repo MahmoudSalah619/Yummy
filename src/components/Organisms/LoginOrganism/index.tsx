@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { Checkbox, CheckboxProps } from "antd";
 import { SubmitHandler, useForm } from "react-hook-form";
+// import { useDispatch } from "react-redux";
 import Text from "@/src/components/Atoms/Text";
-import styles from "./styles.module.scss";
 import TextInput from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
 import HyperLink from "@/src/components/Atoms/HyperLink";
 import ValidationSchema, { Auth } from "@/constants/Validation";
+import styles from "./styles.module.scss";
+// import { login } from "@/reducers/authReducer";
+import loginHandler from "@/utils/loginHandler";
 
 export default function LoginOrganism() {
   const onChange: CheckboxProps["onChange"] = () => {};
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
   const {
     register,
@@ -20,8 +24,9 @@ export default function LoginOrganism() {
 
   const onSubmit: SubmitHandler<Auth> = (data) => {
     console.log("Form Submitted:", data);
-
+    loginHandler({ token: "skshdj36su3h77" });
     navigate("/");
+    // dispatch(login("skshdj36su3h77"));
   };
   return (
     <div className={styles.container}>

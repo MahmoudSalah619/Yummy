@@ -10,11 +10,11 @@ export const generalLinks = {
     { icon: "home", label: "Home", href: "/" },
     { icon: "orders", label: "Orders", href: "/orders" },
     { icon: "package", label: "Products", href: "/products" },
-    { icon: "promo", label: "Merchants", href: "/promo" },
-    { icon: "brand-profile", label: "Users", href: "/brand-profile" },
-    { icon: "brand-profile", label: "Notifications", href: "/brand-profile" },
-    { icon: "brand-profile", label: "Promo Codes", href: "/brand-profile" },
-    { icon: "brand-profile", label: "Categories", href: "/brand-profile" },
+    { icon: "promo", label: "Merchants", href: "/merchants" },
+    { icon: "brand-profile", label: "Users", href: "/users" },
+    { icon: "brand-profile", label: "Notifications", href: "/notifications" },
+    { icon: "brand-profile", label: "Promo Codes", href: "/promo" },
+    { icon: "brand-profile", label: "Categories", href: "/categories" },
   ],
 };
 

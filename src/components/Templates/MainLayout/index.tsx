@@ -1,12 +1,15 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import styles from "./styles.module.scss";
+import useAuth from "@/hooks/useAuth";
 
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  useAuth();
+
   return (
     <div className={styles.mainContainer}>
       {children}

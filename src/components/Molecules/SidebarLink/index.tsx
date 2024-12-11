@@ -10,11 +10,13 @@ function SidebarLink({
   isActive,
   className,
   href,
+  onClick,
 }: SidebarLinkProps) {
   return (
     <Link
       className={`${styles.navbarLink} ${className} ${isActive ? styles.active : ""}`}
       to={href}
+      onClick={onClick}
       replace
     >
       <Icon name={icon} size={24} className={styles.icon} />
