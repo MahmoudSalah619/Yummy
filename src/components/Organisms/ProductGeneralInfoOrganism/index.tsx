@@ -5,7 +5,9 @@ import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
 import { GeneralInfoOrganismProps } from "./types";
 
-function GeneralInfoOrganism({ showProductStatus }: GeneralInfoOrganismProps) {
+function ProductGeneralInfoOrganism({
+  showProductStatus,
+}: GeneralInfoOrganismProps) {
   const dummyOptions = [
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
@@ -53,4 +55,4 @@ function GeneralInfoOrganism({ showProductStatus }: GeneralInfoOrganismProps) {
   );
 }
 
-export default GeneralInfoOrganism;
+export default ProductGeneralInfoOrganism;
