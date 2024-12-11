@@ -3,7 +3,7 @@ import OrderDetails from "@/src/components/Organisms/OrderDetails";
 import FilterOrganism from "@/src/components/Organisms/FilterOrganism";
 import DatePicker from "@/src/components/Molecules/DatePicker";
 import styles from "./styles.module.scss";
-import OrderItemsCard from "@/src/components/Organisms/OrderItemsCard";
+import ItemsInOrder from "@/src/components/Organisms/ItemsInOrder";
 
 function OrderDetailsPage() {
   return (
@@ -13,7 +13,7 @@ function OrderDetailsPage() {
         <FilterOrganism />
       </PageHeader>
       <OrderDetails />
-      <OrderItemsCard />
+      <ItemsInOrder />
     </div>
   );
 }
