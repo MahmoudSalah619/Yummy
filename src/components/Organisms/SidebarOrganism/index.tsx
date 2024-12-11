@@ -23,7 +23,12 @@ function SidebarOrganism() {
       <OrangeLogo />
 
       <div className={styles.sidebarLinksContainer}>
-        <Text color="grey500" fontSize={16} className={styles.sidebarTitle}>
+        <Text
+          color="grey500"
+          fontSize={16}
+          fontFamily="font500"
+          className={styles.sidebarTitle}
+        >
           General
         </Text>
         <div className={styles.sidebarLinks}>

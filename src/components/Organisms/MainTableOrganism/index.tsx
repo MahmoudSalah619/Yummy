@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { Key, useState } from "react";
+import { Table } from "antd";
+import type { TableProps } from "antd";
 import TableHeader from "../../Molecules/TableHeader";
-import MainTable from "../../Molecules/MainTable";
 import CustomPagination from "../../Molecules/CustomPagination";
 import styles from "./styles.module.scss";
-import { MainTableOrganismProps } from "./types";
+import { MainTableOrganismProps, TableRow } from "./types";
 
 function MainTableOrganism({
   headerTitle,
@@ -12,6 +13,10 @@ function MainTableOrganism({
   columns,
   dataSource,
   pageSize = 10,
+  enableSelection = false,
+  selectedRowKeys = [],
+  setSelectedRowKeys,
+  onSelectionChange,
   children,
   rowOnClick,
 }: MainTableOrganismProps) {
@@ -26,15 +31,48 @@ function MainTableOrganism({
     setCurrentPage(page);
   };
 
+  const handleSelectionChange = (newSelectedRowKeys: Key[]) => {
+    const currentPageRowKeys =
+      paginatedData?.map((row) => row.key.toString()) || [];
+
+    const newKeysSet = new Set<string>(
+      selectedRowKeys.map((key) => key.toString())
+    );
+
+    newSelectedRowKeys.forEach((key) => newKeysSet.add(key.toString()));
+
+    currentPageRowKeys.forEach((key) => {
+      if (!newSelectedRowKeys.map(String).includes(key)) {
+        newKeysSet.delete(key);
+      }
+    });
+
+    const updatedKeys = Array.from(newKeysSet);
+    setSelectedRowKeys?.(updatedKeys);
+    onSelectionChange?.(updatedKeys);
+  };
+
+  const rowSelection: TableProps<TableRow>["rowSelection"] = enableSelection
+    ? {
+        type: "checkbox",
+        selectedRowKeys: selectedRowKeys.map((key) => key.toString()),
+        onChange: handleSelectionChange,
+      }
+    : undefined;
+
   return (
     <section className={styles.mainTable}>
       <TableHeader title={headerTitle} headerClassName={headerClassName}>
         {children}
       </TableHeader>
-      <MainTable
+      <Table
+        rowSelection={rowSelection}
         columns={columns}
         dataSource={paginatedData}
-        rowOnClick={rowOnClick}
+        pagination={false}
+        onRow={(record: TableRow) => ({
+          onClick: () => rowOnClick?.(record),
+        })}
       />
       {showPagination && (
         <div className={styles.paginationContainer}>

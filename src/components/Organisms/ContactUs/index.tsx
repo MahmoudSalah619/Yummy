@@ -16,7 +16,7 @@ function ContactUs() {
       </Text>
       <CardWrapper>
         <div className={styles.contactUs}>
-          <Text className={styles.title} fontFamily="font700" fontSize={18}>
+          <Text className={styles.title} fontFamily="font600" fontSize={18}>
             We’d love to hear from you! Feel free to reach out with any
             questions or feedback.
           </Text>
