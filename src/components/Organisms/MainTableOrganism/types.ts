@@ -18,9 +18,11 @@ export interface MainTableOrganismProps {
   dataSource: TableRow[];
   pageSize?: number;
   children?: ReactNode;
-  rowOnClick?: () => void;
+  rowOnClick?: (record: TableRow) => void;
   enableSelection?: boolean;
-  selectedRows?: string[];
+  selectedRowKeys?: string[];
+  setSelectedRowKeys?: (key: string[]) => void;
+
   onSelectionChange?: (selectedKeys: string[]) => void;
 }
 

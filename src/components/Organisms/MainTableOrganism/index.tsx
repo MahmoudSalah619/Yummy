@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Checkbox } from "antd";
+import { Key, useState } from "react";
+import { Table } from "antd";
+import type { TableProps } from "antd";
 import TableHeader from "../../Molecules/TableHeader";
-import MainTable from "../../Molecules/MainTable";
 import CustomPagination from "../../Molecules/CustomPagination";
 import styles from "./styles.module.scss";
 import { MainTableOrganismProps, TableRow } from "./types";
@@ -13,7 +13,8 @@ function MainTableOrganism({
   dataSource,
   pageSize = 10,
   enableSelection = false,
-  selectedRows = [],
+  selectedRowKeys = [],
+  setSelectedRowKeys,
   onSelectionChange,
   children,
   rowOnClick,
@@ -29,67 +30,48 @@ function MainTableOrganism({
     setCurrentPage(page);
   };
 
-  const handleSelectAll = (checked: boolean) => {
-    const pageKeys = paginatedData.map((row) => row.key);
-    if (checked) {
-      const newSelectedRows = Array.from(
-        new Set([...selectedRows, ...pageKeys])
-      );
-      onSelectionChange?.(newSelectedRows);
-    } else {
-      const newSelectedRows = selectedRows.filter(
-        (key) => !pageKeys.includes(key)
-      );
-      onSelectionChange?.(newSelectedRows);
-    }
+  const handleSelectionChange = (newSelectedRowKeys: Key[]) => {
+    const currentPageRowKeys =
+      paginatedData?.map((row) => row.key.toString()) || [];
+
+    const newKeysSet = new Set<string>(
+      selectedRowKeys.map((key) => key.toString())
+    );
+
+    newSelectedRowKeys.forEach((key) => newKeysSet.add(key.toString()));
+
+    currentPageRowKeys.forEach((key) => {
+      if (!newSelectedRowKeys.map(String).includes(key)) {
+        newKeysSet.delete(key);
+      }
+    });
+
+    const updatedKeys = Array.from(newKeysSet);
+    setSelectedRowKeys?.(updatedKeys);
+    onSelectionChange?.(updatedKeys);
   };
 
-  const handleRowSelectionChange = (key: string) => {
-    const newSelectedRows = selectedRows.includes(key)
-      ? selectedRows.filter((row) => row !== key)
-      : [...selectedRows, key];
-    onSelectionChange?.(newSelectedRows);
-  };
-
-  const isAllSelected =
-    paginatedData.length > 0 &&
-    paginatedData.every((row) => selectedRows.includes(row.key));
-
-  const modifiedColumns = enableSelection
-    ? [
-        {
-          title: (
-            <Checkbox
-              checked={isAllSelected}
-              indeterminate={
-                paginatedData.some((row) => selectedRows.includes(row.key)) &&
-                !isAllSelected
-              }
-              onChange={(e) => handleSelectAll(e.target.checked)}
-            />
-          ),
-          dataIndex: "selection",
-          key: "selection",
-          render: (_: string, record: TableRow) => (
-            <Checkbox
-              checked={selectedRows.includes(record.key)}
-              onChange={() => handleRowSelectionChange(record.key)}
-            />
-          ),
-        },
-        ...columns,
-      ]
-    : columns;
+  const rowSelection: TableProps<TableRow>["rowSelection"] = enableSelection
+    ? {
+        type: "checkbox",
+        selectedRowKeys: selectedRowKeys.map((key) => key.toString()),
+        onChange: handleSelectionChange,
+      }
+    : undefined;
 
   return (
     <section className={styles.mainTable}>
       <TableHeader title={headerTitle} headerClassName={headerClassName}>
         {children}
       </TableHeader>
-      <MainTable
-        columns={modifiedColumns}
+      <Table
+        rowSelection={rowSelection}
+        columns={columns}
         dataSource={paginatedData}
-        rowOnClick={rowOnClick}
+        pagination={false}
+        onRow={(record: TableRow) => ({
+          onClick: () => rowOnClick?.(record),
+        })}
       />
       <div className={styles.paginationContainer}>
         <CustomPagination

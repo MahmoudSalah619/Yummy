@@ -1,4 +1,3 @@
-// File: CustomPagination.jsx
 import { Pagination } from "antd";
 import type { PaginationProps } from "antd";
 import Image from "../../Atoms/Image";

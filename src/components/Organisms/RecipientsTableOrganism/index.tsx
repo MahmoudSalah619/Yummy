@@ -7,8 +7,8 @@ import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import Image from "../../Atoms/Image";
 
 function RecipientsTableOrganism() {
-  const [radioValue, setRadioValue] = useState<number | null>();
-  const [selectedRows, setSelectedRows] = useState<string[]>([]);
+  const [radioValue, setRadioValue] = useState<number | null>(null);
+  const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
 
   const columns = [
     {
@@ -53,12 +53,18 @@ function RecipientsTableOrganism() {
 
     if (value === 1) {
       const allKeys = data.map((row) => row.key);
-      setSelectedRows(allKeys);
+      setSelectedRowKeys(allKeys);
+    } else if (value === 2) {
+      if (selectedRowKeys.length === 0) {
+        setRadioValue(null);
+      }
+    } else {
+      setSelectedRowKeys([]);
     }
   };
 
   const handleSelectionChange = (selectedKeys: string[]) => {
-    setSelectedRows(selectedKeys);
+    setSelectedRowKeys(selectedKeys);
 
     if (selectedKeys.length === data.length) {
       setRadioValue(1);
@@ -76,7 +82,8 @@ function RecipientsTableOrganism() {
       dataSource={data}
       headerClassName={styles.headerContainer}
       enableSelection
-      selectedRows={selectedRows}
+      selectedRowKeys={selectedRowKeys}
+      setSelectedRowKeys={setSelectedRowKeys}
       onSelectionChange={handleSelectionChange}
     >
       <div className={styles.tableContainer}>
@@ -87,7 +94,7 @@ function RecipientsTableOrganism() {
         >
           <Radio value={1}>All Users</Radio>
           <Radio value={2}>
-            Selected Users ({selectedRows.length} Selected)
+            Selected Users ({selectedRowKeys.length} Selected)
           </Radio>
         </Radio.Group>
 
