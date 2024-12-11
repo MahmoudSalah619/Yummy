@@ -17,8 +17,20 @@ function OrderDetails() {
       value: "Ahmed Amer",
     },
     {
+      prop: "Customer Phone Number",
+      value: "+200123485894",
+    },
+    {
       prop: "Customer address",
       value: "123 Main St., New Cairo, Cairo, Egypt",
+    },
+    {
+      prop: "Shipping Method",
+      value: "Express Delivery",
+    },
+    {
+      prop: "Payment Method",
+      value: "Online Payment",
     },
   ];
   return (

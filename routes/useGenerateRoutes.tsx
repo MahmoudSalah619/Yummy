@@ -15,8 +15,10 @@ import AddProduct from "@/src/components/Pages/products/AddProduct";
 import ProductDetails from "@/src/components/Pages/products/ProductDetails";
 import EditProduct from "@/src/components/Pages/products/EditProduct";
 import Orders from "@/src/components/Pages/orders";
+import OrderDetailsPage from "@/src/components/Pages/orders/OrderDetails";
 import ContactUS from "@/src/components/Pages/contactUs";
 import PushNotifications from "@/src/components/Pages/notifications";
+import BrandProfile from "@/src/components/Pages/BrandProfile";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -69,6 +71,15 @@ export default function useGenerateRoutes() {
       ),
     },
     {
+      path: "/orders/order-details",
+      element: (
+        <DashboardLayout>
+          <OrderDetailsPage />
+        </DashboardLayout>
+      ),
+    },
+
+    {
       path: "/contact-us",
       element: (
         <DashboardLayout>
@@ -76,6 +87,16 @@ export default function useGenerateRoutes() {
         </DashboardLayout>
       ),
     },
+
+    {
+      path: "/brand-profile",
+      element: (
+        <DashboardLayout>
+          <BrandProfile />
+        </DashboardLayout>
+      ),
+    },
+
     {
       path: "/push-notification",
       element: (
