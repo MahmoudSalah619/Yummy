@@ -17,6 +17,7 @@ import EditProduct from "@/src/components/Pages/products/EditProduct";
 import Orders from "@/src/components/Pages/orders";
 import OrderDetailsPage from "@/src/components/Pages/orders/OrderDetails";
 import ContactUS from "@/src/components/Pages/contactUs";
+import BrandProfile from "@/src/components/Pages/BrandProfile";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -85,6 +86,16 @@ export default function useGenerateRoutes() {
         </DashboardLayout>
       ),
     },
+
+    {
+      path: "/brand-profile",
+      element: (
+        <DashboardLayout>
+          <BrandProfile />
+        </DashboardLayout>
+      ),
+    },
+
     {
       path: "/login",
       element: (

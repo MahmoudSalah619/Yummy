@@ -1,4 +1,4 @@
-import GeneralInfoOrganism from "@/src/components/Organisms/GeneralInfoOrganism";
+import ProductGeneralInfoOrganism from "@/src/components/Organisms/ProductGeneralInfoOrganism";
 import MediaOrganism from "@/src/components/Organisms/MediaOrganism";
 import styles from "./styles.module.scss";
 import AddProductInfoOrganism from "@/src/components/Organisms/AddProductInfoOrganism";
@@ -15,7 +15,7 @@ function EditProduct() {
         <Button title="Publish" />
       </PageHeader>
 
-      <GeneralInfoOrganism showProductStatus />
+      <ProductGeneralInfoOrganism showProductStatus />
 
       <MediaOrganism />
 
