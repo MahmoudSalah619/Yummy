@@ -5,6 +5,7 @@ import OrangeLogo from "@/src/assets/icons/OrangeLogo";
 import Text from "../../Atoms/Text";
 import useGetUserInfo from "@/hooks/useGetUserInfo";
 import { generalLinks, supportLinks } from "./links";
+import logoutHandler from "@/utils/logoutHandler";
 
 function SidebarOrganism() {
   const { role } = useGetUserInfo();
@@ -22,7 +23,12 @@ function SidebarOrganism() {
       <OrangeLogo />
 
       <div className={styles.sidebarLinksContainer}>
-        <Text color="grey500" fontSize={16} className={styles.sidebarTitle}>
+        <Text
+          color="grey500"
+          fontSize={16}
+          fontFamily="font500"
+          className={styles.sidebarTitle}
+        >
           General
         </Text>
         <div className={styles.sidebarLinks}>
@@ -60,6 +66,7 @@ function SidebarOrganism() {
         icon="signout"
         label="Sign out"
         className={styles.signoutContainer}
+        onClick={logoutHandler}
         href="/login"
         isActive={firstSegment === "/login"}
       />

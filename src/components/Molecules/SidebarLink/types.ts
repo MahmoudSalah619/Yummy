@@ -4,4 +4,5 @@ export interface SidebarLinkProps {
   isActive?: boolean;
   className?: string;
   href: string;
+  onClick?: () => void;
 }

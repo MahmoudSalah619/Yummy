@@ -38,12 +38,9 @@ export default function useAuth() {
     if (typeof token !== "string") return;
 
     if (!token) {
-      navigate("/", { replace: true, state: { from: location } });
+      navigate("/login", { replace: true, state: { from: location } });
     } else if (location.state?.from) {
       navigate(location.state.from);
     }
-    // else if (location.pathname === "/") {
-    //   navigate("/quotations");
-    // }
   }, [token]);
 }

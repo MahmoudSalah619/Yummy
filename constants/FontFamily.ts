@@ -1,10 +1,11 @@
 const FontFamily = {
-  font300: "font300",
-  font400: "font400",
-  font500: "font500",
-  font600: "font500",
-  font700: "font700",
-  font800: "font800",
+  font700: "GothamBold",
+  font600: "SFProTextSemibold",
+  font500: "GothamMedium",
+  font400: "GothamLight",
+  font400Nenu: "NeueMachinaLight",
+  font500Nenu: "NeueMachinaRegular",
+  font600Nenu: "NeueMachinaUltrabold",
 };
 
 export default FontFamily;

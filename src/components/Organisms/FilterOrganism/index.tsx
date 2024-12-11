@@ -22,6 +22,8 @@ function FilterOrganism() {
           <Image src={FilterIcon} alt="filter icon" width={20} height={20} />
         }
         variant="transparent-grey"
+        fontSize={14}
+        fontFamily="font500"
       />
 
       <Drawer
