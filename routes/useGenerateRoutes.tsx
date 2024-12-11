@@ -16,6 +16,7 @@ import ProductDetails from "@/src/components/Pages/products/ProductDetails";
 import EditProduct from "@/src/components/Pages/products/EditProduct";
 import Orders from "@/src/components/Pages/orders";
 import ContactUS from "@/src/components/Pages/contactUs";
+import PushNotifications from "@/src/components/Pages/notifications";
 
 export default function useGenerateRoutes() {
   const routes = useRoutes([
@@ -72,6 +73,14 @@ export default function useGenerateRoutes() {
       element: (
         <DashboardLayout>
           <ContactUS />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/push-notification",
+      element: (
+        <DashboardLayout>
+          <PushNotifications />
         </DashboardLayout>
       ),
     },

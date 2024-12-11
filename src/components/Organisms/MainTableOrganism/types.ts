@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
 
 export interface TableRow {
-  // @ts-ignore
   [key: string]: string;
 }
 
 export interface TableColumn {
-  title: string;
+  title: string | ReactNode;
   dataIndex: string;
   key: string;
   render?: (text: string, record: TableRow) => ReactNode;
 }
+
 export interface MainTableOrganismProps {
   headerTitle?: string;
   headerClassName?: string;
@@ -19,6 +19,9 @@ export interface MainTableOrganismProps {
   pageSize?: number;
   children?: ReactNode;
   rowOnClick?: () => void;
+  enableSelection?: boolean;
+  selectedRows?: string[];
+  onSelectionChange?: (selectedKeys: string[]) => void;
 }
 
 export interface CustomPaginationProps {
