@@ -7,10 +7,24 @@ import { CategoriesList } from "./types";
 function SubCategory({ Category }: CategoriesList) {
   return (
     <div className={styles.SubCategoryLine}>
-      <Text className={styles.title}>{Category}</Text>
+      <Text fontSize={14} fontFamily="font400" color="grey900">
+        {Category}
+      </Text>
       <div className={styles.buttons}>
-        <Button customStyle={styles.view} title="view" />
-        <Button customStyle={styles.edit} title="Edit" />
+        <Button
+          variant="transparet"
+          fontSize={14}
+          fontFamily="font500"
+          color="black"
+          title="view"
+        />
+        <Button
+          fontSize={14}
+          fontFamily="font500"
+          variant="transparet"
+          fontColor="primaryFF"
+          title="Edit"
+        />
       </div>
     </div>
   );
