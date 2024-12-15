@@ -18,9 +18,12 @@ export default function SuccessPassChangedOrganism() {
           className={styles.img}
         />
       </div>
-      <Text fontSize={18} fontFamily="font500" color="grey700">
-        Password Successfully Changed!
-      </Text>
+      <Text
+        fontSize={18}
+        fontFamily="font500"
+        color="grey700"
+        i18nKey="password_changed_message"
+      />
       <Button
         customStyle={styles.btn}
         isFullWidth

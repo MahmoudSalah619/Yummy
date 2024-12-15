@@ -5,34 +5,36 @@ import MainTableOrganism from "../MainTableOrganism";
 import styles from "./styles.module.scss";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import Image from "../../Atoms/Image";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function RecipientsTableOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const [radioValue, setRadioValue] = useState<number | null>(null);
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
 
   const columns = [
     {
-      title: "User Name",
+      title: t("user_name_column"),
       dataIndex: "userName",
       key: "userName",
     },
     {
-      title: "Email Address",
+      title: t("Email Address"),
       dataIndex: "emailAddress",
       key: "emailAddress",
     },
     {
-      title: "Phone Number",
+      title: t("phone_number_label"),
       dataIndex: "phoneNumber",
       key: "phoneNumber",
     },
     {
-      title: "Total Orders",
+      title: t("total_orders_column"),
       dataIndex: "totalOrders",
       key: "totalOrders",
     },
     {
-      title: "Join date",
+      title: t("join_date_column"),
       dataIndex: "joinDate",
       key: "joinDate",
     },
@@ -77,7 +79,7 @@ function RecipientsTableOrganism() {
 
   return (
     <MainTableOrganism
-      headerTitle="Recipients"
+      headerTitle={t("Recipients")}
       columns={columns}
       dataSource={data}
       headerClassName={styles.headerContainer}
@@ -92,9 +94,10 @@ function RecipientsTableOrganism() {
           onChange={handleRadioChange}
           value={radioValue}
         >
-          <Radio value={1}>All Users</Radio>
+          <Radio value={1}>{t("radio_all_users")}</Radio>
           <Radio value={2}>
-            Selected Users ({selectedRowKeys.length} Selected)
+            {t("radio_selected_users")} ({selectedRowKeys.length}
+            {t("Selected")})
           </Radio>
         </Radio.Group>
 
@@ -108,7 +111,7 @@ function RecipientsTableOrganism() {
                 height={20}
               />
             }
-            placeholder="Type to Search"
+            placeholder={t("type_to_search_placeholder")}
             className={styles.searchInput}
           />
 

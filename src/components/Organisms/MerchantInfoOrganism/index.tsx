@@ -52,16 +52,17 @@ function MerchantInfoOrganism() {
 
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>Start your brand now</Text>
+      <Text className={styles.introText} i18nKey="intro_text" />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <ProfileImage src={imageSrc} />
         {/* Buttton */}
 
         <div className={styles.btnContainer}>
-          <Text className={`${styles.brandText} ${styles.textCenter}`}>
-            Brand Icon
-          </Text>
+          <Text
+            i18nKey="brand_icon_label"
+            className={`${styles.brandText} ${styles.textCenter}`}
+          />
           <Dragger
             {...uploadProps}
             onChange={(info) =>
@@ -82,13 +83,17 @@ function MerchantInfoOrganism() {
             errorMsg={errors.bio?.message}
           />
 
-          <Text className={styles.legalTitle}>Legal Documents</Text>
-          <Text className={styles.legalDesc}>
-            Please upload the following documents to complete your registration.
-          </Text>
+          <Text className={styles.legalTitle} i18nKey="legal_documents_title" />
+          <Text
+            className={styles.legalDesc}
+            i18nKey="legal_documents_description"
+          />
           <div className={styles.comercialTaxContainer}>
             <div className={styles.comercialContainer}>
-              <Text className={styles.brandText}>Commercial Register </Text>
+              <Text
+                className={styles.brandText}
+                i18nKey="commercial_register_label"
+              />
               <Dragger
                 onChange={(info) =>
                   setValue(
@@ -103,7 +108,7 @@ function MerchantInfoOrganism() {
               </Dragger>
             </div>
             <div className={styles.comercialContainer}>
-              <Text className={styles.brandText}>Tax ID </Text>
+              <Text className={styles.brandText} i18nKey="tax_id_label" />
               <Dragger
                 onChange={(info) =>
                   setValue("taxId", info.fileList[0]?.originFileObj)
@@ -119,7 +124,7 @@ function MerchantInfoOrganism() {
             >
               <Button title="Confirm" isFullWidth />
               <Button
-                title="Do it Later"
+                title="do_it_later_button"
                 isFullWidth
                 variant="transparent-grey"
                 onClick={() => navigate("/")}

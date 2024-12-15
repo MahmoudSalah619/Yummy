@@ -1,5 +1,6 @@
 import { ChangeEventHandler } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 export interface TextInputAtomProps {
   name?: string;
@@ -8,7 +9,7 @@ export interface TextInputAtomProps {
   onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   value?: string;
   placeholder?: string;
-  label?: string;
+  label?: TranslationKeyEnum;
   labelStyle?: string;
   isPasswordInput?: boolean;
   type?: "password" | "textarea" | "text" | "number";

@@ -1,10 +1,11 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import FontFamily from "@/constants/FontFamily";
 import COLORS from "@/constants/COLORS";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 export interface CustomButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
+  title: TranslationKeyEnum;
   customStyle?: string;
   variant?:
     | "primary"

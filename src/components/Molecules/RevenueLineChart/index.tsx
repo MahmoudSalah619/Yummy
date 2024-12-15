@@ -27,9 +27,12 @@ function RevenueLineChart({ data }: { data?: [] }) {
 
   return (
     <div className={styles.container}>
-      <Text fontFamily="font500" fontSize={22} color="grey900">
-        Revenue
-      </Text>
+      <Text
+        fontFamily="font500"
+        fontSize={22}
+        color="grey900"
+        i18nKey="Revenue"
+      />
       <ResponsiveContainer>
         <AreaChart height={135} data={data || fakeData}>
           <CartesianGrid

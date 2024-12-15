@@ -38,9 +38,10 @@ export default function OtpOrganism() {
 
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>
-        An authentication code has been sent to your email.
-      </Text>
+      <Text
+        className={styles.introText}
+        i18nKey="authentication_code_message"
+      />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -65,7 +66,7 @@ export default function OtpOrganism() {
         <Timer />
 
         <div className={styles.btnContainer}>
-          <Button title="Submit" isFullWidth />
+          <Button title="submit_button" isFullWidth />
         </div>
 
         <div className={styles.btnContainer}>

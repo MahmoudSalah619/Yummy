@@ -4,25 +4,34 @@ import Text from "../../Atoms/Text";
 import TextInput from "../../Atoms/TextInput";
 import Button from "../../Atoms/Button";
 import CardWrapper from "../../Wrappers/CardWrapper";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function ContactUs() {
+  const { t } = useAutoCompleteTranslation();
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
   return (
     <div className={styles.container}>
-      <Text className={styles.MainTitle} fontSize={30}>
-        Contact Us
-      </Text>
+      <Text
+        className={styles.MainTitle}
+        fontSize={30}
+        i18nKey="contact_us_main_title"
+      />
+
       <CardWrapper>
         <div className={styles.contactUs}>
-          <Text className={styles.title} fontFamily="font600" fontSize={18}>
-            We’d love to hear from you! Feel free to reach out with any
-            questions or feedback.
-          </Text>
+          <Text
+            className={styles.title}
+            fontFamily="font600"
+            fontSize={18}
+            i18nKey="contact_us_subtitle"
+          />
 
           <div className={styles.SelectInputContent}>
-            <span className="d-block mb-2 Label100 White">Subject</span>
+            <span className="d-block mb-2 Label100 White">
+              {t("subject_label")}
+            </span>
             <Select
               className={styles.SelectInput}
               style={{ width: "100%" }}
@@ -36,15 +45,23 @@ function ContactUs() {
           </div>
           <TextInput
             type="textarea"
-            label="Message"
+            label="message_label"
             containerStyle={styles.textArea}
           />
           <div className={styles.SubmitInfo}>
-            <Button title="Submit" customStyle={styles.btn} />
-            <Text>Customer Support Info</Text>
-            <Text>
-              Email: <span> support@ardi.com</span>
-            </Text>
+            <Button title="submit_button" customStyle={styles.btn} />
+            <Text
+              fontSize={16}
+              fontFamily="font500"
+              color="grey900"
+              i18nKey="customer_support_info"
+            />
+            <Text
+              fontSize={16}
+              fontFamily="font400"
+              color="grey900"
+              i18nKey="customer_support_email"
+            />
           </div>
         </div>
       </CardWrapper>

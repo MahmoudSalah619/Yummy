@@ -8,7 +8,13 @@ function ItemsInOrder() {
   return (
     <CardWrapper>
       <div className={styles.OrdersList}>
-        <Text className={styles.title}>items in order</Text>
+        <Text
+          fontSize={18}
+          fontFamily="font500"
+          color="black"
+          className={styles.title}
+          i18nKey="items in order"
+        />
         <OrderItemsCard />
         <OrderItemsCard />
         <OrderSummary />

@@ -7,8 +7,10 @@ import MainTableOrganism from "../../MainTableOrganism";
 import styles from "../styles.module.scss";
 import FilterButtons from "@/src/components/Molecules/FilterButtons";
 import DatePicker from "@/src/components/Molecules/DatePicker";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function AdminHomeView() {
+  const { t } = useAutoCompleteTranslation();
   const [activeDateFilter, setActiveDateFilter] = useState("12months");
 
   const recentOrders = [
@@ -62,10 +64,10 @@ function AdminHomeView() {
   ];
 
   const dateFilters = [
-    { key: "12months", label: "12 months" },
-    { key: "30days", label: "3 days" },
-    { key: "7days", label: "7 days" },
-    { key: "24hours", label: "24 hours" },
+    { key: "12months", label: t("date_filter_12months") },
+    { key: "30days", label: t("date_filter_30days") },
+    { key: "7days", label: t("date_filter_7days") },
+    { key: "24hours", label: t("date_filter_24hours") },
   ];
 
   const ordersData = Array.from({ length: 101 }, (_, i) => ({
@@ -112,7 +114,7 @@ function AdminHomeView() {
       <div className="flex flex-gap-large flex-align-start">
         <div className="flex-grow-1">
           <MainTableOrganism
-            headerTitle="Recent Orders"
+            headerTitle={t("Recent Orders")}
             columns={recentOrders}
             dataSource={ordersData}
             headerClassName={styles.headerContainer}
@@ -122,7 +124,7 @@ function AdminHomeView() {
         </div>
 
         <MainTableOrganism
-          headerTitle="Top Merchants by Revenue"
+          headerTitle={t("Top Merchants by Revenue")}
           columns={topMerchants}
           dataSource={merchantData}
           showPagination={false}

@@ -1,3 +1,4 @@
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import Text from "../Text";
 import styles from "./styles.module.scss";
 import { CustomButtonProps } from "./types";
@@ -19,6 +20,7 @@ function Button({
 }: CustomButtonProps) {
   const paddingBlockClass = `padding-block-${paddingBlock}`;
   const paddingInlineClass = `padding-inline-${paddingInline}`;
+  const { t } = useAutoCompleteTranslation();
 
   return (
     <button
@@ -35,7 +37,7 @@ function Button({
     >
       {suffix}
       <Text fontFamily={fontFamily} fontSize={fontSize} color={fontColor}>
-        {title}
+        {t(title)}
       </Text>
     </button>
   );

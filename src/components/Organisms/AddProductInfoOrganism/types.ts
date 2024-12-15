@@ -1,5 +1,7 @@
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
+
 export interface AddProductInfoOrganismProps {
-  cardTitle: string;
-  labelTitle: string;
-  buttonTitle: string;
+  cardTitle: TranslationKeyEnum;
+  labelTitle: TranslationKeyEnum;
+  buttonTitle: TranslationKeyEnum;
 }

@@ -39,7 +39,7 @@ export default function ChangPasswordOrganism() {
 
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>Reset Your Password</Text>
+      <Text className={styles.introText} i18nKey="Reset Your Password" />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <TextInput

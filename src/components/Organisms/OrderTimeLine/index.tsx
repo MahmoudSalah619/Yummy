@@ -1,27 +1,30 @@
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import Text from "../../Atoms/Text";
 import CardWrapper from "../../Wrappers/CardWrapper";
 import styles from "./styles.module.scss";
 // import { OrderTimelineStatus } from "./types";
 
 function OrderTimeline() {
+  const { t } = useAutoCompleteTranslation();
+
   const OrderTimeLineArray = [
     {
-      process: "Order Delivered",
+      process: t("order_delivered"),
       status: "Done",
       date: "27/5/2024",
     },
     {
-      process: "Order Shipped",
+      process: t("order_shipped"),
       status: "Done",
       date: "27/5/2024",
     },
     {
-      process: "Order Accepted",
+      process: t("order_accepted"),
       status: "pending",
       date: "27/5/2024",
     },
     {
-      process: "Order Placed",
+      process: t("order_placed"),
       status: "pending",
       date: "27/5/2024",
     },
@@ -30,7 +33,13 @@ function OrderTimeline() {
   return (
     <CardWrapper>
       <div className={styles.OrderTimelineContent}>
-        <Text className={styles.title}>Order Timeline</Text>
+        <Text
+          fontSize={18}
+          fontFamily="font500"
+          color="black"
+          className={styles.title}
+          i18nKey="order_timeline_title"
+        />
         {OrderTimeLineArray.map((item) => {
           return (
             <div

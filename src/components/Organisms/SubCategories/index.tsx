@@ -29,6 +29,7 @@ function SubCategories() {
             <FilterOrganism />
           </PageHeader>
         </div>
+
         <div className={styles.categoriesList}>
           {categories.map((item) => {
             return <SubCategory Category={item} />;

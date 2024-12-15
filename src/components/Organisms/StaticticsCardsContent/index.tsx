@@ -1,12 +1,13 @@
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 import StaticticsCard from "../../Molecules/StaticticsCard";
 import styles from "./styles.module.scss";
 
 function StaticticsCardsContent() {
   const Statictics = [
-    { id: "1", label: "Revenue", value: "EGP 100,280" },
-    { id: "2", label: "Orders", value: "1405" },
-    { id: "3", label: "Orders in progress", value: "71" },
-    { id: "2", label: "Avg. Rating", value: "4.4" },
+    { id: "1", label: "Revenue" as TranslationKeyEnum, value: "EGP 100,280" },
+    { id: "2", label: "Orders" as TranslationKeyEnum, value: "1405" },
+    { id: "3", label: "Orders in progress" as TranslationKeyEnum, value: "71" },
+    { id: "2", label: "Avg. Rating" as TranslationKeyEnum, value: "4.4" },
   ];
 
   return (

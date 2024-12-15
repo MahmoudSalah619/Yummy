@@ -4,8 +4,10 @@ import styles from "./styles.module.scss";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import SelectionInput from "../../Atoms/SelectionInput";
 import TextInput from "../../Atoms/TextInput";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function SearchFilterBar() {
+  const { t } = useAutoCompleteTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const dummyOptions = [
@@ -51,7 +53,7 @@ function SearchFilterBar() {
       <TextInput
         inputStyle={styles.searchInput}
         prefixIcon={SearchIcon}
-        placeholder="Search"
+        placeholder={t("Search")}
         onChange={handleSearchChange}
         value={searchParams.get("search") || ""}
       />
@@ -59,21 +61,21 @@ function SearchFilterBar() {
       <SelectionInput
         containerStyle={styles.selectionContainerInput}
         options={dummyOptions}
-        placeholder="Category"
+        placeholder={t("category_column")}
         onChange={handleCategoryChange}
         value={searchParams.get("category")}
       />
       <SelectionInput
         containerStyle={styles.selectionContainerInput}
         options={dummyOptions}
-        placeholder="Date Created"
+        placeholder={t("Date Created")}
         onChange={handleDateCreatedChange}
         value={searchParams.get("dateCreated")}
       />
       <SelectionInput
         containerStyle={styles.selectionContainerInput}
         options={dummyOptions}
-        placeholder="Date Published"
+        placeholder={t("Date Published")}
         onChange={handleDatePublishedChange}
         value={searchParams.get("datePublished")}
       />
