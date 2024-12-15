@@ -12,7 +12,9 @@ function AuthLayout({
   spaceTop?: "medium" | "large";
 }) {
   return (
-    <Layout>
+    <Layout
+      style={{ backgroundColor: "#fff", height: "100%", minHeight: "100vh" }}
+    >
       <div className={`${styles.container} ${styles[spaceTop]}`}>
         <Image src={Logo} alt="Logo" width={292} height={170} />
         {children}

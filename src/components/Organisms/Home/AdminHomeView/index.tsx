@@ -15,49 +15,50 @@ function AdminHomeView() {
 
   const recentOrders = [
     {
-      title: "Invoice",
+      title: t("invoice_column"),
       dataIndex: "category",
       key: "category",
     },
     {
-      title: "Merchant Name",
+      title: t("merchant_name_column"),
       dataIndex: "price",
       key: "price",
     },
     {
-      title: "Date",
+      title: t("date_column"),
       dataIndex: "orders",
       key: "orders",
     },
     {
-      title: "Order Amount",
+      title: t("order_amount_column"),
       dataIndex: "stock",
       key: "stock",
     },
     {
-      title: "Status",
+      title: t("status_column"),
       dataIndex: "revenue",
       key: "revenue",
     },
   ];
+
   const topMerchants = [
     {
-      title: "Merchant Name",
+      title: t("merchant_name_column"),
       dataIndex: "category",
       key: "category",
     },
     {
-      title: "Orders",
+      title: t("Orders"),
       dataIndex: "price",
       key: "price",
     },
     {
-      title: "Revenue",
+      title: t("Revenue"),
       dataIndex: "orders",
       key: "orders",
     },
     {
-      title: "Rating",
+      title: t("Rating"),
       dataIndex: "stock",
       key: "stock",
     },

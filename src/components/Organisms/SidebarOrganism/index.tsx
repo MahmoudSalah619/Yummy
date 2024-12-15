@@ -6,8 +6,10 @@ import Text from "../../Atoms/Text";
 import useGetUserInfo from "@/hooks/useGetUserInfo";
 import { generalLinks, supportLinks } from "./links";
 import logoutHandler from "@/utils/logoutHandler";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function SidebarOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const { role } = useGetUserInfo();
   const location = useLocation();
   const currentPath = location.pathname;
@@ -28,9 +30,8 @@ function SidebarOrganism() {
           fontSize={16}
           fontFamily="font500"
           className={styles.sidebarTitle}
-        >
-          General
-        </Text>
+          i18nKey="General"
+        />
         <div className={styles.sidebarLinks}>
           {mainLinks.map((link) => (
             <SidebarLink
@@ -45,9 +46,12 @@ function SidebarOrganism() {
       </div>
       {!!subLinks.length && (
         <div className={styles.sidebarLinksContainer}>
-          <Text color="grey500" fontSize={16} className={styles.sidebarTitle}>
-            Support
-          </Text>
+          <Text
+            color="grey500"
+            fontSize={16}
+            className={styles.sidebarTitle}
+            i18nKey="Support"
+          />
           <div className={styles.sidebarLinks}>
             {subLinks.map((link) => (
               <SidebarLink
@@ -64,7 +68,7 @@ function SidebarOrganism() {
 
       <SidebarLink
         icon="signout"
-        label="Sign out"
+        label={t("Sign out")}
         className={styles.signoutContainer}
         onClick={logoutHandler}
         href="/login"

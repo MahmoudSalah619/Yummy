@@ -9,7 +9,6 @@
   "Forget_Password": "Forget your password?",
   "Welcome Back!": "Welcome Back!",
   "Don’t have an account?": "Don’t have an account?",
-  "_______________________________________________": "________________________________________",
   "Reset Your Password": "Reset Your Password",
   "New Password": "New Password",
   "Minimum 8 characters": "Minimum 8 characters",
@@ -63,7 +62,6 @@
   "Edit Photo": "Edit Photo",
   "Shop Name": "Shop Name",
   "Categories": "Categories",
-
   "contact_us_main_title": "Contact Us",
   "contact_us_subtitle": "We’d love to hear from you! Feel free to reach out with any questions or feedback.",
   "subject_label": "Subject",
@@ -121,7 +119,6 @@
   "actions_column": "Actions",
   "view_button": "View",
   "Order #100": "Order #100",
-
   "order_details_title": "Order Details",
   "order_date_label": "Order Date",
   "customer_phone_number_label": "Customer Phone Number",
@@ -143,7 +140,6 @@
   "Export as CSV": "Export as CSV",
   "Add Product": "Add Product",
   "Import as CSV": "Import as CSV",
-
   "published_filter": "Published",
   "in_review_filter": "In review",
   "rejected_filter": "Rejected",
@@ -181,5 +177,24 @@
   "Product Details": "Product Details",
   "See more": "See more",
   "You can request a new code now": "You can request a new code now",
-  "Sub Categories": "Sub Categories"
+  "Sub Categories": "Sub Categories",
+  "merchant_name_column": "Merchant Name",
+  "Rating": "Rating",
+  "Previous": "Previous",
+  "Next": "Next",
+  "Promo Codes": "Promo Codes",
+  "Home": "Home",
+  "Merchants": "Merchants",
+  "Users": "Users",
+  "Notifications": "Notifications",
+  "FAQ": "FAQ",
+  "Sign out": "Sign out",
+  "Support": "Support",
+  "General": "General",
+  "Mark all as read": "Mark all as read",
+  "product_approved_message": "Congratulations, your product has been approved, users can buy it from the app.",
+  "product_rejected_message": "Your product has been rejected.",
+  "Filter": "Filter",
+  "From": "From",
+  "To": "To"
 }

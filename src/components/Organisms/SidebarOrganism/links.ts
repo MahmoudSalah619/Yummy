@@ -1,27 +1,41 @@
+import i18n from "@/i18n";
+
 export const generalLinks = {
   seller: [
-    { icon: "home", label: "Home", href: "/" },
-    { icon: "package", label: "Products", href: "/products" },
-    { icon: "orders", label: "Orders", href: "/orders" },
-    { icon: "promo", label: "Promo Codes", href: "/promo" },
-    { icon: "brand-profile", label: "Brand Profile", href: "/brand-profile" },
+    { icon: "home", label: i18n.t("Home"), href: "/" },
+    { icon: "package", label: i18n.t("Products"), href: "/products" },
+    { icon: "orders", label: i18n.t("Orders"), href: "/orders" },
+    { icon: "promo", label: i18n.t("Promo Codes"), href: "/promo" },
+    {
+      icon: "brand-profile",
+      label: i18n.t("Brand Profile"),
+      href: "/brand-profile",
+    },
   ],
   admin: [
-    { icon: "home", label: "Home", href: "/" },
-    { icon: "orders", label: "Orders", href: "/orders" },
-    { icon: "package", label: "Products", href: "/products" },
-    { icon: "promo", label: "Merchants", href: "/merchants" },
-    { icon: "brand-profile", label: "Users", href: "/users" },
-    { icon: "brand-profile", label: "Notifications", href: "/notifications" },
-    { icon: "brand-profile", label: "Promo Codes", href: "/promo" },
-    { icon: "brand-profile", label: "Categories", href: "/categories" },
+    { icon: "home", label: i18n.t("Home"), href: "/" },
+    { icon: "orders", label: i18n.t("Orders"), href: "/orders" },
+    { icon: "package", label: i18n.t("Products"), href: "/products" },
+    { icon: "promo", label: i18n.t("Merchants"), href: "/merchants" },
+    { icon: "brand-profile", label: i18n.t("Users"), href: "/users" },
+    {
+      icon: "brand-profile",
+      label: i18n.t("Notifications"),
+      href: "/notifications",
+    },
+    { icon: "brand-profile", label: i18n.t("Promo Codes"), href: "/promo" },
+    { icon: "brand-profile", label: i18n.t("Categories"), href: "/categories" },
   ],
 };
 
 export const supportLinks = {
   seller: [
-    { icon: "contact-us", label: "Contact us", href: "/contact-us" },
-    { icon: "faq", label: "FAQ", href: "/faq" },
+    {
+      icon: "contact-us",
+      label: i18n.t("contact_us_main_title"),
+      href: "/contact-us",
+    },
+    { icon: "faq", label: i18n.t("FAQ"), href: "/faq" },
   ],
   admin: [],
 };

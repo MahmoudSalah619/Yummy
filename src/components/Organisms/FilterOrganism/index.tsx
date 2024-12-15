@@ -5,8 +5,10 @@ import Image from "../../Atoms/Image";
 import FilterIcon from "@/src/assets/icons/home/filter.svg";
 import FilterPopover from "../../Molecules/FilterPopover";
 import Button from "../../Atoms/Button";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function FilterOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -27,7 +29,7 @@ function FilterOrganism() {
       />
 
       <Drawer
-        title="Filter"
+        title={t("Filter")}
         placement="right"
         onClose={toggleDrawer}
         open={isDrawerOpen}
