@@ -21,7 +21,13 @@ function FilterPopover({ className }: FilterPopoverProps) {
     <div className={`${styles.container} ${className}`}>
       <CheckboxGroup
         title="Order Status"
-        options={["Select All", "Paid", "Cancelled", "In Progress", "Refunded"]}
+        options={[
+          { label: "Select All", value: "selectAll" },
+          { label: "Paid", value: "paid" },
+          { label: "Cancelled", value: "cancelled" },
+          { label: "In Progress", value: "inProgress" },
+          { label: "Refunded", value: "refunded" },
+        ]}
         onChange={setOrderStatus}
       />
 
@@ -29,7 +35,11 @@ function FilterPopover({ className }: FilterPopoverProps) {
 
       <CheckboxGroup
         title="Payment Method"
-        options={["All", "Online Payment", "Cash on Delivery"]}
+        options={[
+          { label: "All", value: "all" },
+          { label: "Online Payment", value: "onlinePayment" },
+          { label: "Cash on Delivery", value: "cashOnDelivery" },
+        ]}
         onChange={setPaymentMethod}
       />
 
@@ -46,7 +56,11 @@ function FilterPopover({ className }: FilterPopoverProps) {
       <CheckboxGroup
         title="Customer Name"
         showSearch
-        options={["All", "Mohamed", "Salma"]}
+        options={[
+          { label: "All", value: "all" },
+          { label: "Mohamed", value: "mohamed" },
+          { label: "Salma", value: "salma" },
+        ]}
         onChange={setCustomerName}
       />
 

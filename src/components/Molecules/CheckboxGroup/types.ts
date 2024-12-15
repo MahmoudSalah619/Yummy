@@ -1,6 +1,14 @@
+import { ReactNode } from "react";
+
+interface CheckboxOption {
+  label: ReactNode;
+  value: string;
+}
+
 export interface CheckboxGroupProps {
   title: string;
-  options: string[];
+  options: CheckboxOption[];
+  value?: string[];
   showSearch?: boolean;
-  onChange?: (checkedValues: string[]) => void;
+  onChange?: (selectedValues: string[]) => void;
 }

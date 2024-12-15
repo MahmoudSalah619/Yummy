@@ -3,7 +3,7 @@ export const generalLinks = {
     { icon: "home", label: "Home", href: "/" },
     { icon: "package", label: "Products", href: "/products" },
     { icon: "orders", label: "Orders", href: "/orders" },
-    { icon: "promo", label: "Promo Codes", href: "/promo" },
+    { icon: "promo", label: "Promo Codes", href: "/promo-codes" },
     { icon: "brand-profile", label: "Brand Profile", href: "/brand-profile" },
   ],
   admin: [
@@ -13,7 +13,7 @@ export const generalLinks = {
     { icon: "promo", label: "Merchants", href: "/merchants" },
     { icon: "brand-profile", label: "Users", href: "/users" },
     { icon: "brand-profile", label: "Notifications", href: "/notifications" },
-    { icon: "brand-profile", label: "Promo Codes", href: "/promo" },
+    { icon: "brand-profile", label: "Promo Codes", href: "/promo-codes" },
     { icon: "brand-profile", label: "Categories", href: "/categories" },
   ],
 };
