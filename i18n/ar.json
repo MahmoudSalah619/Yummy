@@ -196,5 +196,10 @@
   "product_rejected_message": "تم رفض منتجك.",
   "Filter": "فلتر",
   "From": "من",
-  "To": "إلى"
+  "To": "إلى",
+  "Go to add promo page": "الذهاب الي صفحة البرومو",
+  "Add Promo Code": "أضف الرمز الترويجي",
+  "Create Promo Code": "إنشاء الرمز الترويجي",
+  "Offer Name": "اسم العرض",
+  "Usage Limit": "حد الاستخدام"
 }

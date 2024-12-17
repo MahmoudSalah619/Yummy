@@ -22,13 +22,13 @@ function FilterPopover({ className }: FilterPopoverProps) {
   return (
     <div className={`${styles.container} ${className}`}>
       <CheckboxGroup
-        title={t("order_status_title")}
+        title="Order Status"
         options={[
-          t("Select All"),
-          t("Paid"),
-          t("Cancelled"),
-          t("In Progress"),
-          t("Refunded"),
+          { label: "Select All", value: "selectAll" },
+          { label: "Paid", value: "paid" },
+          { label: "Cancelled", value: "cancelled" },
+          { label: "In Progress", value: "inProgress" },
+          { label: "Refunded", value: "refunded" },
         ]}
         onChange={setOrderStatus}
       />
@@ -36,8 +36,12 @@ function FilterPopover({ className }: FilterPopoverProps) {
       <Divider className={styles.divider} />
 
       <CheckboxGroup
-        title={t("payment_method_title")}
-        options={[t("All"), t("Online Payment"), t("Cash on Delivery")]}
+        title="Payment Method"
+        options={[
+          { label: "All", value: "all" },
+          { label: "Online Payment", value: "onlinePayment" },
+          { label: "Cash on Delivery", value: "cashOnDelivery" },
+        ]}
         onChange={setPaymentMethod}
       />
 
@@ -54,7 +58,11 @@ function FilterPopover({ className }: FilterPopoverProps) {
       <CheckboxGroup
         title={t("customer_name_title")}
         showSearch
-        options={["All", "Mohamed", "Salma"]}
+        options={[
+          { label: "All", value: "all" },
+          { label: "Mohamed", value: "mohamed" },
+          { label: "Salma", value: "salma" },
+        ]}
         onChange={setCustomerName}
       />
 

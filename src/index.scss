@@ -135,6 +135,15 @@ button {
   border: none !important;
 }
 
+.ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: $orange500 !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: $orange500 !important;
+  border-color: $orange500 !important;
+}
+
 // Bootstrap
 :root {
   /* Common spacing variables */

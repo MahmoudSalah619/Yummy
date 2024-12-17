@@ -196,5 +196,10 @@
   "product_rejected_message": "Your product has been rejected.",
   "Filter": "Filter",
   "From": "From",
-  "To": "To"
+  "To": "To",
+  "Go to add promo page": "Go to add promo page",
+  "Add Promo Code": "Add Promo Code",
+  "Create Promo Code": "Create Promo Code",
+  "Offer Name": "Offer Name",
+  "Usage Limit": "Usage Limit"
 }

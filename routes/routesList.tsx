@@ -22,6 +22,7 @@ import Users from "@/src/components/Pages/users";
 import Notifications from "@/src/components/Pages/notifications";
 import Promo from "@/src/components/Pages/promo";
 import Categories from "@/src/components/Pages/categories";
+import AddPromoCode from "@/src/components/Pages/addPromoCode";
 
 export default {
   common: [
@@ -82,7 +83,7 @@ export default {
       ),
     },
     {
-      path: "/promo",
+      path: "/promo-codes",
       element: (
         <DashboardLayout>
           <Promo />
@@ -206,6 +207,14 @@ export default {
       element: (
         <DashboardLayout>
           <Categories />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/promo-codes/add-promo-code",
+      element: (
+        <DashboardLayout>
+          <AddPromoCode />
         </DashboardLayout>
       ),
     },
