@@ -10,8 +10,11 @@ import PageHeader from "../../Molecules/PageHeader";
 import StaticticsCard from "../../Molecules/StaticticsCard";
 import Button from "../../Atoms/Button";
 import DatePicker from "../../Molecules/DatePicker";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 function Orders() {
+  const { t } = useAutoCompleteTranslation();
   const { role } = useGetUserInfo();
   const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
   const [activeDateFilter, setActiveDateFilter] = useState("12months");
@@ -19,86 +22,74 @@ function Orders() {
 
   const statistics = {
     seller: [
-      { label: "Total Orders", value: "950" },
-      { label: "Ordered Items", value: "1450" },
+      { label: "total_orders_column" as TranslationKeyEnum, value: "950" },
+      { label: "ordered_items_statistic" as TranslationKeyEnum, value: "1450" },
     ],
     admin: [
-      { label: "Total Orders", value: "950" },
-      { label: "Ordered Items", value: "1450" },
-      { label: "Avg. order value", value: "EGP 1450" },
-      { label: "Returns", value: "3" },
+      { label: "total_orders_column" as TranslationKeyEnum, value: "950" },
+      { label: "ordered_items_statistic" as TranslationKeyEnum, value: "1450" },
+      { label: "Avg. order value" as TranslationKeyEnum, value: "EGP 1450" },
+      { label: "Returns" as TranslationKeyEnum, value: "3" },
     ],
   };
 
   const filters = [
-    { key: Status.VIEW_ALL, label: "View all" },
-    { key: Status.OPEN, label: "Open" },
-    { key: Status.PENDING, label: "Pending" },
-    { key: Status.CLOSED, label: "Closed" },
-    { key: Status.CANCELLED, label: "Cancelled" },
-    { key: Status.OVERDUE, label: "Overdue" },
+    { key: Status.VIEW_ALL, label: t("view_all_filter") },
+    { key: Status.OPEN, label: t("open_filter") },
+    { key: Status.PENDING, label: t("pending_filter") },
+    { key: Status.CLOSED, label: t("closed_filter") },
+    { key: Status.CANCELLED, label: t("Cancelled") },
+    { key: Status.OVERDUE, label: t("overdue_filter") },
   ];
 
   const dateFilters = [
-    { key: "12months", label: "12 months" },
-    { key: "30days", label: "3 days" },
-    { key: "7days", label: "7 days" },
-    { key: "24hours", label: "24 hours" },
+    { key: "12months", label: t("date_filter_12months") },
+    { key: "30days", label: t("date_filter_30days") },
+    { key: "7days", label: t("date_filter_7days") },
+    { key: "24hours", label: t("date_filter_24hours") },
   ];
 
   const columns = [
+    { title: t("invoice_column"), dataIndex: "invoice", key: "invoice" },
+    { title: t("date_column"), dataIndex: "date", key: "date" },
     {
-      title: "Invoice",
-      dataIndex: "invoice",
-      key: "invoice",
-    },
-    {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
-    },
-    {
-      title: "Order Amount",
+      title: t("order_amount_column"),
       dataIndex: "orderAmount",
       key: "orderAmount",
     },
     {
-      title: "Status",
+      title: t("status_column"),
       dataIndex: "status",
       key: "status",
       render: (status: string) => <StatusIndicator status={status} />,
     },
     {
-      title: "Customer name",
+      title: t("customer_name_title"),
       dataIndex: "customerName",
       key: "customerName",
     },
     {
-      title: "Payment method",
+      title: t("payment_method_title"),
       dataIndex: "paymentMethod",
       key: "paymentMethod",
     },
     {
-      title: "Actions",
+      title: t("actions_column"),
       dataIndex: "actions",
       key: "actions",
       render: () => (
         <div className={styles.actions}>
           <Button
-            title="View"
+            title="view_button"
             variant="transparet"
             fontColor="dark"
-            onClick={() => {
-              navigate("/orders/order-details");
-            }}
+            onClick={() => navigate("/orders/order-details")}
           />
           <Button
             title="Edit"
             variant="transparet"
             fontColor="orange500"
-            onClick={() => {
-              navigate("/products/edit-product");
-            }}
+            onClick={() => navigate("/products/edit-product")}
           />
         </div>
       ),

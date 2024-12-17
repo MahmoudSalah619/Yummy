@@ -26,10 +26,10 @@ export default function ForgetPasswordOrganism() {
   };
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>
-        To reset your password, please enter the email address of your ardi
-        account
-      </Text>
+      <Text
+        className={styles.introText}
+        i18nKey="To reset your password, please enter the email address of your ardi account"
+      />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <TextInput

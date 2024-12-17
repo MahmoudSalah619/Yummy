@@ -14,9 +14,8 @@ function PriceAndQuantityOrganism() {
         fontSize={22}
         fontFamily="font500"
         className={styles.mainTitle}
-      >
-        Pricing and Quantity
-      </Text>
+        i18nKey="Pricing and Quantity"
+      />
 
       <div className={styles.tableHeader}>
         <Text
@@ -24,25 +23,22 @@ function PriceAndQuantityOrganism() {
           fontFamily="font500"
           fontSize={14}
           className={styles.productName}
-        >
-          Variant
-        </Text>
+          i18nKey="Variant"
+        />
         <Text
           color="grey600"
           fontFamily="font500"
           fontSize={14}
           className={styles.productName}
-        >
-          Pricing
-        </Text>
+          i18nKey="Pricing"
+        />
         <Text
           color="grey600"
           fontFamily="font500"
           fontSize={14}
           className={styles.productName}
-        >
-          Quantity
-        </Text>
+          i18nKey="Quantity"
+        />
       </div>
 
       <div className={styles.tableBody}>

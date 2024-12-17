@@ -10,8 +10,10 @@ import ValidationSchema, { Auth } from "@/constants/Validation";
 import styles from "./styles.module.scss";
 // import { login } from "@/reducers/authReducer";
 import loginHandler from "@/utils/loginHandler";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 export default function LoginOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const onChange: CheckboxProps["onChange"] = () => {};
   const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -30,15 +32,12 @@ export default function LoginOrganism() {
   };
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>
-        Welcome to ARDI Merchant Gateway, please sign in using your account or
-        apply for a merchant account below
-      </Text>
+      <Text className={styles.introText} i18nKey="welcome_message" />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <TextInput
           containerStyle={styles.input}
-          label="Phone Number or Email Address"
+          label="email_or_phone_label"
           status={errors.emailOrPhone?.message ? "error" : "default"}
           reactHookFormProps={{
             ...register("emailOrPhone", ValidationSchema.emailOrPhone),
@@ -60,12 +59,12 @@ export default function LoginOrganism() {
         />
         <div className={styles.rowContainer}>
           <Checkbox className={styles.checkboxStyle} onChange={onChange}>
-            Remember Me
+            {t("remember_me")}
           </Checkbox>
 
           <HyperLink
             to="/forget-password"
-            title="Forgot Password?"
+            title={t("forgot_password")}
             fontSize={12}
           />
         </div>
@@ -77,10 +76,10 @@ export default function LoginOrganism() {
 
         <div className={styles.signUpContainer}>
           <Text className={styles.signUpText}>
-            Don’t have an account?
+            {t("sign_up_prompt")}
             <HyperLink
               to="/sign-up"
-              title="Sign Up"
+              title={t("sign_up_link")}
               fontSize={14}
               className={styles.space}
             />

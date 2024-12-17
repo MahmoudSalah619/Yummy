@@ -5,14 +5,16 @@ import Image from "../../Atoms/Image";
 import DeleteIcon from "@/src/assets/icons/products/delete-icon.svg";
 import Button from "../../Atoms/Button";
 import { AddProductInfoOrganismProps } from "./types";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function AddProductInfoOrganism({
   cardTitle,
   labelTitle,
   buttonTitle,
 }: AddProductInfoOrganismProps) {
+  const { t } = useAutoCompleteTranslation();
   return (
-    <CardWrapper title={cardTitle}>
+    <CardWrapper title={t(cardTitle)}>
       <div className={styles.inputContainer}>
         <TextInputAtom label={labelTitle} inputStyle={styles.input} />
         <Image

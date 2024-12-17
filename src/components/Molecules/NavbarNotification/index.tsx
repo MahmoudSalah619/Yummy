@@ -6,22 +6,23 @@ import NotificationIcon from "@/src/assets/icons/navbar/notification-icon.svg";
 import AvatarImage from "@/src/assets/icons/navbar/avatar.svg";
 import NotificationItem from "../NotificationItem";
 import Text from "../../Atoms/Text";
-
-const notificationItems = [
-  {
-    message:
-      "Congratulations, your product has been approved, users can buy it from app.",
-    productName: "Product Name",
-    imageSrc: AvatarImage,
-  },
-  {
-    message: "Your product has been rejected",
-    productName: "Product Name",
-    imageSrc: AvatarImage,
-  },
-];
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function NavbarNotification() {
+  const { t } = useAutoCompleteTranslation();
+  const notificationItems = [
+    {
+      message: t("product_approved_message"),
+      productName: "Product Name",
+      imageSrc: AvatarImage,
+    },
+    {
+      message: t("product_rejected_message"),
+      productName: "Product Name",
+      imageSrc: AvatarImage,
+    },
+  ];
+
   const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 
   const handlePopoverVisibleChange = (visible: boolean) => {
@@ -36,13 +37,19 @@ function NavbarNotification() {
   const notificationContent = (
     <div className={styles.notificationOverlay}>
       <div className={styles.notificationHeader}>
-        <Text color="grey900" fontSize={18} fontFamily="font500">
-          Notifications
-        </Text>
+        <Text
+          color="grey900"
+          fontSize={18}
+          fontFamily="font500"
+          i18nKey="Notifications"
+        />
         <button className={styles.markAsRead}>
-          <Text color="orange500" fontSize={12} fontFamily="font500">
-            Mark all as read
-          </Text>
+          <Text
+            color="orange500"
+            fontSize={12}
+            fontFamily="font500"
+            i18nKey="Mark all as read"
+          />
         </button>
       </div>
       <div className={styles.notificationList}>

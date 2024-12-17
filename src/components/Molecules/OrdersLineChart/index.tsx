@@ -26,9 +26,12 @@ function OrdersBarChart({ data }: { data?: [] }) {
   ];
   return (
     <div className={styles.container}>
-      <Text fontFamily="font500" fontSize={22} color="grey900">
-        Orders
-      </Text>
+      <Text
+        fontFamily="font500"
+        fontSize={22}
+        color="grey900"
+        i18nKey="Orders"
+      />
       <ResponsiveContainer>
         <BarChart
           barCategoryGap={6}

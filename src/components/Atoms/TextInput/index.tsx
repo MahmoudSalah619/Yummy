@@ -5,6 +5,7 @@ import { TextInputAtomProps } from "./types";
 import styles from "./styles.module.scss";
 import Text from "../Text";
 import Image from "../Image";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 export default function TextInput({
   containerStyle,
@@ -22,6 +23,7 @@ export default function TextInput({
   prefixIcon,
 }: TextInputAtomProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const { t } = useAutoCompleteTranslation();
 
   useEffect(() => {
     const cancelWheel = (e: WheelEvent) =>
@@ -36,7 +38,7 @@ export default function TextInput({
     <>
       <div className={`${styles.container} ${containerStyle}`}>
         {!!label && (
-          <span className={`${styles.label} ${labelStyle}`}>{label}</span>
+          <span className={`${styles.label} ${labelStyle}`}>{t(label)}</span>
         )}
 
         <div

@@ -5,8 +5,10 @@ import RangeInput from "../RangeInput";
 import styles from "./styles.module.scss";
 import { FilterPopoverProps } from "./types";
 import Button from "../../Atoms/Button";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function FilterPopover({ className }: FilterPopoverProps) {
+  const { t } = useAutoCompleteTranslation();
   const [orderStatus, setOrderStatus] = useState<string[]>([]);
   const [paymentMethod, setPaymentMethod] = useState<string[]>([]);
   const [customerName, setCustomerName] = useState<string[]>([]);
@@ -45,16 +47,16 @@ function FilterPopover({ className }: FilterPopoverProps) {
 
       <Divider className={styles.divider} />
 
-      <RangeInput title="Order ID" />
+      <RangeInput title={t("order_id_title")} />
 
       <Divider className={styles.divider} />
 
-      <RangeInput title="Order Value" />
+      <RangeInput title={t("order_value_title")} />
 
       <Divider className={styles.divider} />
 
       <CheckboxGroup
-        title="Customer Name"
+        title={t("customer_name_title")}
         showSearch
         options={[
           { label: "All", value: "all" },
@@ -67,8 +69,12 @@ function FilterPopover({ className }: FilterPopoverProps) {
       <Divider className={styles.divider} />
 
       <div className={styles.buttonsContainer}>
-        <Button variant="transparent-grey" title="Clear all" isFullWidth />
-        <Button onClick={handleConfirm} title="Done" isFullWidth />
+        <Button
+          variant="transparent-grey"
+          title="clear_all_button"
+          isFullWidth
+        />
+        <Button onClick={handleConfirm} title="done_button" isFullWidth />
       </div>
     </div>
   );

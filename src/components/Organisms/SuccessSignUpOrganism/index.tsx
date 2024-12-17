@@ -19,13 +19,18 @@ export default function SuccessSignUpOrganism() {
         />
       </div>
       <div className={styles.textContainer}>
-        <Text fontSize={18} fontFamily="font500" color="grey700">
-          Account Registration Pending Review
-        </Text>
-        <Text fontSize={16} fontFamily="font400" color="grey700">
-          Your merchant account is now under review by our team. We will notify
-          you upon approval in your mail. Thank you for your patience!
-        </Text>
+        <Text
+          fontSize={18}
+          fontFamily="font500"
+          color="grey700"
+          i18nKey="registration_pending_title"
+        />
+        <Text
+          fontSize={16}
+          fontFamily="font400"
+          color="grey700"
+          i18nKey="registration_pending_message"
+        />
       </div>
       <Button
         customStyle={styles.btn}

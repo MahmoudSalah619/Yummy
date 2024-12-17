@@ -8,8 +8,10 @@ import FilterOrganism from "../../FilterOrganism";
 import StaticticsCardsContent from "../../StaticticsCardsContent";
 import MainTableOrganism from "../../MainTableOrganism";
 import styles from "../styles.module.scss";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function SellerHomeView() {
+  const { t } = useAutoCompleteTranslation();
   const columns = [
     {
       title: "Product Name",
@@ -70,7 +72,7 @@ function SellerHomeView() {
       </div>
 
       <MainTableOrganism
-        headerTitle="Best Sellers"
+        headerTitle={t("Best Sellers")}
         columns={columns}
         dataSource={data}
         headerClassName={styles.headerContainer}

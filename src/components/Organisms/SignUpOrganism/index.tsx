@@ -9,8 +9,10 @@ import Button from "@/src/components/Atoms/Button";
 import HyperLink from "@/src/components/Atoms/HyperLink";
 import PasswordValidationRole from "@/src/components/Molecules/PasswordValidationRole";
 import ValidationSchema, { Auth } from "@/constants/Validation";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 export default function SignUpOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const [isChecked, setIsChecked] = useState(false); // Manage checkbox state
 
   const onCheckboxChange: CheckboxProps["onChange"] = (e) => {
@@ -50,12 +52,12 @@ export default function SignUpOrganism() {
 
   return (
     <div className={styles.container}>
-      <Text className={styles.introText}>Create your merchant account</Text>
+      <Text className={styles.introText} i18nKey="create_account_heading" />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <TextInput
           containerStyle={`${styles.input} ${styles.spaceTop}`}
-          label="Brand Name"
+          label="brand_name_label"
           labelStyle={styles.labelStyle}
           inputStyle={styles.emailInput}
           status={errors.brandName ? "error" : "default"}
@@ -77,7 +79,7 @@ export default function SignUpOrganism() {
         />
         <TextInput
           containerStyle={`${styles.input} ${styles.spaceTop}`}
-          label="Phone Number"
+          label="phone_number_label"
           labelStyle={styles.labelStyle}
           inputStyle={styles.emailInput}
           status={errors.phoneNumber ? "error" : "default"}
@@ -100,9 +102,12 @@ export default function SignUpOrganism() {
           errorMsg={errors.newPassword?.message}
         />
         <div className={styles.validationContainer}>
-          <Text fontSize={12} fontFamily="font500" color="grey900">
-            Password Requirements
-          </Text>
+          <Text
+            fontSize={12}
+            fontFamily="font500"
+            color="grey900"
+            i18nKey="password_requirements_heading"
+          />
           <PasswordValidationRole
             title="Minimum 8 characters"
             isValid={hasEightLetters(password)}
@@ -121,8 +126,8 @@ export default function SignUpOrganism() {
             className={styles.checkboxStyle}
             onChange={onCheckboxChange} // Handle checkbox change manually
           >
-            I agree to the{" "}
-            <HyperLink to="/" title="terms and conditions" fontSize={16} />
+            {t("agree_terms")}{" "}
+            <HyperLink to="/" title={t("terms_and_conditions")} fontSize={16} />
           </Checkbox>
         </div>
         {/* Buttton */}
@@ -130,7 +135,7 @@ export default function SignUpOrganism() {
         <div className={styles.btnContainer}>
           <Button
             disabled={!isChecked}
-            title="Sign Up"
+            title="sign_up_button"
             isFullWidth
             type="submit"
           />
@@ -138,10 +143,10 @@ export default function SignUpOrganism() {
 
         <div className={styles.signUpContainer}>
           <Text className={styles.signUpText}>
-            Already have an account?
+            {t("already_have_account")}
             <HyperLink
               to="/login"
-              title="Sign In"
+              title={t("sign_in_link")}
               fontSize={14}
               className={styles.space}
             />

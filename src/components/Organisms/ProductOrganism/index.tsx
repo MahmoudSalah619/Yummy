@@ -11,22 +11,24 @@ import Status from "@/constants/Status";
 import PageHeader from "../../Molecules/PageHeader";
 import Button from "../../Atoms/Button";
 import FilterButtons from "../../Molecules/FilterButtons";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function ProductOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
 
   const filters = [
-    { key: Status.VIEW_ALL, label: "View all" },
-    { key: Status.PUBLISHED, label: "Published" },
-    { key: Status.IN_REVIEW, label: "In review" },
-    { key: Status.REJECTED, label: "Rejected" },
-    { key: Status.IN_DRAFT, label: "In draft" },
+    { key: Status.VIEW_ALL, label: t("view_all_filter") },
+    { key: Status.PUBLISHED, label: t("published_filter") },
+    { key: Status.IN_REVIEW, label: t("in_review_filter") },
+    { key: Status.REJECTED, label: t("rejected_filter") },
+    { key: Status.IN_DRAFT, label: t("in_draft_filter") },
   ];
 
   const columns = [
     {
-      title: "Product Name",
+      title: t("product_name_column"),
       dataIndex: "productName",
       key: "productName",
       render: (text: string) => (
@@ -34,45 +36,45 @@ function ProductOrganism() {
       ),
     },
     {
-      title: "Category",
+      title: t("category_column"),
       dataIndex: "category",
       key: "category",
     },
     {
-      title: "Created on",
+      title: t("created_on_column"),
       dataIndex: "createdOn",
       key: "createdOn",
       render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
-      title: "Published on",
+      title: t("published_on_column"),
       dataIndex: "publishedOn",
       key: "publishedOn",
       render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
     },
     {
-      title: "Price",
+      title: t("price_column"),
       dataIndex: "price",
       key: "price",
     },
     {
-      title: "Orders",
+      title: t("Orders"),
       dataIndex: "orders",
       key: "orders",
     },
     {
-      title: "Stock",
+      title: t("stock_column"),
       dataIndex: "stock",
       key: "stock",
     },
     {
-      title: "Status",
+      title: t("status_column"),
       dataIndex: "status",
       key: "status",
       render: (status: string) => <StatusIndicator status={status} />,
     },
     {
-      title: "Revenue",
+      title: t("Revenue"),
       dataIndex: "revenue",
       key: "revenue",
     },

@@ -16,7 +16,7 @@ function SubCategory({ Category }: CategoriesList) {
           fontSize={14}
           fontFamily="font500"
           color="black"
-          title="view"
+          title="view_button"
         />
         <Button
           fontSize={14}

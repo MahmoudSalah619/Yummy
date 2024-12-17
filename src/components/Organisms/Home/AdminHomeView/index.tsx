@@ -7,65 +7,68 @@ import MainTableOrganism from "../../MainTableOrganism";
 import styles from "../styles.module.scss";
 import FilterButtons from "@/src/components/Molecules/FilterButtons";
 import DatePicker from "@/src/components/Molecules/DatePicker";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function AdminHomeView() {
+  const { t } = useAutoCompleteTranslation();
   const [activeDateFilter, setActiveDateFilter] = useState("12months");
 
   const recentOrders = [
     {
-      title: "Invoice",
+      title: t("invoice_column"),
       dataIndex: "category",
       key: "category",
     },
     {
-      title: "Merchant Name",
+      title: t("merchant_name_column"),
       dataIndex: "price",
       key: "price",
     },
     {
-      title: "Date",
+      title: t("date_column"),
       dataIndex: "orders",
       key: "orders",
     },
     {
-      title: "Order Amount",
+      title: t("order_amount_column"),
       dataIndex: "stock",
       key: "stock",
     },
     {
-      title: "Status",
+      title: t("status_column"),
       dataIndex: "revenue",
       key: "revenue",
     },
   ];
+
   const topMerchants = [
     {
-      title: "Merchant Name",
+      title: t("merchant_name_column"),
       dataIndex: "category",
       key: "category",
     },
     {
-      title: "Orders",
+      title: t("Orders"),
       dataIndex: "price",
       key: "price",
     },
     {
-      title: "Revenue",
+      title: t("Revenue"),
       dataIndex: "orders",
       key: "orders",
     },
     {
-      title: "Rating",
+      title: t("Rating"),
       dataIndex: "stock",
       key: "stock",
     },
   ];
 
   const dateFilters = [
-    { key: "12months", label: "12 months" },
-    { key: "30days", label: "3 days" },
-    { key: "7days", label: "7 days" },
-    { key: "24hours", label: "24 hours" },
+    { key: "12months", label: t("date_filter_12months") },
+    { key: "30days", label: t("date_filter_30days") },
+    { key: "7days", label: t("date_filter_7days") },
+    { key: "24hours", label: t("date_filter_24hours") },
   ];
 
   const ordersData = Array.from({ length: 101 }, (_, i) => ({
@@ -112,7 +115,7 @@ function AdminHomeView() {
       <div className="flex flex-gap-large flex-align-start">
         <div className="flex-grow-1">
           <MainTableOrganism
-            headerTitle="Recent Orders"
+            headerTitle={t("Recent Orders")}
             columns={recentOrders}
             dataSource={ordersData}
             headerClassName={styles.headerContainer}
@@ -122,7 +125,7 @@ function AdminHomeView() {
         </div>
 
         <MainTableOrganism
-          headerTitle="Top Merchants by Revenue"
+          headerTitle={t("Top Merchants by Revenue")}
           columns={topMerchants}
           dataSource={merchantData}
           showPagination={false}

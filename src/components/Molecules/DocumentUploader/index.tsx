@@ -3,10 +3,12 @@ import Button from "../../Atoms/Button";
 import Image from "../../Atoms/Image";
 import Text from "../../Atoms/Text";
 import styles from "./styles.module.scss";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 interface DocumentUploadProps {
-  title: string;
-  description: string;
+  title: TranslationKeyEnum;
+  description: TranslationKeyEnum;
   uploadedImage: string;
   setUploadedImage: (image: string) => void;
 }
@@ -18,6 +20,7 @@ function DocumentUploader({
   uploadedImage,
   setUploadedImage,
 }: DocumentUploadProps) {
+  const { t } = useAutoCompleteTranslation();
   const uploadProps = {
     name: "file",
     multiple: false,
@@ -42,10 +45,10 @@ function DocumentUploader({
     <div className={styles.commercialContainer}>
       <div className={styles.textContainer}>
         <Text fontSize={14} color="grey900" fontFamily="font500">
-          {title}
+          {t(title)}
         </Text>
         <Text fontSize={11} color="grey600" fontFamily="font500">
-          {description}
+          {t(description)}
         </Text>
       </div>
       <div className={styles.previewContainer}>

@@ -19,9 +19,12 @@ function NavbarLink() {
     <div className={styles.navbarLink}>
       <div className={styles.homeContainer}>
         <Link to="/" className={styles.textStyle}>
-          <Text color="grey900" fontFamily="font500" fontSize={16}>
-            Home
-          </Text>
+          <Text
+            color="grey900"
+            fontFamily="font500"
+            fontSize={16}
+            i18nKey="Home"
+          />
         </Link>
         {pathnames.length > 0 && (
           <Image

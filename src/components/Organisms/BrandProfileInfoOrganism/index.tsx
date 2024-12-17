@@ -8,10 +8,12 @@ import ProfileImage from "../../Molecules/ProfileImage";
 import vector from "@/src/assets/images/vector.png";
 import Text from "../../Atoms/Text";
 import LegalDocuments from "../../Molecules/LegalDocuments";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 const { Dragger } = Upload;
 
 function BrandProfileInfoOrganism() {
+  const { t } = useAutoCompleteTranslation();
   const [imageSrc, setImageSrc] = useState<string>(vector); // State for uploaded image URL
 
   const uploadProps = {
@@ -32,7 +34,7 @@ function BrandProfileInfoOrganism() {
 
   return (
     <div className={styles.container}>
-      <CardWrapper title="General Info">
+      <CardWrapper title={t("General Info")}>
         <div className={styles.inputsHolder}>
           <div className={styles.profileContainer}>
             <ProfileImage src={imageSrc || vector} />
@@ -41,9 +43,12 @@ function BrandProfileInfoOrganism() {
               {...uploadProps}
               className={`${styles.uploadDragger} ${styles.center}`}
             >
-              <Text fontSize={12} fontFamily="font500" color="primaryFF">
-                Edit Photo
-              </Text>
+              <Text
+                fontSize={12}
+                fontFamily="font500"
+                color="primaryFF"
+                i18nKey="Edit Photo"
+              />
             </Dragger>
           </div>
 
@@ -60,7 +65,10 @@ function BrandProfileInfoOrganism() {
             label="Email Address"
           />
 
-          <RichTextEditor containerStyle={styles.inputContainer} label="Bio" />
+          <RichTextEditor
+            containerStyle={styles.inputContainer}
+            label={t("Bio")}
+          />
         </div>
       </CardWrapper>
 

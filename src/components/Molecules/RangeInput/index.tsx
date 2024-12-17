@@ -2,6 +2,7 @@ import { Input } from "antd";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import { RangeInputProps } from "./types";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function RangeInput({
   title,
@@ -9,6 +10,7 @@ function RangeInput({
   fromValue,
   toValue,
 }: RangeInputProps) {
+  const { t } = useAutoCompleteTranslation();
   return (
     <div className={styles.container}>
       {!!title && (
@@ -18,12 +20,16 @@ function RangeInput({
       )}
       <Input.Group compact className={styles.rangeInputContainer}>
         <Input
-          placeholder="From"
+          placeholder={t("From")}
           className={inputClassName}
           value={fromValue}
         />
         <span className={styles.rangeSeparator}> - </span>
-        <Input placeholder="To" className={inputClassName} value={toValue} />
+        <Input
+          placeholder={t("To")}
+          className={inputClassName}
+          value={toValue}
+        />
       </Input.Group>
     </div>
   );

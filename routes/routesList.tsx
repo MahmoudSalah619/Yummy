@@ -148,6 +148,15 @@ export default {
         </AuthLayout>
       ),
     },
+
+    {
+      path: "/merchant-info",
+      element: (
+        <AuthLayout>
+          <MerchantInfo />
+        </AuthLayout>
+      ),
+    },
   ],
   seller: [
     {
@@ -165,15 +174,6 @@ export default {
         <DashboardLayout>
           <BrandProfile />
         </DashboardLayout>
-      ),
-    },
-
-    {
-      path: "/merchant-info",
-      element: (
-        <AuthLayout>
-          <MerchantInfo />
-        </AuthLayout>
       ),
     },
   ],

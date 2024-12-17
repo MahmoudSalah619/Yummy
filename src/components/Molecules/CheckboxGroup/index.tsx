@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import Image from "../../Atoms/Image";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import { CheckboxGroupProps } from "./types";
 
 function CheckboxGroup({
@@ -12,6 +13,7 @@ function CheckboxGroup({
   showSearch = false,
   onChange,
 }: CheckboxGroupProps) {
+  const { t } = useAutoCompleteTranslation();
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
   const handleCheckboxChange = (checkedValues: string[]) => {
@@ -29,7 +31,7 @@ function CheckboxGroup({
           prefix={
             <Image src={SearchIcon} alt="search icon" width={20} height={20} />
           }
-          placeholder="Type to Search"
+          placeholder={t("type_to_search_placeholder")}
           className={styles.searchInput}
         />
       )}

@@ -6,6 +6,7 @@ import ArrowLeft from "@/src/assets/icons/home/arrow-left.svg";
 import ArrowRight from "@/src/assets/icons/home/arrow-right.svg";
 import styles from "./styles.module.scss";
 import { CustomPaginationProps } from "../../Organisms/MainTableOrganism/types";
+import i18n from "@/i18n";
 
 function CustomPagination({
   total,
@@ -21,20 +22,36 @@ function CustomPagination({
     if (type === "prev") {
       return (
         <a className={styles.btnPrev}>
-          <Image src={ArrowLeft} alt="arrow left" width={20} height={20} />
-          <Text fontFamily="font500" fontSize={14} color="grey900">
-            Previous
-          </Text>
+          <Image
+            src={i18n.dir() === "ltr" ? ArrowLeft : ArrowRight}
+            alt="arrow left"
+            width={20}
+            height={20}
+          />
+          <Text
+            fontFamily="font500"
+            fontSize={14}
+            color="grey900"
+            i18nKey="Previous"
+          />
         </a>
       );
     }
     if (type === "next") {
       return (
         <a className={styles.btnNext}>
-          <Text fontFamily="font500" fontSize={14} color="grey900">
-            Next
-          </Text>
-          <Image src={ArrowRight} alt="arrow right" width={20} height={20} />
+          <Text
+            fontFamily="font500"
+            fontSize={14}
+            color="grey900"
+            i18nKey="Next"
+          />
+          <Image
+            src={i18n.dir() === "ltr" ? ArrowRight : ArrowLeft}
+            alt="arrow right"
+            width={20}
+            height={20}
+          />
         </a>
       );
     }

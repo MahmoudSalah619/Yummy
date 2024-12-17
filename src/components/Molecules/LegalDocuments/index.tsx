@@ -3,17 +3,18 @@ import styles from "./styles.module.scss";
 import legalDoc from "@/src/assets/images/legalDoc.png";
 import DocumentUploader from "../DocumentUploader";
 import CardWrapper from "../../Wrappers/CardWrapper";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 function LegalDocuments() {
   const [documents, setDocuments] = useState([
     {
-      title: "Commercial Register",
-      description: "Uploaded on 13/9/2024 11:50PM",
+      title: "Commercial Register" as TranslationKeyEnum,
+      description: "Uploaded on 13/9/2024 11:50PM" as TranslationKeyEnum,
       uploadedImage: legalDoc,
     },
     {
-      title: "Tax ID",
-      description: "Uploaded on 13/9/2024 11:50PM",
+      title: "tax_id_label" as TranslationKeyEnum,
+      description: "Uploaded on 13/9/2024 11:50PM" as TranslationKeyEnum,
       uploadedImage: legalDoc,
     },
   ]);
