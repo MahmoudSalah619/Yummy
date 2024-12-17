@@ -1,22 +1,22 @@
 import { Checkbox, Input } from "antd";
 import { useState } from "react";
 import styles from "./styles.module.scss";
-import { CheckboxGroupProps } from "./types";
 import Text from "../../Atoms/Text";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
 import Image from "../../Atoms/Image";
+import { CheckboxGroupProps } from "./types";
 
 function CheckboxGroup({
   title,
   options,
-  showSearch,
+  showSearch = false,
   onChange,
 }: CheckboxGroupProps) {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
   const handleCheckboxChange = (checkedValues: string[]) => {
-    setSelectedValues(checkedValues);
-    if (onChange) onChange(checkedValues);
+    setSelectedValues(checkedValues as string[]);
+    if (onChange) onChange(checkedValues as string[]);
   };
 
   return (
@@ -38,9 +38,13 @@ function CheckboxGroup({
         value={selectedValues}
         onChange={handleCheckboxChange}
       >
-        {options.map((option, index) => (
-          <Checkbox key={String(option + index)} value={option}>
-            {option}
+        {options.map((option) => (
+          <Checkbox
+            key={option.value}
+            value={option.value}
+            className={styles.checkbox}
+          >
+            {option.label}
           </Checkbox>
         ))}
       </Checkbox.Group>
