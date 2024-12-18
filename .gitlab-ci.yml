@@ -41,10 +41,10 @@ deploy-staging:
     - chmod 644 ~/.ssh/known_hosts
 
   script:
-    - rsync --delete-after -va build/ $SSH_USER_STAGING@$VM_IP_ADDRESS_STAGING:/var/www/html/kaj-medical/build/
+    - rsync --delete-after -va build/ $SSH_USER_STAGING@$VM_IP_ADDRESS_STAGING:/var/www/html/ardi_seller_staging/build/
     - echo -e
       "
-      cd /var/www/html/kaj-medical/;
+      cd /var/www/html/ardi_seller_staging/;
       rm package-lock.json;
       git pull origin staging;
       source ~/.nvm/nvm.sh;
