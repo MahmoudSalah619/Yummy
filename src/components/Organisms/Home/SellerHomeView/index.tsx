@@ -60,8 +60,8 @@ function SellerHomeView() {
   return (
     <>
       <PageHeader title="Dashboard">
-        <FilterOrganism />
         <DatePicker />
+        <FilterOrganism />
       </PageHeader>
 
       <StaticticsCardsContent />

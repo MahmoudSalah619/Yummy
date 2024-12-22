@@ -36,7 +36,7 @@ function FilterOrganism() {
         className={styles.drawer}
         width={480}
       >
-        <FilterPopover />
+        <FilterPopover toggleDrawer={toggleDrawer} />
       </Drawer>
     </main>
   );

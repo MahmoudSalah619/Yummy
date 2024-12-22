@@ -100,9 +100,11 @@ function DatePicker() {
   const customFooterContent = (
     <div className={styles.customFooterContent}>
       <RangeInput
+        disabled
         inputClassName={styles.rangeInput}
         fromValue={rangeInputValues.from}
         toValue={rangeInputValues.to}
+        fromDatePicker
       />
       <Button
         title="Cancel"
@@ -127,7 +129,7 @@ function DatePicker() {
       <Button
         className={styles.button}
         onClick={() => setOpen((prevState) => !prevState)}
-        title="Select Dates"
+        title="Select Date"
         variant="transparent-grey"
         suffix={
           <Image src={SelectDate} alt="Select Date" width={20} height={20} />

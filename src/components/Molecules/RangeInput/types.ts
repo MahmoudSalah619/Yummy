@@ -3,4 +3,8 @@ export interface RangeInputProps {
   inputClassName?: string;
   fromValue?: string;
   toValue?: string;
+  clearFlag?: boolean;
+  onClearComplete?: () => void;
+  disabled?: boolean;
+  fromDatePicker?: boolean;
 }
