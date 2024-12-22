@@ -1,5 +1,5 @@
 import { Checkbox, Input } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import SearchIcon from "@/src/assets/icons/home/search-orange-icon.svg";
@@ -12,14 +12,18 @@ function CheckboxGroup({
   options,
   showSearch = false,
   onChange,
+  value,
 }: CheckboxGroupProps) {
   const { t } = useAutoCompleteTranslation();
-  const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const [selectedValues, setSelectedValues] = useState<string[]>(value);
 
   const handleCheckboxChange = (checkedValues: string[]) => {
     setSelectedValues(checkedValues as string[]);
     if (onChange) onChange(checkedValues as string[]);
   };
+  useEffect(() => {
+    setSelectedValues(value);
+  }, [value]);
 
   return (
     <div className={styles.container}>

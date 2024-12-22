@@ -1,4 +1,5 @@
 import { Input } from "antd";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import { RangeInputProps } from "./types";
@@ -9,8 +10,23 @@ function RangeInput({
   inputClassName,
   fromValue,
   toValue,
+  clearFlag,
+  disabled,
+  fromDatePicker,
+  onClearComplete,
 }: RangeInputProps) {
   const { t } = useAutoCompleteTranslation();
+  const [from, setFrom] = useState(fromValue);
+  const [to, setTo] = useState(toValue);
+  useEffect(() => {
+    if (clearFlag) {
+      setFrom("");
+      setTo("");
+      if (onClearComplete) {
+        onClearComplete();
+      }
+    }
+  }, [clearFlag, onClearComplete]);
   return (
     <div className={styles.container}>
       {!!title && (
@@ -22,13 +38,17 @@ function RangeInput({
         <Input
           placeholder={t("From")}
           className={inputClassName}
-          value={fromValue}
+          value={fromDatePicker ? fromValue : from}
+          onChange={(e) => setFrom(e.target.value)}
+          disabled={disabled}
         />
         <span className={styles.rangeSeparator}> - </span>
         <Input
           placeholder={t("To")}
           className={inputClassName}
-          value={toValue}
+          value={fromDatePicker ? toValue : to}
+          onChange={(e) => setTo(e.target.value)}
+          disabled={disabled}
         />
       </Input.Group>
     </div>
