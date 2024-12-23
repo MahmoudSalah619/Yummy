@@ -1,4 +1,4 @@
-@import "styles/all";
+@use "/styles/all" as *;
 
 .container {
   gap: 16px;
