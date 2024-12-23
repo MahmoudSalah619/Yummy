@@ -19,8 +19,8 @@
 
     width: 100%;
 
+    border: 1px solid $grey200;
     border-radius: 10px;
-
     .prefixIcon {
       position: absolute;
       z-index: 100;
@@ -42,16 +42,9 @@
 
       color: $dark;
 
-      border: 1px solid $grey200 !important;
-      border-radius: 8px;
+      border: none !important;
+      border-radius: inherit;
       outline: none;
-      &:active,
-      &:focus,
-      &:focus-within,
-      &:focus-visible {
-        border: none !important;
-        outline: none;
-      }
     }
   }
 
