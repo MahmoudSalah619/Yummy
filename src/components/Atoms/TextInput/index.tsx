@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { TextInputAtomProps } from "./types";
 import styles from "./styles.module.scss";

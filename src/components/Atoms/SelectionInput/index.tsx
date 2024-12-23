@@ -1,5 +1,3 @@
-"use client";
-
 import { Select } from "antd";
 import { SelectionInputAtomProps } from "./types";
 import styles from "./styles.module.scss";
