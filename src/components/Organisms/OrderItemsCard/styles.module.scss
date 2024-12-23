@@ -7,21 +7,19 @@
   gap: 15px;
   justify-content: space-between;
 
-  padding: 26px 20px 26px 88px;
+  padding: 26px 20px 26px 0px;
 
   font-weight: bold;
 
   border-bottom: 1px solid $grey400;
-  .ImageContent {
-    position: absolute;
-    top: 17px;
-    left: 0;
+  .ProductCard {
+    display: flex;
+    gap: 15px;
   }
   .FirstLine {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    justify-content: space-between;
+    gap: 5px;
     .BorderBtn {
       border-radius: 5px;
     }
