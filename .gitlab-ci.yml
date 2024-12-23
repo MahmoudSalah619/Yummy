@@ -3,7 +3,7 @@ stages:
   - deploy
 
 build:
-  image: node:18.17.0
+  image: node:20.17.0
   stage: build
   cache:
     paths:
@@ -48,7 +48,7 @@ deploy-staging:
       rm package-lock.json;
       git pull origin staging;
       source ~/.nvm/nvm.sh;
-      nvm use 18.17.0;
+      nvm use 20.17.0;
       npm i -f;
       " | ssh $SSH_USER_STAGING@$VM_IP_ADDRESS_STAGING
 
