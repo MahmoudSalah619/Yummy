@@ -1,6 +1,6 @@
 export interface CardDetails {
   title: string;
-  price: number;
+  price: string;
   status: string;
   date: string;
 }

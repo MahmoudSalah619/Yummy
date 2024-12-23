@@ -7,9 +7,7 @@ function OrderItemsCard() {
   return (
     <div className={styles.ProductCardContent}>
       <div className={styles.ProductCard}>
-        <div className={styles.ImageContent}>
-          <Image src={item} width={100} height={100} alt="T-shirt" />
-        </div>
+        <Image src={item} width={100} height={100} alt="T-shirt" />
         <div className={styles.FirstLine}>
           <Text>Te-shirt</Text>
           <Text color="grey200" className={styles.brandName}>
