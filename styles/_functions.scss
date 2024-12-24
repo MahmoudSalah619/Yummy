@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 @function vw($px-vw, $design-viewport: $desktop-design-viewport) {
   @return ($px-vw * 100vw) / $design-viewport;

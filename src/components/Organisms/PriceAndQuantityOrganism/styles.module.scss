@@ -1,4 +1,4 @@
-@import "styles/all";
+@use "/styles/all" as *;
 
 .cardWrapperContainer {
   gap: 16px;
