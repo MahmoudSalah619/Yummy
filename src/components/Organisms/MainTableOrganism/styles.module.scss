@@ -9,6 +9,9 @@
 .table {
   margin-bottom: 20px;
 }
+.rowCustom {
+  cursor: pointer;
+}
 
 .paginationContainer {
   padding-top: 14px;
@@ -21,4 +24,22 @@
       align-items: center;
     }
   }
+}
+.headerCon {
+  display: flex;
+  justify-content: space-between;
+}
+.filterBtn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  padding: 8px;
+
+  font-family: "GothamMedium";
+  font-size: 14px;
+  color: $gray700;
+
+  border: 1px solid $darkGrey;
+  border-radius: 7px;
 }
