@@ -23,7 +23,7 @@ export interface MainTableOrganismProps {
   enableSelection?: boolean;
   selectedRowKeys?: string[];
   setSelectedRowKeys?: (key: string[]) => void;
-
+  filterBtn?: boolean;
   onSelectionChange?: (selectedKeys: string[]) => void;
 }
 

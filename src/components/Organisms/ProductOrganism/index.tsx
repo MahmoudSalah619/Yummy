@@ -126,6 +126,7 @@ function ProductOrganism() {
         dataSource={filteredData}
         headerClassName={styles.headerContainer}
         rowOnClick={() => navigate("product-details")}
+        filterBtn
       >
         <FilterButtons
           filters={filters}

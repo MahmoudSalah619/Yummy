@@ -150,11 +150,7 @@ function Orders() {
         ))}
       </div>
 
-      <MainTableOrganism
-        columns={columns}
-        dataSource={filteredData}
-        headerClassName={styles.headerContainer}
-      >
+      <MainTableOrganism columns={columns} dataSource={filteredData} filterBtn>
         <FilterButtons
           filters={filters}
           activeFilter={activeFilter}

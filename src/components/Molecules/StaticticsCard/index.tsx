@@ -14,7 +14,7 @@ function StaticticsCard({ label, value, icon }: StaticticsCardProps) {
       />
 
       <div className={styles.iconCon}>
-        {icon && <Image alt="icon" src={icon} width={40} height={40} />}
+        {icon && <Image alt="icon" src={icon} width={35} height={35} />}
         <Text fontSize={30} color="grey900" fontFamily="font600">
           {value}
         </Text>
