@@ -1,29 +1,20 @@
 @use "/styles/all" as *;
+
 .ProductCardContent {
   position: relative;
-
   display: flex;
-  flex-direction: column;
-  gap: 25px;
+  flex-direction: row;
 
-  padding-left: 90px;
-
-  font-weight: bold;
-  .ImageContent {
-    position: absolute;
-    top: 1px;
-    left: 0;
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
   }
-  .FirstLine {
+
+  .content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    .BorderBtn {
-      border-radius: 5px;
-    }
-  }
-  .SecondLine {
-    display: flex;
     justify-content: space-between;
   }
 }
