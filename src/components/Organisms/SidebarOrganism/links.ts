@@ -35,7 +35,7 @@ export const supportLinks = {
       label: i18n.t("contact_us_main_title"),
       href: "/contact-us",
     },
-    { icon: "faq", label: i18n.t("FAQ"), href: "/faq" },
+    { icon: "faq", label: i18n.t("FAQ"), href: "/Faqs" },
   ],
   admin: [],
 };

@@ -23,6 +23,7 @@ import Notifications from "@/src/components/Pages/notifications";
 import Promo from "@/src/components/Pages/promo";
 import Categories from "@/src/components/Pages/categories";
 import AddPromoCode from "@/src/components/Pages/addPromoCode";
+import Faqs from "@/src/components/Pages/Faqs";
 
 export default {
   common: [
@@ -164,6 +165,14 @@ export default {
       element: (
         <DashboardLayout>
           <ContactUS />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/Faqs",
+      element: (
+        <DashboardLayout>
+          <Faqs />
         </DashboardLayout>
       ),
     },

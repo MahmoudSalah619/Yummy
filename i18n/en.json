@@ -201,5 +201,11 @@
   "Add Promo Code": "Add Promo Code",
   "Create Promo Code": "Create Promo Code",
   "Offer Name": "Offer Name",
-  "Usage Limit": "Usage Limit"
+  "Usage Limit": "Usage Limit",
+  "Frequently Asked Questions": "Frequently Asked Questions",
+  "faq_ans": "Yes, our platform offers integrated shipping solutions to make the order fulfillment process easier for sellers. Here’s how it works: 1. Shipping Partners: We partner with reliable logistics providers to handle deliveries. Sellers can choose from available shipping options directly through the dashboard. 2.Shipping Labels: Once an order is confirmed, you can generate and print shipping labels directly from the dashboard.",
+  "faq_quest": "Question number one ?",
+  "": "",
+  "": "",
+  "": ""
 }
