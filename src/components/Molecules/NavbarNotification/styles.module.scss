@@ -10,7 +10,15 @@
     margin-top: 2px;
   }
 }
-
+.langCon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  .langBtn {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
 .hideOverlay {
   position: fixed;
   top: 0;

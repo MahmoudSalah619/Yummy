@@ -25,6 +25,8 @@ function NavbarNotification() {
 
   const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 
+  const language = localStorage.getItem("gtoLang");
+
   const handlePopoverVisibleChange = (visible: boolean) => {
     setIsPopoverVisible(visible);
     if (visible) {
@@ -65,11 +67,26 @@ function NavbarNotification() {
     </div>
   );
 
+  const changeLanguage = (lang: string) => () => {
+    localStorage.setItem("gtoLang", lang);
+    window.location.reload();
+  };
+
   return (
     <div className={styles.navbarNotificationContainer}>
       <div
         className={`${styles.hideOverlay} ${isPopoverVisible && styles.show}`}
       />
+      <div className={styles.langCon}>
+        <button
+          className={styles.langBtn}
+          onClick={
+            language === "en" ? changeLanguage("ar") : changeLanguage("en")
+          }
+        >
+          {language === "en" ? "التغيير للعربية" : "Change To English"}
+        </button>
+      </div>
 
       <Popover
         content={notificationContent}
