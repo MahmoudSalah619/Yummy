@@ -1,4 +1,4 @@
-@import "styles/all";
+@use "/styles/all" as *;
 
 .notificationItem {
   display: flex;
@@ -6,12 +6,12 @@
   align-items: center;
 
   .notificationDot {
-    width: 8px;
-    height: 8px;
-    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    margin-inline-end: 8px;
 
     background-color: #ff5722;
-    border-radius: 50%;
+    border-radius: 14px;
   }
 
   .productInfo {

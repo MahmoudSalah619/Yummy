@@ -1,4 +1,4 @@
-@import "styles/all";
+@use "/styles/all" as *;
 
 .container {
   display: flex;
@@ -10,5 +10,8 @@
     flex-direction: column;
     gap: 16px;
     width: 30%;
+  }
+  .searchInput {
+    font-size: 20px !important;
   }
 }

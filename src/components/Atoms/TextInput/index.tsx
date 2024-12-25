@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { TextInputAtomProps } from "./types";
 import styles from "./styles.module.scss";
@@ -50,8 +48,8 @@ export default function TextInput({
             <Image
               alt="prefixIcon"
               src={prefixIcon}
-              width={16.52}
-              height={16.52}
+              width={26.52}
+              height={26.52}
               className={styles.prefixIcon}
             />
           )}

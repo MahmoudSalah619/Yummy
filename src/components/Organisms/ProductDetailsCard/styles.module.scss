@@ -1,5 +1,7 @@
-@import "styles/all.scss";
-.container {
+@use "/styles/all" as *;
+
+.ProductCardContent {
+  position: relative;
   display: flex;
   flex-direction: row;
 

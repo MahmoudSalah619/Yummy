@@ -1,4 +1,4 @@
-@import "styles/all";
+@use "/styles/all" as *;
 
 .StaticticsCard {
   display: flex;
@@ -13,6 +13,7 @@
   border-radius: 10px;
   .iconCon {
     display: flex;
-    gap: vw(4px);
+    gap: 4px;
+    align-items: center;
   }
 }

@@ -5,6 +5,8 @@ import TableHeader from "../../Molecules/TableHeader";
 import CustomPagination from "../../Molecules/CustomPagination";
 import styles from "./styles.module.scss";
 import { MainTableOrganismProps, TableRow } from "./types";
+import Image from "../../Atoms/Image";
+import filter from "../../../assets/icons/filter-lines.svg";
 
 function MainTableOrganism({
   headerTitle,
@@ -19,6 +21,7 @@ function MainTableOrganism({
   onSelectionChange,
   children,
   rowOnClick,
+  filterBtn,
 }: MainTableOrganismProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -63,7 +66,15 @@ function MainTableOrganism({
   return (
     <section className={styles.mainTable}>
       <TableHeader title={headerTitle} headerClassName={headerClassName}>
-        {children}
+        <div className={styles.headerCon}>
+          {children}
+          {filterBtn && (
+            <button className={styles.filterBtn}>
+              <Image src={filter} alt="filter" width={20} height={20} />
+              Filters
+            </button>
+          )}
+        </div>
       </TableHeader>
       <Table
         rowSelection={rowSelection}

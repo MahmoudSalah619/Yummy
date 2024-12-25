@@ -36,7 +36,7 @@ function FilterButtons({
         <Button
           key={ele.key}
           onClick={() => onFilterChange(ele.key)}
-          className={ele.className}
+          className={`${styles.btnCon} ${ele.className}`}
         >
           {filters[index].label}
         </Button>
