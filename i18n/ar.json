@@ -201,5 +201,18 @@
   "Add Promo Code": "أضف الرمز الترويجي",
   "Create Promo Code": "إنشاء الرمز الترويجي",
   "Offer Name": "اسم العرض",
-  "Usage Limit": "حد الاستخدام"
+  "Usage Limit": "حد الاستخدام",
+  "Merchant Details": "بيانات التاجر",
+  "Merchant Name": "اسم التاجر",
+  "number_of_product": "عدد المنتجات",
+  "awaiting_approval": "بانتظار الموافقة",
+  "suspended_filter": "إيقاف",
+  "active_filter": "نشط",
+  "in_active_filter": "غير نشط",
+  "Main Details": "التفاصيل الرئيسية",
+  "Pending Producsts": "المنتجات المعلقة",
+  "reviews": "المراجعات",
+  "Add Merchant": "إضافة تاجر",
+  "confirm password": "تأكيد كلمة المرور",
+  "merchant_bio": "السيرة الذاتية للتاجر"
 }

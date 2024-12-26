@@ -1,5 +1,11 @@
+import MerchantOrganism from "../../Organisms/Merchant/merchantOrganism";
+
 function Merchants() {
-  return <div>Merchants</div>;
+  return (
+    <div>
+      <MerchantOrganism />
+    </div>
+  );
 }
 
 export default Merchants;

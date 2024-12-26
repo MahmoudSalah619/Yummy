@@ -5,12 +5,12 @@ import Text from "@/src/components/Atoms/Text";
 import styles from "./styles.module.scss";
 import Button from "@/src/components/Atoms/Button";
 import { Auth } from "@/constants/Validation";
+import CardWrapper from "../../../Wrappers/CardWrapper";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
-import CardWrapper from "../../Wrappers/CardWrapper";
 
 const { Dragger } = Upload;
 
-function MerchantInfoOrganism() {
+function MerchantLegalDocs() {
   const { t } = useAutoCompleteTranslation();
   // eslint-disable-next-line
   const [_, setUploadedFiles] = useState<UploadFile[]>([]);
@@ -83,4 +83,4 @@ function MerchantInfoOrganism() {
   );
 }
 
-export default MerchantInfoOrganism;
+export default MerchantLegalDocs;

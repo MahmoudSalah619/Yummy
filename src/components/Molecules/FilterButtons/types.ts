@@ -8,4 +8,5 @@ export interface FilterButtonsProps {
   activeFilter: string;
   onFilterChange: (key: string) => void;
   isGrayButtons?: boolean;
+  isDateRange?: boolean;
 }

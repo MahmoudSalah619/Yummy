@@ -10,6 +10,9 @@ const Status = {
   CLOSED: "Closed",
   CANCELLED: "Cancelled",
   OVERDUE: "Overdue",
+  ACTIVE: "Active",
+  AWAITING_APPROVAL: "Awaiting approval",
+  SUSPENDED: "Suspended",
 };
 
 export default Status;

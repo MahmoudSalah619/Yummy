@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 import { MainTableOrganismProps, TableRow } from "./types";
 import Image from "../../Atoms/Image";
 import filter from "../../../assets/icons/filter-lines.svg";
+import DatePicker from "../../Molecules/DatePicker";
 
 function MainTableOrganism({
   headerTitle,
@@ -22,6 +23,7 @@ function MainTableOrganism({
   children,
   rowOnClick,
   filterBtn,
+  dateBtn,
 }: MainTableOrganismProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -65,17 +67,21 @@ function MainTableOrganism({
 
   return (
     <section className={styles.mainTable}>
-      <TableHeader title={headerTitle} headerClassName={headerClassName}>
-        <div className={styles.headerCon}>
-          {children}
-          {filterBtn && (
-            <button className={styles.filterBtn}>
-              <Image src={filter} alt="filter" width={20} height={20} />
-              Filters
-            </button>
-          )}
-        </div>
-      </TableHeader>
+      {headerTitle && (
+        <TableHeader title={headerTitle} headerClassName={headerClassName}>
+          <div className={styles.headerCon}>
+            {children}
+            {filterBtn ? (
+              <button className={styles.filterBtn}>
+                <Image src={filter} alt="filter" width={20} height={20} />
+                Filters
+              </button>
+            ) : dateBtn ? (
+              <DatePicker />
+            ) : null}
+          </div>
+        </TableHeader>
+      )}
       <Table
         rowSelection={rowSelection}
         columns={columns}

@@ -24,6 +24,15 @@
   color: #ff9800 !important;
 }
 
+.awaitApp {
+  background-color: $yellow50;
+  border: 1px solid $yellow700;
+
+  p {
+    color: $yellow700 !important;
+  }
+}
+
 .rejected {
   background-color: $error50;
   border: 1px solid $error200;
@@ -43,5 +52,14 @@
 
   p {
     color: $gray700 !important;
+  }
+}
+
+.closed {
+  background-color: $gray200;
+  border: 1px solid $grey300;
+
+  p {
+    color: $grey700 !important;
   }
 }

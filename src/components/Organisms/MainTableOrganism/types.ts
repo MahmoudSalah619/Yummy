@@ -24,6 +24,7 @@ export interface MainTableOrganismProps {
   selectedRowKeys?: string[];
   setSelectedRowKeys?: (key: string[]) => void;
   filterBtn?: boolean;
+  dateBtn?: boolean;
   onSelectionChange?: (selectedKeys: string[]) => void;
 }
 
