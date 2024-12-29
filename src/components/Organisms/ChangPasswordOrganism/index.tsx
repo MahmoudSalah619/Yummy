@@ -80,7 +80,7 @@ export default function ChangPasswordOrganism() {
           reactHookFormProps={{
             ...register(
               "confirmPassword",
-              ValidationSchema.ConfirmPassword(watch)
+              ValidationSchema.confirmPassword(watch)
             ),
           }}
           errorMsg={errors.confirmPassword?.message}

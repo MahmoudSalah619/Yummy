@@ -22,6 +22,7 @@
   "To reset your password, please enter the email address of your ardi account": "لإعادة تعيين كلمة المرور، يرجى إدخال عنوان البريد الإلكتروني لحسابك في ARDI",
   "welcome_message": "مرحبًا بك في بوابة تاجر ARDI، يرجى تسجيل الدخول باستخدام حسابك أو التقدم للحصول على حساب تاجر أدناه",
   "email_or_phone_label": "رقم الهاتف أو البريد الإلكتروني",
+  "user_Name": "اسم المستخدم",
   "remember_me": "تذكرني",
   "forgot_password": "نسيت كلمة المرور؟",
   "sign_up_prompt": "لا تملك حسابًا؟",
@@ -201,5 +202,9 @@
   "Add Promo Code": "أضف الرمز الترويجي",
   "Create Promo Code": "إنشاء الرمز الترويجي",
   "Offer Name": "اسم العرض",
-  "Usage Limit": "حد الاستخدام"
+  "Usage Limit": "حد الاستخدام",
+  "Create_New_User": "انشاء مستخدم جديد",
+  "Home_address": "عنوان المنزل",
+  "Discard_Changes": "تجاهل التغيرات",
+  "Confirm Password": "تاكيد كلمة المرور"
 }
