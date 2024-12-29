@@ -7,17 +7,16 @@ export default function NavbarChangeLang() {
     localStorage.setItem("gtoLang", lang);
     window.location.reload();
   };
+  const isEng = language === "en";
 
   return (
     <div>
       <div className={styles.langCon}>
         <button
           className={styles.langBtn}
-          onClick={
-            language === "en" ? changeLanguage("ar") : changeLanguage("en")
-          }
+          onClick={isEng ? changeLanguage("ar") : changeLanguage("en")}
         >
-          {language === "en" ? "التغيير للعربية" : "Change To English"}
+          {isEng ? "التغيير للعربية" : "Change To English"}
         </button>
       </div>
     </div>
