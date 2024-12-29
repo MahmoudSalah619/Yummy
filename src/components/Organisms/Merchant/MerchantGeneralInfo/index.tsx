@@ -22,7 +22,7 @@ export default function MerchantGeneralInfo() {
   } = useForm<MerchantInfo>();
   const { setValue } = useForm<MerchantInfo>();
 
-  const password = watch("password");
+  const password = watch("confirmPassword");
 
   const hasUppercase = (value: string) => {
     return /[A-Z]/.test(value);
@@ -74,16 +74,18 @@ export default function MerchantGeneralInfo() {
             isValid={hasUppercase(password)}
           />
           <TextInput
-            type="text"
+            type="password"
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
             label="confirm password"
+            status={errors.confirmPassword ? "error" : "default"}
             reactHookFormProps={{
               ...register(
                 "confirmPassword",
-                ValidationSchema.ConfirmPassword(watch)
+                ValidationSchema.confirmPassword(watch)
               ),
             }}
+            errorMsg={errors.confirmPassword?.message}
           />
           <TextInput
             type="text"

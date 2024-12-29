@@ -2,16 +2,20 @@ import { RcFile } from "antd/es/upload";
 
 export interface Auth {
   emailOrPhone: string;
+  userName: string;
   password: string;
   otp: string;
   newPassword: string;
   confirmPassword: string;
+  UserPassword: string;
+  ConfirmUserPassword: string;
   brandName: string;
   phoneNumber: number;
   bio: string;
   brandIcon: RcFile | undefined | File;
   commercialRegister: RcFile | undefined;
   taxId: RcFile | undefined;
+  homeAddress: string;
 }
 export interface MerchantInfo {
   name: string;
@@ -74,11 +78,31 @@ const ValidationSchema = {
         /\d/.test(value) || "Password must include at least one number",
     },
   },
-  ConfirmPassword: (watch: (field: string) => string) => ({
+  confirmPassword: (watch: (field: string) => string) => ({
     required: "Confirm password is required",
     validate: {
       matchesPassword: (value: string) =>
         value === watch("newPassword") || "Passwords do not match",
+    },
+  }),
+
+  UserPassword: {
+    required: "New password is required",
+    validate: {
+      hasUppercase: (value: string) =>
+        /[A-Z]/.test(value) ||
+        "Password must include at least one uppercase letter",
+      hasEightCharacters: (value: string) =>
+        value?.length >= 8 || "Password must be at least 8 characters long",
+      hasNumber: (value: string) =>
+        /\d/.test(value) || "Password must include at least one number",
+    },
+  },
+  ConfirmUserPassword: (watch: (field: string) => string) => ({
+    required: "Confirm password is required",
+    validate: {
+      matchesPassword: (value: string) =>
+        value === watch("UserPassword") || "Passwords do not match",
     },
   }),
 
@@ -113,6 +137,29 @@ const ValidationSchema = {
   },
   taxId: {
     required: "Tax ID document is required",
+  },
+
+  userName: {
+    required: "user name is required",
+    minLength: {
+      value: 4,
+      message: "user name must be at least 2 characters long",
+    },
+    maxLength: {
+      value: 15,
+      message: "Brand name cannot exceed 15 characters",
+    },
+  },
+  homeAddress: {
+    required: "Home address is required",
+    minLength: {
+      value: 4,
+      message: "Home address must be at least 2 characters long",
+    },
+    maxLength: {
+      value: 30,
+      message: "Home address cannot exceed 15 characters",
+    },
   },
 };
 
