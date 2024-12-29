@@ -13,6 +13,14 @@ export interface Auth {
   commercialRegister: RcFile | undefined;
   taxId: RcFile | undefined;
 }
+export interface MerchantInfo {
+  name: string;
+  password: string;
+  confirmPassword: string;
+  email: string;
+  phoneNumber: number;
+  bio: string;
+}
 
 const ValidationSchema = {
   emailOrPhone: {
