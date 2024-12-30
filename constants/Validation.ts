@@ -17,6 +17,14 @@ export interface Auth {
   taxId: RcFile | undefined;
   homeAddress: string;
 }
+export interface MerchantInfo {
+  name: string;
+  password: string;
+  confirmPassword: string;
+  email: string;
+  phoneNumber: number;
+  bio: string;
+}
 
 const ValidationSchema = {
   emailOrPhone: {
