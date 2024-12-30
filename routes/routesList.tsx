@@ -25,6 +25,7 @@ import Categories from "@/src/components/Pages/categories";
 import AddPromoCode from "@/src/components/Pages/addPromoCode";
 import AddMerchant from "@/src/components/Pages/merchants/AddMerchant";
 import MerchantDetails from "@/src/components/Pages/merchants/MerchantDetails";
+import Faqs from "@/src/components/Pages/Faqs";
 
 export default {
   common: [
@@ -166,6 +167,14 @@ export default {
       element: (
         <DashboardLayout>
           <ContactUS />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/Faqs",
+      element: (
+        <DashboardLayout>
+          <Faqs />
         </DashboardLayout>
       ),
     },
