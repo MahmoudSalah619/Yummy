@@ -60,7 +60,7 @@ function SellerHomeView() {
   return (
     <>
       <PageHeader title="Dashboard">
-        <DatePicker />
+        <DatePicker titleOfBtn="Select dates" />
         <FilterOrganism />
       </PageHeader>
 

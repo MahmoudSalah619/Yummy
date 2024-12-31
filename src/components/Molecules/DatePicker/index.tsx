@@ -9,6 +9,7 @@ import RangeInput from "../RangeInput";
 import Button from "../../Atoms/Button";
 import SelectDate from "@/src/assets/icons/home/select-date.svg";
 import Image from "../../Atoms/Image";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 const { RangePicker } = DatePickerANTD;
 
@@ -60,7 +61,7 @@ const rangePresets: TimeRangePickerProps["presets"] = [
   },
 ];
 
-function DatePicker() {
+function DatePicker({ titleOfBtn }: { titleOfBtn?: TranslationKeyEnum }) {
   const [selectedRange, setSelectedRange] = useState<
     [Dayjs | null, Dayjs | null]
   >([dayjs().startOf("day"), dayjs().endOf("day")]);
@@ -129,7 +130,7 @@ function DatePicker() {
       <Button
         className={styles.button}
         onClick={() => setOpen((prevState) => !prevState)}
-        title="Select Date"
+        title={titleOfBtn || "Select Date"}
         variant="transparent-grey"
         suffix={
           <Image src={SelectDate} alt="Select Date" width={20} height={20} />
