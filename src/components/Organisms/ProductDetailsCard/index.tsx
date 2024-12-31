@@ -16,9 +16,9 @@ function ProductDetailsCard({ title, price, status, date }: CardDetails) {
 
   return (
     <CardWrapper className={styles.container}>
-      <Image src={item} width={100} height={100} alt="T-shirt" />
+      <Image src={item} width={120} height={120} alt="T-shirt" />
       <div className={styles.contentContainer}>
-        <div className={styles.content}>
+        <div className={styles.titleBtnContainer}>
           <Text>{title}</Text>
           <Button
             onClick={handleNavigateToEditProduct}

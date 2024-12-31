@@ -17,7 +17,7 @@ function OrderSummary() {
     <div className={styles.OrderInfo}>
       <Text
         color="grey700"
-        fontFamily="font400"
+        fontFamily="font400Nenu"
         fontSize={17}
         className={styles.OrderInfo_title}
         i18nKey="Order Summary"

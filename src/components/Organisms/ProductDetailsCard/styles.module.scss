@@ -1,20 +1,22 @@
 @use "/styles/all" as *;
 
-.ProductCardContent {
-  position: relative;
+.container {
   display: flex;
   flex-direction: row;
-
+  gap: 12px;
   .contentContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 32px;
     width: 100%;
-  }
-
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .titleBtnContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
