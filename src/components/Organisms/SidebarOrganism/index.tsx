@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 import SidebarLink from "../../Molecules/SidebarLink";
-import OrangeLogo from "@/src/assets/icons/OrangeLogo";
 import Text from "../../Atoms/Text";
 import useGetUserInfo from "@/hooks/useGetUserInfo";
 import { generalLinks, supportLinks } from "./links";
 import logoutHandler from "@/utils/logoutHandler";
+import logo from "@/src/assets/icons/Logo.svg";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 
 function SidebarOrganism() {
@@ -22,8 +22,7 @@ function SidebarOrganism() {
 
   return (
     <aside>
-      <OrangeLogo />
-
+      <img width={88} height={51} src={logo} alt="logo" />
       <div className={styles.sidebarLinksContainer}>
         <Text
           color="grey500"
