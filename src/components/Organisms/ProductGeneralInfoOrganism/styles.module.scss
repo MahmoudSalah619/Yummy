@@ -9,6 +9,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    font-family: "GothamMedium";
+    font-size: 14px;
+  }
+  .label {
+    font-family: "GothamMedium";
+    font-size: 14px;
   }
 
   .input {
@@ -26,7 +33,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   width: 100%;
+
+  font-family: "GothamMedium";
+  font-size: 14px;
 }
 
 .productStatus {

@@ -11,22 +11,22 @@ function OrderTimeline() {
     {
       process: t("order_delivered"),
       status: "Done",
-      date: "27/5/2024",
+      date: "Tuesday 20/4/2024  - 03:00PM",
     },
     {
       process: t("order_shipped"),
       status: "Done",
-      date: "27/5/2024",
+      date: "Tuesday 20/4/2024  - 03:00PM",
     },
     {
       process: t("order_accepted"),
       status: "pending",
-      date: "27/5/2024",
+      date: "Tuesday 20/4/2024  - 03:00PM",
     },
     {
       process: t("order_placed"),
       status: "pending",
-      date: "27/5/2024",
+      date: "Tuesday 20/4/2024  - 03:00PM",
     },
   ];
 

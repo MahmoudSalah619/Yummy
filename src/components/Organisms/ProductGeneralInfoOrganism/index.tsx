@@ -32,6 +32,7 @@ function ProductGeneralInfoOrganism({
           inputStyle={styles.input}
           containerStyle={styles.inputContainer}
           label="product_name_column"
+          labelStyle={styles.label}
         />
 
         <RichTextEditor
