@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import MainTableOrganism from "@/src/components/Organisms/MainTableOrganism";
-import StatusIndicator from "../../Molecules/StatusIndicator";
-import DateTimeDisplay from "../../Molecules/DateTimeDisplay";
+import StatusIndicator from "../../../Molecules/StatusIndicator";
+import DateTimeDisplay from "../../../Molecules/DateTimeDisplay";
 import Status from "@/constants/Status";
-import PageHeader from "../../Molecules/PageHeader";
-import Button from "../../Atoms/Button";
-import FilterButtons from "../../Molecules/FilterButtons";
+import PageHeader from "../../../Molecules/PageHeader";
+import Button from "../../../Atoms/Button";
+import FilterButtons from "../../../Molecules/FilterButtons";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
-import SearchFilterBarForUsers from "../../Molecules/SearchFilterForUsers";
+import SearchFilterBarForUsers from "../../../Molecules/SearchFilterForUsers";
 
 export default function UserOrganism() {
   const { t } = useAutoCompleteTranslation();

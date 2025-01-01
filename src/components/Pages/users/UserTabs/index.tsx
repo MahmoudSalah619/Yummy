@@ -1,0 +1,29 @@
+import { Tabs, TabsProps } from "antd";
+import CardWrapper from "@/src/components/Wrappers/CardWrapper";
+import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import UserProducts from "./UserProducts";
+import UserOrders from "./UserOrders";
+
+export default function UserTabs() {
+  const { t } = useAutoCompleteTranslation();
+  const onChange = (key: string) => {
+    console.log(key);
+  };
+  const items: TabsProps["items"] = [
+    {
+      key: "1",
+      label: t("Orders"),
+      children: <UserOrders hasOrders />,
+    },
+    {
+      key: "2",
+      label: t("Favorite Items"),
+      children: <UserProducts hasProducts={false} />,
+    },
+  ];
+  return (
+    <CardWrapper>
+      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+    </CardWrapper>
+  );
+}

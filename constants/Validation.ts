@@ -25,6 +25,14 @@ export interface MerchantInfo {
   phoneNumber: number;
   bio: string;
 }
+export interface UserInfo {
+  userName: string;
+  password: string;
+  confirmPassword: string;
+  email: string;
+  phoneNumber: number;
+  homeAddress: string;
+}
 
 const ValidationSchema = {
   emailOrPhone: {
