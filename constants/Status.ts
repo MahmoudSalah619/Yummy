@@ -13,6 +13,7 @@ const Status = {
   ACTIVE: "Active",
   AWAITING_APPROVAL: "Awaiting approval",
   SUSPENDED: "Suspended",
+  EXPIRED: "Expired",
 };
 
 export default Status;

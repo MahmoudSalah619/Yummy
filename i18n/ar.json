@@ -61,6 +61,7 @@
   "Save Changes": "حفظ التغييرات",
   "Brand Profile": "ملف العلامة التجارية",
   "General Info": "المعلومات العامة",
+  "Main Info": "المعلومات العامة",
   "Edit Photo": "تعديل الصورة",
   "Shop Name": "اسم المتجر",
   "Categories": "الفئات",
@@ -229,5 +230,14 @@
   "Create_New_User": "انشاء مستخدم جديد",
   "Home_address": "عنوان المنزل",
   "Discard_Changes": "تجاهل التغيرات",
-  "Confirm Password": "تاكيد كلمة المرور"
+  "Confirm Password": "تاكيد كلمة المرور",
+  "Promos": "العروض",
+  "Create promo code": "إنشاء الرمز الترويجي",
+  "start_date": "تاريخ البدء",
+  "end_date": "تاريخ الانتهاء",
+  "usage": " استخدام",
+  "Discount Percentage": "نسبة الخصم",
+  "Discount Amount": "مبلغ الخصم",
+  "time": "الوقت",
+  "Included Products": "المنتجات المضمنة"
 }

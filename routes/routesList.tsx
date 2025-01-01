@@ -28,6 +28,7 @@ import MerchantDetails from "@/src/components/Pages/merchants/MerchantDetails";
 import Faqs from "@/src/components/Pages/Faqs";
 import AddUser from "@/src/components/Pages/users/AddUser";
 import UserDetails from "@/src/components/Pages/users/UserDetails";
+import AddPromo from "@/src/components/Pages/promo/addPromo";
 
 export default {
   common: [
@@ -88,10 +89,18 @@ export default {
       ),
     },
     {
-      path: "/promo-codes",
+      path: "/promo",
       element: (
         <DashboardLayout>
           <Promo />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/promo/add-promo",
+      element: (
+        <DashboardLayout>
+          <AddPromo />
         </DashboardLayout>
       ),
     },

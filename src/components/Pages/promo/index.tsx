@@ -1,14 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../Atoms/Button";
+import PromoOrganism from "../../Organisms/Promo/PromoOrganism";
 
 function Promo() {
-  const navigate = useNavigate();
-
-  const handleNavigate = () => {
-    navigate("add-promo-code");
-  };
-
-  return <Button onClick={handleNavigate} title="Go to add promo page" />;
+  return <PromoOrganism />;
 }
 
 export default Promo;

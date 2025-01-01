@@ -61,6 +61,7 @@
   "Save Changes": "Save Changes",
   "Brand Profile": "Brand Profile",
   "General Info": "General Info",
+  "Main Info": " Main Info",
   "Edit Photo": "Edit Photo",
   "Shop Name": "Shop Name",
   "Categories": "Categories",
@@ -229,5 +230,14 @@
   "Home_address": "Home address",
   "Discard_Changes": " Discard Changes",
   "Confirm Password": "Confirm Password",
-  "Add User": "Add User"
+  "Add User": "Add User",
+  "Promos": "Promos",
+  "Create promo code": "Create promo code",
+  "start_date": "Start Date",
+  "end_date": "End Date",
+  "usage": "Usage",
+  "Discount Percentage": "Discount Percentage",
+  "Discount Amount": "Discount Amount",
+  "time": "Time",
+  "Included Products": "Included Products"
 }
