@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Checkbox, CheckboxProps } from "antd";
 import { SubmitHandler, useForm } from "react-hook-form";
-// import { useDispatch } from "react-redux";
 import Text from "@/src/components/Atoms/Text";
 import TextInput from "@/src/components/Atoms/TextInput";
 import Button from "@/src/components/Atoms/Button";
@@ -11,6 +10,7 @@ import styles from "./styles.module.scss";
 // import { login } from "@/reducers/authReducer";
 import loginHandler from "@/utils/loginHandler";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import { User } from "@/src/apis/types/auth";
 
 export default function LoginOrganism() {
   const { t } = useAutoCompleteTranslation();
@@ -26,7 +26,15 @@ export default function LoginOrganism() {
 
   const onSubmit: SubmitHandler<Auth> = (data) => {
     console.log("Form Submitted:", data);
-    loginHandler({ token: "skshdj36su3h77" });
+    const user_type =
+      data.emailOrPhone === "admin@gmail.com" ? "admin" : "seller";
+    const dummy_data = {
+      user_type,
+    };
+    loginHandler({
+      token: "skshdj36su3h77",
+      data: dummy_data as User,
+    });
     navigate("/");
     // dispatch(login("skshdj36su3h77"));
   };

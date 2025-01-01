@@ -6,7 +6,7 @@ import { RootState } from "@/reducers";
 export default function useGetUserInfo() {
   const userData = useSelector((state: RootState) => state.auth.userData);
 
-  const userType = userData?.user_type || "admin";
+  const userType = userData?.user_type;
   return {
     isAdmin: userType === "admin",
     isSeller: userType === "seller",

@@ -30,7 +30,7 @@ const baseQuery = async (
   api: BaseQueryApi,
   extraOptions: object
 ) => {
-  const lang = localStorage.getItem("gtoLang");
+  const lang = localStorage.getItem("lang");
   const languageText = lang?.includes("ar") ? "ar" : "en";
 
   const baseUrl = `${DomainUrl}/${languageText}/api`;

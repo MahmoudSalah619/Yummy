@@ -1,22 +1,22 @@
 import styles from "./styles.module.scss";
 
 export default function NavbarChangeLang() {
-  const language = localStorage.getItem("gtoLang");
+  const language = localStorage.getItem("lang");
 
   const changeLanguage = (lang: string) => () => {
     localStorage.setItem("lang", lang);
     window.location.reload();
   };
-  const isEng = language === "en";
+  const isAR = language === "ar";
 
   return (
     <div>
       <div className={styles.langCon}>
         <button
           className={styles.langBtn}
-          onClick={isEng ? changeLanguage("ar") : changeLanguage("en")}
+          onClick={isAR ? changeLanguage("en") : changeLanguage("ar")}
         >
-          {isEng ? "التغيير للعربية" : "Change To English"}
+          {isAR ? "English" : " العربية"}
         </button>
       </div>
     </div>

@@ -26,7 +26,7 @@ const useLanguageStorage: LanguageDetectorAsyncModule = {
   type: "languageDetector",
   async: true,
   detect: (callback) => {
-    const lang = localStorage.getItem("gtoLang");
+    const lang = localStorage.getItem("lang");
     if (lang) {
       moment.locale(lang);
       if (lang === "ar") {
@@ -41,7 +41,7 @@ const useLanguageStorage: LanguageDetectorAsyncModule = {
   },
   init: () => null,
   cacheUserLanguage: (language: string) => {
-    localStorage.setItem("gtoLang", language);
+    localStorage.setItem("lang", language);
     if (language === "ar") {
       document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
     } else {

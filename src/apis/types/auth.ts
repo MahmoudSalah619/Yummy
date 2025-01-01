@@ -16,11 +16,11 @@ export interface FirstLoginPasswordBody {
 
 export interface User {
   id?: number;
-  username: string;
-  first_name: string;
-  last_name: string;
-  phone: string;
-  is_new: boolean;
+  username?: string;
+  first_name?: string;
+  last_name?: string;
+  phone?: string;
+  is_new?: boolean;
   user_type: "admin" | "seller";
 }
 
