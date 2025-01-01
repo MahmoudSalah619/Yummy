@@ -67,21 +67,20 @@ function MainTableOrganism({
 
   return (
     <section className={styles.mainTable}>
-      {headerTitle && (
-        <TableHeader title={headerTitle} headerClassName={headerClassName}>
-          <div className={styles.headerCon}>
-            {children}
-            {filterBtn ? (
-              <button className={styles.filterBtn}>
-                <Image src={filter} alt="filter" width={20} height={20} />
-                Filters
-              </button>
-            ) : dateBtn ? (
-              <DatePicker />
-            ) : null}
-          </div>
-        </TableHeader>
-      )}
+      <TableHeader title={headerTitle} headerClassName={headerClassName}>
+        <div className={styles.headerCon}>
+          {children}
+          {filterBtn ? (
+            <button className={styles.filterBtn}>
+              <Image src={filter} alt="filter" width={20} height={20} />
+              Filters
+            </button>
+          ) : dateBtn ? (
+            <DatePicker />
+          ) : null}
+        </div>
+      </TableHeader>
+
       <Table
         rowSelection={rowSelection}
         columns={columns}

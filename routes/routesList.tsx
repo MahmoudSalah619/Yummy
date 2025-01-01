@@ -26,6 +26,8 @@ import AddPromoCode from "@/src/components/Pages/addPromoCode";
 import AddMerchant from "@/src/components/Pages/merchants/AddMerchant";
 import MerchantDetails from "@/src/components/Pages/merchants/MerchantDetails";
 import Faqs from "@/src/components/Pages/Faqs";
+import AddUser from "@/src/components/Pages/users/AddUser";
+import UserDetails from "@/src/components/Pages/users/UserDetails";
 
 export default {
   common: [
@@ -218,6 +220,22 @@ export default {
       element: (
         <DashboardLayout>
           <Users />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/users/add-user",
+      element: (
+        <DashboardLayout>
+          <AddUser />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/users/user-details",
+      element: (
+        <DashboardLayout>
+          <UserDetails />
         </DashboardLayout>
       ),
     },

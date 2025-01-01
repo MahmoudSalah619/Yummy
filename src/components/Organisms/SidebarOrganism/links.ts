@@ -16,15 +16,15 @@ export const generalLinks = {
     { icon: "home", label: i18n.t("Home"), href: "/" },
     { icon: "orders", label: i18n.t("Orders"), href: "/orders" },
     { icon: "package", label: i18n.t("Products"), href: "/products" },
-    { icon: "promo", label: i18n.t("Merchants"), href: "/merchants" },
-    { icon: "brand-profile", label: i18n.t("Users"), href: "/users" },
+    { icon: "brand-profile", label: i18n.t("Merchants"), href: "/merchants" },
+    { icon: "user", label: i18n.t("Users"), href: "/users" },
     {
-      icon: "brand-profile",
+      icon: "notification",
       label: i18n.t("Notifications"),
       href: "/notifications",
     },
-    { icon: "brand-profile", label: i18n.t("Promo Codes"), href: "/promo" },
-    { icon: "brand-profile", label: i18n.t("Categories"), href: "/categories" },
+    { icon: "promo", label: i18n.t("Promo Codes"), href: "/promo" },
+    { icon: "categories", label: i18n.t("Categories"), href: "/categories" },
   ],
 };
 
