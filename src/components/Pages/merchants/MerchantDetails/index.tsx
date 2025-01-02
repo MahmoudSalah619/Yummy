@@ -1,6 +1,5 @@
 import PageHeader from "@/src/components/Molecules/PageHeader";
 import styles from "./styles.module.scss";
-// import ProductReviews from "@/src/components/Molecules/ProductReviews";
 import MerchantDetailsCard from "@/src/components/Organisms/Merchant/marchentDetailsCard";
 import MerchantTabs from "../MerchantTabs";
 

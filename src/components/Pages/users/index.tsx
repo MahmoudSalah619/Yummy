@@ -1,4 +1,4 @@
-import UserOrganism from "../../Organisms/UsersOrganisms";
+import UserOrganism from "../../Organisms/User/UsersOrganisms";
 
 function Users() {
   return (

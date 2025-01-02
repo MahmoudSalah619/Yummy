@@ -5,7 +5,7 @@ export const generalLinks = {
     { icon: "home", label: i18n.t("Home"), href: "/" },
     { icon: "package", label: i18n.t("Products"), href: "/products" },
     { icon: "orders", label: i18n.t("Orders"), href: "/orders" },
-    { icon: "promo", label: i18n.t("Promo Codes"), href: "/promo" },
+    { icon: "promo", label: i18n.t("Promo Codes"), href: "/Promo" },
     {
       icon: "brand-profile",
       label: i18n.t("Brand Profile"),
@@ -23,7 +23,7 @@ export const generalLinks = {
       label: i18n.t("Notifications"),
       href: "/notifications",
     },
-    { icon: "promo", label: i18n.t("Promo Codes"), href: "/promo" },
+    { icon: "promo", label: i18n.t("Promo Codes"), href: "/Promo" },
     { icon: "categories", label: i18n.t("Categories"), href: "/categories" },
   ],
 };
