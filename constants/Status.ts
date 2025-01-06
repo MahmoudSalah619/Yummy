@@ -16,6 +16,8 @@ const Status = {
   SUSPENDED: "Suspended",
   EXPIRED: "Expired",
   PAID: "Paid",
+  read: "Read",
+  unread: "Unread",
 };
 
 export default Status;
