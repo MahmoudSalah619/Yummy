@@ -8,6 +8,8 @@ import styles from "../styles.module.scss";
 import FilterButtons from "@/src/components/Molecules/FilterButtons";
 import DatePicker from "@/src/components/Molecules/DatePicker";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import StatusIndicator from "@/src/components/Molecules/StatusIndicator";
+import Status from "@/constants/Status";
 
 function AdminHomeView() {
   const { t } = useAutoCompleteTranslation();
@@ -16,51 +18,52 @@ function AdminHomeView() {
   const recentOrders = [
     {
       title: t("invoice_column"),
-      dataIndex: "category",
-      key: "category",
+      dataIndex: "invoice",
+      key: "invoice",
     },
     {
       title: t("merchant_name_column"),
-      dataIndex: "price",
-      key: "price",
+      dataIndex: "merchantName",
+      key: "merchantName",
     },
     {
       title: t("date_column"),
-      dataIndex: "orders",
-      key: "orders",
+      dataIndex: "date",
+      key: "date",
     },
     {
       title: t("order_amount_column"),
-      dataIndex: "stock",
-      key: "stock",
+      dataIndex: "orderAmount",
+      key: "orderAmount",
     },
     {
       title: t("status_column"),
-      dataIndex: "revenue",
-      key: "revenue",
+      dataIndex: "status",
+      key: "status",
+      render: (status: string) => <StatusIndicator status={status} />,
     },
   ];
 
   const topMerchants = [
     {
       title: t("merchant_name_column"),
-      dataIndex: "category",
-      key: "category",
+      dataIndex: "merchantName",
+      key: "merchantName",
     },
     {
       title: t("Orders"),
-      dataIndex: "price",
-      key: "price",
-    },
-    {
-      title: t("Revenue"),
       dataIndex: "orders",
       key: "orders",
     },
     {
+      title: t("Revenue"),
+      dataIndex: "revenue",
+      key: "revenue",
+    },
+    {
       title: t("Rating"),
-      dataIndex: "stock",
-      key: "stock",
+      dataIndex: "rating",
+      key: "rating",
     },
   ];
 
@@ -73,21 +76,27 @@ function AdminHomeView() {
 
   const ordersData = Array.from({ length: 101 }, (_, i) => ({
     key: (i + 1).toString(),
-    productName: `Product Name`,
-    category: "Men, Hoodies",
-    price: "1234",
-    orders: "1234",
-    stock: "1234",
-    revenue: "EGP 123,456",
+    invoice: `# ${i + 11}`,
+    merchantName: "Merchant Name",
+    date: "Mar 1, 2024",
+    orderAmount: "EGP 1000",
+    status:
+      i % 5 === 0
+        ? Status.PAID
+        : i % 5 === 1
+          ? Status.PAID
+          : i % 5 === 2
+            ? Status.REFUNDED
+            : i % 5 === 3
+              ? Status.CANCELLED
+              : Status.REFUNDED,
   }));
   const merchantData = Array.from({ length: 7 }, (_, i) => ({
     key: (i + 1).toString(),
-    productName: `Product Name`,
-    category: "Men, Hoodies",
-    price: "1234",
+    merchantName: `Merchant Name`,
     orders: "1234",
-    stock: "1234",
-    revenue: "EGP 123,456",
+    rating: "4.5",
+    revenue: "EGP 1,234",
   }));
 
   const handleDateFilterChange = (key: string) => {

@@ -15,6 +15,7 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
   const iconMap: { [key: string]: string } = {
     [Status.PUBLISHED]: PublishedIcon,
     [Status.ACTIVE]: PublishedIcon,
+    [Status.PAID]: PublishedIcon,
     [Status.IN_REVIEW]: InReviewIcon,
     [Status.REJECTED]: RejectedIcon,
     [Status.SUSPENDED]: RejectedIcon,
@@ -23,12 +24,14 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
     [Status.IN_DRAFT]: InDraftIcon,
     [Status.CLOSED]: ClosedIcon,
     [Status.INACTIVE]: InactiveIcon,
+    [Status.REFUNDED]: InactiveIcon,
     [Status.AWAITING_APPROVAL]: awaitingApp,
   };
 
   const statusStyleMap: { [key: string]: string } = {
     [Status.PUBLISHED]: styles.published,
     [Status.ACTIVE]: styles.published,
+    [Status.PAID]: styles.published,
     [Status.IN_REVIEW]: styles.inReview,
     [Status.REJECTED]: styles.rejected,
     [Status.SUSPENDED]: styles.rejected,
@@ -38,6 +41,7 @@ function StatusIndicator({ status }: StatusIndicatorProps) {
     [Status.AWAITING_APPROVAL]: styles.awaitApp,
     [Status.IN_DRAFT]: styles.inDraft,
     [Status.INACTIVE]: styles.inactive,
+    [Status.REFUNDED]: styles.inactive,
   };
 
   return (

@@ -5,6 +5,7 @@ const Status = {
   REJECTED: "Rejected",
   IN_DRAFT: "In draft",
   INACTIVE: "Inactive",
+  REFUNDED: "Refunded",
   OPEN: "Open",
   PENDING: "Pending",
   CLOSED: "Closed",
@@ -14,6 +15,7 @@ const Status = {
   AWAITING_APPROVAL: "Awaiting approval",
   SUSPENDED: "Suspended",
   EXPIRED: "Expired",
+  PAID: "Paid",
 };
 
 export default Status;
