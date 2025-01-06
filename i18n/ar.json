@@ -239,5 +239,12 @@
   "Discount Percentage": "نسبة الخصم",
   "Discount Amount": "مبلغ الخصم",
   "time": "الوقت",
-  "Included Products": "المنتجات المضمنة"
+  "Included Products": "المنتجات المضمنة",
+  "Create new category": "Create new category",
+  "Create new sub-category": "Create new sub-category",
+  "Add Category": "Add Category",
+  "category_name": "category_name",
+  "Category Description": "Category Description",
+  "Add Sub Product": "Add Sub Product",
+  "Parent Category": "Parent Category"
 }

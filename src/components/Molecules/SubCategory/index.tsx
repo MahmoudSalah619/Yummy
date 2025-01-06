@@ -4,7 +4,7 @@ import Text from "../../Atoms/Text";
 import Button from "../../Atoms/Button";
 import { CategoriesList } from "./types";
 
-function SubCategory({ Category }: CategoriesList) {
+function SubCategory({ Category, onClick }: CategoriesList) {
   return (
     <div className={styles.SubCategoryLine}>
       <Text fontSize={14} fontFamily="font400" color="grey900">
@@ -17,6 +17,7 @@ function SubCategory({ Category }: CategoriesList) {
           fontFamily="font500"
           color="black"
           title="view_button"
+          onClick={onClick}
         />
         <Button
           fontSize={14}

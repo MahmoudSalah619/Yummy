@@ -239,5 +239,12 @@
   "Discount Percentage": "Discount Percentage",
   "Discount Amount": "Discount Amount",
   "time": "Time",
-  "Included Products": "Included Products"
+  "Included Products": "Included Products",
+  "Create new category": "Create new category",
+  "Create new sub-category": "Create new sub-category",
+  "Add Category": "Add Category",
+  "category_name": "Category Name",
+  "Category Description": "Category Description",
+  "Add Sub Product": "Add Sub Product",
+  "Parent Category": "Parent Category"
 }
