@@ -244,5 +244,12 @@
   "Read": "Read",
   "Unread": "Unread",
   "Call User": "Call User",
-  "Reply using e-mail": "Reply using e-mail"
+  "Reply using e-mail": "Reply using e-mail",
+  "Create new category": "Create new category",
+  "Create new sub-category": "Create new sub-category",
+  "Add Category": "Add Category",
+  "category_name": "Category Name",
+  "Category Description": "Category Description",
+  "Add Sub Product": "Add Sub Product",
+  "Parent Category": "Parent Category"
 }

@@ -31,6 +31,9 @@ import UserDetails from "@/src/components/Pages/users/UserDetails";
 import AddPromo from "@/src/components/Pages/promo/addPromo";
 import Messages from "@/src/components/Pages/message";
 import MessageDetails from "@/src/components/Pages/message/messageDetails";
+import SubCategories from "@/src/components/Pages/categories/subCategories";
+import AddSubCategory from "@/src/components/Pages/categories/AddSubCategory";
+import AddCategory from "@/src/components/Pages/categories/AddCategory";
 
 export default {
   common: [
@@ -263,6 +266,30 @@ export default {
       element: (
         <DashboardLayout>
           <Categories />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/categories/sub-categories",
+      element: (
+        <DashboardLayout>
+          <SubCategories />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/categories/add-sub-category",
+      element: (
+        <DashboardLayout>
+          <AddSubCategory />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/categories/add-category",
+      element: (
+        <DashboardLayout>
+          <AddCategory />
         </DashboardLayout>
       ),
     },
