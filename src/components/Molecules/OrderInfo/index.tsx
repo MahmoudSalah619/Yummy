@@ -2,7 +2,12 @@ import Text from "../../Atoms/Text";
 import styles from "./styles.module.scss";
 import { OrderInfoProps } from "./types";
 
-export default function OrderInfo({ title, status, isMarked }: OrderInfoProps) {
+export default function OrderInfo({
+  title,
+  status,
+  isMarked,
+  isSeller,
+}: OrderInfoProps) {
   return (
     <div className={styles.cardLine}>
       <Text fontSize={16} fontFamily="font500" color="grey900">
@@ -12,7 +17,7 @@ export default function OrderInfo({ title, status, isMarked }: OrderInfoProps) {
         fontSize={16}
         fontFamily="font500"
         color="grey900"
-        className={isMarked ? styles.marked : ""}
+        className={isMarked ? styles.marked : isSeller ? styles.title : ""}
       >
         {status}
       </Text>

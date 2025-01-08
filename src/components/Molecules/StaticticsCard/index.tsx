@@ -6,12 +6,9 @@ import { StaticticsCardProps } from "./types";
 function StaticticsCard({ label, value, icon }: StaticticsCardProps) {
   return (
     <div className={styles.StaticticsCard}>
-      <Text
-        fontSize={14}
-        fontFamily="font500"
-        color="grey700"
-        i18nKey={label}
-      />
+      <Text fontSize={14} fontFamily="font500" color="grey700">
+        {label}
+      </Text>
 
       <div className={styles.iconCon}>
         {icon && <Image alt="icon" src={icon} width={35} height={35} />}

@@ -25,12 +25,7 @@ export default function MerchantProducts() {
       dataIndex: "category",
       key: "category",
     },
-    {
-      title: t("created_on_column"),
-      dataIndex: "createdOn",
-      key: "createdOn",
-      render: () => <DateTimeDisplay date="20 May 2024" time="12:00 PM" />,
-    },
+
     {
       title: t("published_on_column"),
       dataIndex: "publishedOn",
@@ -69,7 +64,6 @@ export default function MerchantProducts() {
     key: (i + 1).toString(),
     productName: `Product ${i + 1}`,
     category: "Men, Hoodies",
-    createdOn: "20 May 2024 12:00 PM",
     publishedOn: "20 May 2024 12:00 PM",
     price: "1234",
     orders: "1234",

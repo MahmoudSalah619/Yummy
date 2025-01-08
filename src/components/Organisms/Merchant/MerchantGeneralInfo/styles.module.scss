@@ -15,7 +15,10 @@
     border: 1px solid $grey200;
   }
 }
-
+.titleCon {
+  font-family: "GothamMedium";
+  font-size: 14px !important;
+}
 .selectionsHolder {
   display: flex;
   gap: 32px;

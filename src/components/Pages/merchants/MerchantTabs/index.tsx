@@ -41,13 +41,12 @@ export default function MerchantTabs() {
     },
   ];
   return (
-    <CardWrapper>
+    <CardWrapper className={styles.container}>
       <Tabs
-        tabBarStyle={{ color: "red" }}
         defaultActiveKey="1"
         items={items}
         onChange={onChange}
-        className={styles.tabs}
+        className="merchantTab"
       />
     </CardWrapper>
   );

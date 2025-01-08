@@ -19,7 +19,6 @@ export default function MerchantOrganism() {
     { key: Status.ACTIVE, label: t("active_filter") },
     { key: Status.INACTIVE, label: t("in_active_filter") },
     { key: Status.SUSPENDED, label: t("suspended_filter") },
-    { key: Status.CLOSED, label: t("closed_filter") },
     { key: Status.AWAITING_APPROVAL, label: t("awaiting_approval") },
   ];
 
@@ -68,7 +67,7 @@ export default function MerchantOrganism() {
           : i % 5 === 2
             ? Status.SUSPENDED
             : i % 5 === 3
-              ? Status.CLOSED
+              ? Status.ACTIVE
               : Status.INACTIVE,
     numberOfProduct: "123,45",
     revenue: "EGP 123,456",
@@ -90,7 +89,10 @@ export default function MerchantOrganism() {
       <PageHeader title="Merchants">
         <Button title="Export as CSV" variant="transparent-grey" />
         <Button title="Import as CSV" variant="transparent-grey" />
-        <Button title="Add Merchant" onClick={() => navigate("add-merchant")} />
+        <Button
+          title="Create new merchant"
+          onClick={() => navigate("add-merchant")}
+        />
       </PageHeader>
 
       <MainTableOrganism

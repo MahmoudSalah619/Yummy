@@ -141,7 +141,7 @@ function Orders() {
           isGrayButtons
         />
 
-        <DatePicker />
+        <DatePicker titleOfBtn="Select dates" />
       </div>
 
       <div className={styles.staticticsContainer}>

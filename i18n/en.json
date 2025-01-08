@@ -148,7 +148,7 @@
   "published_filter": "Published",
   "in_review_filter": "In review",
   "rejected_filter": "Rejected",
-  "suspended_filter": "Suspend",
+  "suspended_filter": "Suspended",
   "active_filter": "Active",
   "in_active_filter": "Inactive",
   "in_draft_filter": "In draft",
@@ -254,5 +254,9 @@
   "category_name": "Category Name",
   "Category Description": "Category Description",
   "Add Sub Product": "Add Sub Product",
-  "Parent Category": "Parent Category"
+  "Parent Category": "Parent Category",
+  "seller_name": "Seller name",
+  "Create new merchant": "Create new merchant",
+  "approved": "Approve",
+  "rejected": "Reject"
 }

@@ -9,8 +9,7 @@ export default function AddMerchant() {
     <main className={styles.container}>
       <PageHeader title="Add Merchant">
         <Button title="Discard Changes" variant="transparent-error" />
-        <Button title="Save Changes" variant="transparent-grey" />
-        <Button title="Publish" />
+        <Button title="Create new merchant" />
       </PageHeader>
 
       <MerchantGeneralInfo />

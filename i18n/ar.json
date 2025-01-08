@@ -254,5 +254,9 @@
   "category_name": "category_name",
   "Category Description": "Category Description",
   "Add Sub Product": "Add Sub Product",
-  "Parent Category": "Parent Category"
+  "Parent Category": "Parent Category",
+  "seller_name": "اسم البائع",
+  "Create new merchant": "Create new merchant",
+  "approved": "approve",
+  "rejected": "Reject"
 }
