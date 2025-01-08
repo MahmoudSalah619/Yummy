@@ -27,7 +27,7 @@ export default function MessagesOrganism() {
       dataIndex: "status",
       key: "status",
       render: (status: string) => (
-        <MessageIndicator isRead={status === Status.read ? "true" : "false"} />
+        <MessageIndicator isRead={status === Status.read} />
       ),
     },
     {
