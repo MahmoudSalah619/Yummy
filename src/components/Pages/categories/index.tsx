@@ -1,10 +1,10 @@
+import CategoriesOrganism from "../../Organisms/CategoriesOrganism";
 import styles from "./styles.module.scss";
-import PageHeader from "../../Molecules/PageHeader";
 
 function Categories() {
   return (
     <main className={styles.container}>
-      <PageHeader title="Categories" />
+      <CategoriesOrganism />
     </main>
   );
 }

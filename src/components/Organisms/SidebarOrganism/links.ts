@@ -25,6 +25,7 @@ export const generalLinks = {
     },
     { icon: "promo", label: i18n.t("Promo Codes"), href: "/Promo" },
     { icon: "categories", label: i18n.t("Categories"), href: "/categories" },
+    { icon: "message", label: i18n.t("Messages"), href: "/messages" },
   ],
 };
 

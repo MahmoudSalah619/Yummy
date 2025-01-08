@@ -1,10 +1,24 @@
 @use "/styles/all" as *;
 
-.SubCategoriesContent {
-  .headerContaier {
-    margin-bottom: 24px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .titleCon {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
-  .categoriesList {
-    margin-bottom: 30px;
+  .btnCon {
+    display: flex;
+    gap: 15px;
+  }
+  .SubCategoriesContent {
+    .headerContaier {
+      margin-bottom: 24px;
+    }
+    .categoriesList {
+      margin-bottom: 30px;
+    }
   }
 }

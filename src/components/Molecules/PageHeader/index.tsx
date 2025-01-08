@@ -8,18 +8,24 @@ function PageHeader({
   title,
   children,
   fontSize = 36,
+  childCon,
 }: {
-  title: TranslationKeyEnum;
+  title?: TranslationKeyEnum;
   children?: ReactNode;
   fontSize?: number;
+  childCon?: string;
 }) {
   const { t } = useAutoCompleteTranslation();
   return (
     <div className={styles.container}>
-      <Text fontSize={fontSize} fontFamily="font500" color="grey900">
-        {t(title)}
-      </Text>
-      <div className={styles.childrenContainer}>{children}</div>
+      {title && (
+        <Text fontSize={fontSize} fontFamily="font500" color="grey900">
+          {t(title)}
+        </Text>
+      )}
+      <div className={`${styles.childrenContainer} ${childCon}`}>
+        {children}
+      </div>
     </div>
   );
 }
