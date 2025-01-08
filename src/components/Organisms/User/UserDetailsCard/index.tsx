@@ -28,18 +28,20 @@ function UserDetailsCard({
           </Text>
         </div>
         <div className={styles.detailsCon}>
-          <div className={styles.details}>
-            <Text fontSize={16} fontFamily="font500">
-              {t("status_column")}
-            </Text>
+          {status && (
+            <div className={styles.details}>
+              <Text fontSize={16} fontFamily="font500">
+                {t("status_column")}
+              </Text>
 
-            <SelectionInput
-              containerStyle={styles.selectionContainerInput}
-              options={dummyOptions}
-              placeholder={t("Date Published")}
-              value={status}
-            />
-          </div>
+              <SelectionInput
+                containerStyle={styles.selectionContainerInput}
+                options={dummyOptions}
+                placeholder={t("Date Published")}
+                value={status}
+              />
+            </div>
+          )}
           <div className={styles.details}>
             <Text fontSize={16} fontFamily="font500">
               {t("join_date_column")}

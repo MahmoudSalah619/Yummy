@@ -1,5 +1,5 @@
 export interface CardDetails {
-  status: string;
+  status?: string;
   joinDate: string;
   email: string;
   phoneNumber: string;

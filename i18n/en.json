@@ -239,5 +239,10 @@
   "Discount Percentage": "Discount Percentage",
   "Discount Amount": "Discount Amount",
   "time": "Time",
-  "Included Products": "Included Products"
+  "Included Products": "Included Products",
+  "Messages": "Messages",
+  "Read": "Read",
+  "Unread": "Unread",
+  "Call User": "Call User",
+  "Reply using e-mail": "Reply using e-mail"
 }
