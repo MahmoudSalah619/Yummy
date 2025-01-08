@@ -122,6 +122,7 @@ function ProductOrganism() {
       <SearchFilterBar />
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}

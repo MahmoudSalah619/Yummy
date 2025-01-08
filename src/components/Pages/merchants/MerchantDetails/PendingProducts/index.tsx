@@ -77,7 +77,11 @@ export default function PendingProducts() {
   }));
   return (
     <div>
-      <MainTableOrganism columns={columns} dataSource={allData} />
+      <MainTableOrganism
+        columns={columns}
+        dataSource={allData}
+        showHeader={false}
+      />
     </div>
   );
 }

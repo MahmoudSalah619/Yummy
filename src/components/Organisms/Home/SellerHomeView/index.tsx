@@ -72,6 +72,7 @@ function SellerHomeView() {
       </div>
 
       <MainTableOrganism
+        showHeader
         headerTitle={t("Best Sellers")}
         columns={columns}
         dataSource={data}

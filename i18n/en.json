@@ -239,5 +239,8 @@
   "Discount Percentage": "Discount Percentage",
   "Discount Amount": "Discount Amount",
   "time": "Time",
-  "Included Products": "Included Products"
+  "Included Products": "Included Products",
+  "Total Merchants": "Total Merchants",
+  "Total Customers": "Total Customers",
+  "Total Visits": "Total Visits"
 }

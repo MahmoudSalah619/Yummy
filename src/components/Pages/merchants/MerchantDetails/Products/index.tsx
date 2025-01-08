@@ -89,6 +89,7 @@ export default function MerchantProducts() {
   return (
     <div>
       <MainTableOrganism
+        showHeader={false}
         columns={columns}
         dataSource={allData}
         rowOnClick={() => navigate("product-details")}

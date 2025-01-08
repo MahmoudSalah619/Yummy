@@ -150,7 +150,12 @@ function Orders() {
         ))}
       </div>
 
-      <MainTableOrganism columns={columns} dataSource={filteredData} filterBtn>
+      <MainTableOrganism
+        columns={columns}
+        dataSource={filteredData}
+        filterBtn
+        showHeader
+      >
         <FilterButtons
           filters={filters}
           activeFilter={activeFilter}

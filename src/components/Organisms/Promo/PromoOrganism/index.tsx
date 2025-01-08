@@ -76,6 +76,7 @@ export default function PromoOrganism() {
       <SearchFilterBarForPromo />
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={allData}
         headerClassName={styles.headerContainer}

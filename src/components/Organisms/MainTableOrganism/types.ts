@@ -26,6 +26,7 @@ export interface MainTableOrganismProps {
   filterBtn?: boolean;
   dateBtn?: boolean;
   onSelectionChange?: (selectedKeys: string[]) => void;
+  showHeader: boolean;
 }
 
 export interface CustomPaginationProps {

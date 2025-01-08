@@ -82,7 +82,11 @@ export default function UserOrders({ hasOrders }: { hasOrders: boolean }) {
   return (
     <div>
       {hasOrders ? (
-        <MainTableOrganism columns={columns} dataSource={allData} />
+        <MainTableOrganism
+          columns={columns}
+          dataSource={allData}
+          showHeader={false}
+        />
       ) : (
         <div className={styles.emptyState}>
           <Image src={bag} alt="bag" height={120} width={120} />

@@ -77,7 +77,11 @@ export default function MerchantOrders() {
   }));
   return (
     <div>
-      <MainTableOrganism columns={columns} dataSource={allData} />
+      <MainTableOrganism
+        showHeader={false}
+        columns={columns}
+        dataSource={allData}
+      />
     </div>
   );
 }

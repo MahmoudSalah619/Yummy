@@ -11,9 +11,9 @@ import Text from "../../Atoms/Text";
 
 function RevenueLineChart({ data }: { data?: [] }) {
   const fakeData = [
-    { month: "0", orders: 0 },
+    { month: "", orders: 0 },
     { month: "Jan", orders: 4400 },
-    { month: "Feb", orders: 4398 },
+    { month: "Feb", orders: 4798 },
     { month: "Mar", orders: 6398 },
     { month: "Apr", orders: 8398 },
     { month: "May", orders: 7398 },

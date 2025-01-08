@@ -94,6 +94,7 @@ export default function MerchantOrganism() {
       </PageHeader>
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}
