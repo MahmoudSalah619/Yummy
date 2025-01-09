@@ -8,8 +8,12 @@ function OrderDetails() {
 
   const OrderDetailsArray = [
     {
-      prop: t("order_status_title"),
+      prop: t("status_column"),
       value: "Shipped",
+    },
+    {
+      prop: t("seller_name"),
+      value: "AD Customs",
     },
     {
       prop: t("order_date_label"),
@@ -53,6 +57,7 @@ function OrderDetails() {
             title={order.prop}
             status={order.value}
             isMarked={index === 0 && true}
+            isSeller={index === 1 && true}
           />
         );
       })}

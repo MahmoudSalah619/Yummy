@@ -10,6 +10,7 @@ import DatePicker from "@/src/components/Molecules/DatePicker";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import StatusIndicator from "@/src/components/Molecules/StatusIndicator";
 import Status from "@/constants/Status";
+import TotalChart from "../../TotalCharts";
 
 function AdminHomeView() {
   const { t } = useAutoCompleteTranslation();
@@ -120,6 +121,9 @@ function AdminHomeView() {
         <RevenueLineChart />
         <OrdersBarChart />
       </div>
+      <div>
+        <TotalChart />
+      </div>
 
       <div className="flex flex-gap-large flex-align-start">
         <div className="flex-grow-1">
@@ -128,6 +132,7 @@ function AdminHomeView() {
             columns={recentOrders}
             dataSource={ordersData}
             headerClassName={styles.headerContainer}
+            showHeader
           >
             <FilterOrganism />
           </MainTableOrganism>
@@ -138,6 +143,7 @@ function AdminHomeView() {
           columns={topMerchants}
           dataSource={merchantData}
           showPagination={false}
+          showHeader
           headerClassName={styles.headerContainer}
         />
       </div>

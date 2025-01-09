@@ -88,6 +88,7 @@ export default function UserOrganism() {
       <SearchFilterBarForUsers />
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}

@@ -72,6 +72,7 @@ export default function UserProducts({
     <div>
       {hasProducts ? (
         <MainTableOrganism
+          showHeader={false}
           columns={columns}
           dataSource={allData}
           rowOnClick={() => navigate("product-details")}

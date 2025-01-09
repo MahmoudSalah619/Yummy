@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../Atoms/Button";
 import Image from "../../Atoms/Image";
 import Text from "../../Atoms/Text";
 import CardWrapper from "../../Wrappers/CardWrapper";
@@ -8,9 +6,7 @@ import blackStar from "@/src/assets/icons/stars/blackStar.svg";
 import greyStar from "@/src/assets/icons/stars/greyStar.svg";
 import yellowStar from "@/src/assets/icons/stars/yellowStar.svg";
 
-function ProductReviews() {
-  const navigate = useNavigate();
-
+function ProductFullReviews() {
   const reviews = [
     {
       id: 1,
@@ -25,6 +21,34 @@ function ProductReviews() {
       stars: 4,
       author: "James",
       date: "October 25, 2024",
+    },
+    {
+      id: 3,
+      text: "The sneakers are stylish and surprisingly comfortable. I wore them for a long walk, and they didn’t hurt at all. The design is sleek and goes well with both casual and semi-formal outfits. The sole is durable, and the price point is just right. Great value for money!",
+      stars: 5,
+      author: "Emily",
+      date: "September 14, 2024",
+    },
+    {
+      id: 3,
+      text: "The sneakers are stylish and surprisingly comfortable. I wore them for a long walk, and they didn’t hurt at all. The design is sleek and goes well with both casual and semi-formal outfits. The sole is durable, and the price point is just right. Great value for money!",
+      stars: 5,
+      author: "Emily",
+      date: "September 14, 2024",
+    },
+    {
+      id: 3,
+      text: "The sneakers are stylish and surprisingly comfortable. I wore them for a long walk, and they didn’t hurt at all. The design is sleek and goes well with both casual and semi-formal outfits. The sole is durable, and the price point is just right. Great value for money!",
+      stars: 5,
+      author: "Emily",
+      date: "September 14, 2024",
+    },
+    {
+      id: 3,
+      text: "The sneakers are stylish and surprisingly comfortable. I wore them for a long walk, and they didn’t hurt at all. The design is sleek and goes well with both casual and semi-formal outfits. The sole is durable, and the price point is just right. Great value for money!",
+      stars: 5,
+      author: "Emily",
+      date: "September 14, 2024",
     },
     {
       id: 3,
@@ -126,14 +150,9 @@ function ProductReviews() {
             </Text>
           </CardWrapper>
         ))}
-
-        <Button
-          title="See more"
-          onClick={() => navigate("/products/product-details/review")}
-        />
       </div>
     </CardWrapper>
   );
 }
 
-export default ProductReviews;
+export default ProductFullReviews;

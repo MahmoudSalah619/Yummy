@@ -19,7 +19,7 @@ export const generalLinks = {
     { icon: "brand-profile", label: i18n.t("Merchants"), href: "/merchants" },
     { icon: "user", label: i18n.t("Users"), href: "/users" },
     {
-      icon: "notification",
+      icon: "bell",
       label: i18n.t("Notifications"),
       href: "/notifications",
     },

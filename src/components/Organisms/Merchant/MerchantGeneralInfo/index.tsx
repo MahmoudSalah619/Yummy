@@ -44,6 +44,7 @@ export default function MerchantGeneralInfo() {
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
             label="Merchant Name"
+            labelStyle={styles.titleCon}
             reactHookFormProps={{
               ...register("name", ValidationSchema.brandName),
             }}
@@ -51,10 +52,11 @@ export default function MerchantGeneralInfo() {
             errorMsg={errors.name?.message}
           />
           <TextInput
-            type="text"
+            type="password"
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
             label="Password"
+            labelStyle={styles.titleCon}
             reactHookFormProps={{
               ...register("password", ValidationSchema.NewPassword),
             }}
@@ -77,6 +79,7 @@ export default function MerchantGeneralInfo() {
             type="password"
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
+            labelStyle={styles.titleCon}
             label="confirm password"
             status={errors.confirmPassword ? "error" : "default"}
             reactHookFormProps={{
@@ -92,6 +95,7 @@ export default function MerchantGeneralInfo() {
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
             label="Email Address"
+            labelStyle={styles.titleCon}
             reactHookFormProps={{
               ...register("email", ValidationSchema.email),
             }}
@@ -102,6 +106,7 @@ export default function MerchantGeneralInfo() {
             type="number"
             inputStyle={styles.input}
             containerStyle={styles.inputContainer}
+            labelStyle={styles.titleCon}
             label="phone_number_label"
             reactHookFormProps={{
               ...register("phoneNumber", ValidationSchema.phoneNumber),
@@ -111,6 +116,7 @@ export default function MerchantGeneralInfo() {
           />
 
           <RichTextEditor
+            label="Merchant Bio"
             containerStyle={styles.inputContainer}
             onChange={(value) => setValue("bio", value)}
           />

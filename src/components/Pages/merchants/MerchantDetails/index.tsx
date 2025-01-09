@@ -6,7 +6,7 @@ import MerchantTabs from "../MerchantTabs";
 export default function MerchantDetails() {
   return (
     <main className={styles.container}>
-      <PageHeader title="Merchant Name" />
+      <PageHeader title="Merchant Name" titleImg />
 
       <MerchantDetailsCard
         status="Active"

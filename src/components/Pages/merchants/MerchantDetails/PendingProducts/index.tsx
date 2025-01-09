@@ -11,12 +11,17 @@ export default function PendingProducts() {
   const navigate = useNavigate();
 
   const columns = [
-    { title: t("invoice_column"), dataIndex: "invoice", key: "invoice" },
-    { title: t("date_column"), dataIndex: "date", key: "date" },
+    { title: t("product_name_column"), dataIndex: "product", key: "product" },
+    { title: t("category_column"), dataIndex: "category", key: "category" },
     {
-      title: t("order_amount_column"),
-      dataIndex: "orderAmount",
-      key: "orderAmount",
+      title: t("price_column"),
+      dataIndex: "price",
+      key: "price",
+    },
+    {
+      title: t("stock_column"),
+      dataIndex: "stock",
+      key: "stock",
     },
     {
       title: t("status_column"),
@@ -24,32 +29,17 @@ export default function PendingProducts() {
       key: "status",
       render: (status: string) => <StatusIndicator status={status} />,
     },
-    {
-      title: t("customer_name_title"),
-      dataIndex: "customerName",
-      key: "customerName",
-    },
-    {
-      title: t("payment_method_title"),
-      dataIndex: "paymentMethod",
-      key: "paymentMethod",
-    },
+
     {
       title: t("actions_column"),
       dataIndex: "actions",
       key: "actions",
       render: () => (
         <div className={styles.actions}>
+          <Button title="approved" fontColor="dark" />
           <Button
-            title="view_button"
-            variant="transparet"
-            fontColor="dark"
-            onClick={() => navigate("/orders/order-details")}
-          />
-          <Button
-            title="Edit"
-            variant="transparet"
-            fontColor="orange500"
+            title="rejected"
+            variant="transparent-grey"
             onClick={() => navigate("/products/edit-product")}
           />
         </div>
@@ -58,9 +48,10 @@ export default function PendingProducts() {
   ];
   const allData = Array.from({ length: 101 }, (_, i) => ({
     key: (i + 1).toString(),
-    invoice: `#${i + 1}`,
-    date: "Mar 1, 2024",
-    orderAmount: "EGP 1,000",
+    product: `Product Name`,
+    category: "Men, Hoodies",
+    price: "EGP 1234",
+    stock: "1234",
     status:
       i % 5 === 0
         ? Status.OPEN
@@ -71,13 +62,15 @@ export default function PendingProducts() {
             : i % 5 === 3
               ? Status.CANCELLED
               : Status.OVERDUE,
-    customerName: "Mohamed",
-    paymentMethod: "Cash on delivery",
     Actions: "Actions",
   }));
   return (
     <div>
-      <MainTableOrganism columns={columns} dataSource={allData} />
+      <MainTableOrganism
+        columns={columns}
+        dataSource={allData}
+        showHeader={false}
+      />
     </div>
   );
 }

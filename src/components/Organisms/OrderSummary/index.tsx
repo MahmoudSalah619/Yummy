@@ -27,7 +27,9 @@ function OrderSummary() {
           return (
             <div className={styles.orderInfo_line}>
               <Text>{item.prop}</Text>
-              <Text>EGP {item.value}</Text>
+              <Text>
+                {item.prop === "Discount" && "- "}EGP {item.value}
+              </Text>
             </div>
           );
         })}

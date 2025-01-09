@@ -9,6 +9,8 @@ import StaticticsCardsContent from "../../StaticticsCardsContent";
 import MainTableOrganism from "../../MainTableOrganism";
 import styles from "../styles.module.scss";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
+import star from "@/src/assets/icons/stars/yellowStar.svg";
+import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
 
 function SellerHomeView() {
   const { t } = useAutoCompleteTranslation();
@@ -57,6 +59,17 @@ function SellerHomeView() {
     stock: "1234",
     revenue: "EGP 123,456",
   }));
+  const Statictics = [
+    { id: "1", label: "Revenue" as TranslationKeyEnum, value: "EGP 100,280" },
+    { id: "2", label: "Orders" as TranslationKeyEnum, value: "1405" },
+    { id: "3", label: "Orders in progress" as TranslationKeyEnum, value: "71" },
+    {
+      id: "2",
+      label: "Avg. Rating" as TranslationKeyEnum,
+      value: "4.4",
+      icon: star,
+    },
+  ];
   return (
     <>
       <PageHeader title="Dashboard">
@@ -64,7 +77,7 @@ function SellerHomeView() {
         <FilterOrganism />
       </PageHeader>
 
-      <StaticticsCardsContent />
+      <StaticticsCardsContent Statictics={Statictics} />
 
       <div className={styles.chartContainer}>
         <RevenueLineChart />
@@ -72,6 +85,7 @@ function SellerHomeView() {
       </div>
 
       <MainTableOrganism
+        showHeader
         headerTitle={t("Best Sellers")}
         columns={columns}
         dataSource={data}

@@ -141,7 +141,7 @@ function Orders() {
           isGrayButtons
         />
 
-        <DatePicker />
+        <DatePicker titleOfBtn="Select dates" />
       </div>
 
       <div className={styles.staticticsContainer}>
@@ -150,7 +150,12 @@ function Orders() {
         ))}
       </div>
 
-      <MainTableOrganism columns={columns} dataSource={filteredData} filterBtn>
+      <MainTableOrganism
+        columns={columns}
+        dataSource={filteredData}
+        filterBtn
+        showHeader
+      >
         <FilterButtons
           filters={filters}
           activeFilter={activeFilter}

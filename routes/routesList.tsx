@@ -34,6 +34,7 @@ import MessageDetails from "@/src/components/Pages/message/messageDetails";
 import SubCategories from "@/src/components/Pages/categories/subCategories";
 import AddSubCategory from "@/src/components/Pages/categories/AddSubCategory";
 import AddCategory from "@/src/components/Pages/categories/AddCategory";
+import Reviews from "@/src/components/Pages/products/Reviews";
 
 export default {
   common: [
@@ -66,6 +67,14 @@ export default {
       element: (
         <DashboardLayout>
           <ProductDetails />
+        </DashboardLayout>
+      ),
+    },
+    {
+      path: "/products/product-details/review",
+      element: (
+        <DashboardLayout>
+          <Reviews />
         </DashboardLayout>
       ),
     },

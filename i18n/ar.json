@@ -240,6 +240,9 @@
   "Discount Amount": "مبلغ الخصم",
   "time": "الوقت",
   "Included Products": "المنتجات المضمنة",
+  "Total Merchants": "Total Merchants",
+  "Total Customers": "Total Customers",
+  "Total Visits": "Total Visits",
   "Messages": "الرسائل",
   "read": "قراءة",
   "unread": "غير مقروء",
@@ -251,5 +254,9 @@
   "category_name": "category_name",
   "Category Description": "Category Description",
   "Add Sub Product": "Add Sub Product",
-  "Parent Category": "Parent Category"
+  "Parent Category": "Parent Category",
+  "seller_name": "اسم البائع",
+  "Create new merchant": "Create new merchant",
+  "approved": "approve",
+  "rejected": "Reject"
 }

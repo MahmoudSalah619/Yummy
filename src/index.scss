@@ -258,9 +258,14 @@ button {
   font-size: 14px;
   border: 1px solid $grey200;
 }
-.ant-tabs-tab-btn:first-child {
-  border-radius: 10px;
+
+.merchantTab .ant-tabs-nav-list .ant-tabs-tab:first-of-type .ant-tabs-tab-btn {
+  border-radius: 10px 0 0 10px;
 }
+.ant-tabs-nav-list div:nth-child(5) .ant-tabs-tab-btn {
+  border-radius: 0 10px 10px 0 !important;
+}
+
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: $background !important;
   background-color: $orange500;

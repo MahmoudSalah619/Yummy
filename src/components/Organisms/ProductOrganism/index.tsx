@@ -23,7 +23,7 @@ function ProductOrganism() {
     { key: Status.PUBLISHED, label: t("published_filter") },
     { key: Status.IN_REVIEW, label: t("in_review_filter") },
     { key: Status.REJECTED, label: t("rejected_filter") },
-    { key: Status.IN_DRAFT, label: t("in_draft_filter") },
+    { key: Status.INACTIVE, label: t("in_active_filter") },
   ];
 
   const columns = [
@@ -122,11 +122,11 @@ function ProductOrganism() {
       <SearchFilterBar />
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}
         rowOnClick={() => navigate("product-details")}
-        filterBtn
       >
         <FilterButtons
           filters={filters}

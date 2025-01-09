@@ -81,6 +81,7 @@ export default function MessagesOrganism() {
       <SearchFilterBarForMessages />
 
       <MainTableOrganism
+        showHeader
         columns={columns}
         dataSource={filteredData}
         headerClassName={styles.headerContainer}

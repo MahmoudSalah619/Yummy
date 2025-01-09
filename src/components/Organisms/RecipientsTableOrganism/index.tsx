@@ -79,6 +79,7 @@ function RecipientsTableOrganism() {
 
   return (
     <MainTableOrganism
+      showHeader
       headerTitle={t("Recipients")}
       columns={columns}
       dataSource={data}
