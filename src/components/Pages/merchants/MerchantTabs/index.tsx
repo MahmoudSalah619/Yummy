@@ -7,12 +7,21 @@ import MainDetails from "../MerchantDetails/MainDetails";
 import MerchantOrders from "../MerchantDetails/Orders";
 import MerchantProducts from "../MerchantDetails/Products";
 import PendingProducts from "../MerchantDetails/PendingProducts";
+import Image from "@/src/components/Atoms/Image";
+import filter from "@/src/assets/icons/filter-lines.svg";
 
 export default function MerchantTabs() {
   const { t } = useAutoCompleteTranslation();
   const onChange = (key: string) => {
     console.log(key);
   };
+
+  const operations = (
+    <button className={styles.filterBtn}>
+      <Image src={filter} alt="filter" width={20} height={20} />
+      Filters
+    </button>
+  );
   const items: TabsProps["items"] = [
     {
       key: "1",
@@ -47,6 +56,7 @@ export default function MerchantTabs() {
         items={items}
         onChange={onChange}
         className="merchantTab"
+        tabBarExtraContent={operations}
       />
     </CardWrapper>
   );
