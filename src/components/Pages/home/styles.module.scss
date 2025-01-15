@@ -4,21 +4,70 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+.search {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
 
-  .chartContainer {
-    display: flex;
-    gap: 32px;
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 16px);
+  max-width: calc(25% - 16px);
+  box-sizing: border-box;
+  padding: 0 !important;
+
+  @media (max-width: 1024px) {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+  }
+  @media (max-width: 768px) {
+    flex: 1 1 calc(100% - 16px);
+    max-width: calc(100% - 16px);
   }
 }
 
-.productNameCell {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+.cardImage {
+  width: 100%;
+  height: auto;
 }
 
-.headerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.cardTitle {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+
+.cardPrice {
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.cardButton {
+  background-color: $primary;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  // float: inline-end;
+}
+
+.cardButton:hover {
+  background-color: darken($primary, 10%);
 }

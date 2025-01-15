@@ -40,7 +40,10 @@ export default function LoginOrganism() {
   };
   return (
     <div className={styles.container}>
-      <Text className={styles.introText} i18nKey="welcome_message" />
+      <Text
+        className={styles.introText}
+        i18nKey="Welcome to Yummy, please sign in using your account to check our products and stuff"
+      />
 
       <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
         <TextInput
@@ -80,18 +83,6 @@ export default function LoginOrganism() {
 
         <div className={styles.btnContainer}>
           <Button title="Login" isFullWidth type="submit" />
-        </div>
-
-        <div className={styles.signUpContainer}>
-          <Text className={styles.signUpText}>
-            {t("sign_up_prompt")}
-            <HyperLink
-              to="/sign-up"
-              title={t("sign_up_link")}
-              fontSize={14}
-              className={styles.space}
-            />
-          </Text>
         </div>
       </form>
     </div>

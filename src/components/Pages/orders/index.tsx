@@ -1,168 +1,143 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Status from "@/constants/Status";
-import useGetUserInfo from "@/hooks/useGetUserInfo";
-import FilterButtons from "../../Molecules/FilterButtons";
-import MainTableOrganism from "../../Organisms/MainTableOrganism";
+import React from "react";
+import { Card, Divider } from "antd";
 import styles from "./styles.module.scss";
-import StatusIndicator from "../../Molecules/StatusIndicator";
-import PageHeader from "../../Molecules/PageHeader";
-import StaticticsCard from "../../Molecules/StaticticsCard";
+import Text from "../../Atoms/Text";
+import img from "../../../assets/images/pancakes.jpg";
 import Button from "../../Atoms/Button";
-import DatePicker from "../../Molecules/DatePicker";
-import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
-import { TranslationKeyEnum } from "@/types/TranslationKeyEnum";
+const orders = [
+  {
+    name: "Product 1",
+    category: "Breakfast",
+    date_ordered: "2023-10-01",
+    date_delivered: "2023-10-05",
+    price: "$10.00",
+  },
+  {
+    name: "Product 2",
+    category: "Lunch",
+    date_ordered: "2023-10-02",
+    date_delivered: "2023-10-06",
+    price: "$20.00",
+  },
+  {
+    name: "Product 3",
+    category: "Lunch",
+    date_ordered: "2023-10-02",
+    date_delivered: "2023-10-06",
+    price: "$20.00",
+  },
+  // Add more orders as needed
+];
 
 function Orders() {
-  const { t } = useAutoCompleteTranslation();
-  const { role } = useGetUserInfo();
-  const [activeFilter, setActiveFilter] = useState(Status.VIEW_ALL);
-  const [activeDateFilter, setActiveDateFilter] = useState("12months");
-  const navigate = useNavigate();
-
-  const statistics = {
-    seller: [
-      { label: "total_orders_column" as TranslationKeyEnum, value: "950" },
-      { label: "ordered_items_statistic" as TranslationKeyEnum, value: "1450" },
-    ],
-    admin: [
-      { label: "total_orders_column" as TranslationKeyEnum, value: "950" },
-      { label: "ordered_items_statistic" as TranslationKeyEnum, value: "1450" },
-      { label: "Avg. order value" as TranslationKeyEnum, value: "EGP 1450" },
-      { label: "Returns" as TranslationKeyEnum, value: "3" },
-    ],
-  };
-
-  const filters = [
-    { key: Status.VIEW_ALL, label: t("view_all_filter") },
-    { key: Status.OPEN, label: t("open_filter") },
-    { key: Status.PENDING, label: t("pending_filter") },
-    { key: Status.CLOSED, label: t("closed_filter") },
-    { key: Status.CANCELLED, label: t("Cancelled") },
-    { key: Status.OVERDUE, label: t("overdue_filter") },
-  ];
-
-  const dateFilters = [
-    { key: "12months", label: t("date_filter_12months") },
-    { key: "30days", label: t("date_filter_30days") },
-    { key: "7days", label: t("date_filter_7days") },
-    { key: "24hours", label: t("date_filter_24hours") },
-  ];
-
-  const columns = [
-    { title: t("invoice_column"), dataIndex: "invoice", key: "invoice" },
-    { title: t("date_column"), dataIndex: "date", key: "date" },
-    {
-      title: t("order_amount_column"),
-      dataIndex: "orderAmount",
-      key: "orderAmount",
-    },
-    {
-      title: t("status_column"),
-      dataIndex: "status",
-      key: "status",
-      render: (status: string) => <StatusIndicator status={status} />,
-    },
-    {
-      title: t("customer_name_title"),
-      dataIndex: "customerName",
-      key: "customerName",
-    },
-    {
-      title: t("payment_method_title"),
-      dataIndex: "paymentMethod",
-      key: "paymentMethod",
-    },
-    {
-      title: t("actions_column"),
-      dataIndex: "actions",
-      key: "actions",
-      render: () => (
-        <div className={styles.actions}>
-          <Button
-            title="view_button"
-            variant="transparet"
-            fontColor="dark"
-            onClick={() => navigate("/orders/order-details")}
-          />
-          <Button
-            title="Edit"
-            variant="transparet"
-            fontColor="orange500"
-            onClick={() => navigate("/products/edit-product")}
-          />
-        </div>
-      ),
-    },
-  ];
-
-  const allData = Array.from({ length: 101 }, (_, i) => ({
-    key: (i + 1).toString(),
-    invoice: `#${i + 1}`,
-    date: "Mar 1, 2024",
-    orderAmount: "EGP 1,000",
-    status:
-      i % 5 === 0
-        ? Status.OPEN
-        : i % 5 === 1
-          ? Status.PENDING
-          : i % 5 === 2
-            ? Status.CLOSED
-            : i % 5 === 3
-              ? Status.CANCELLED
-              : Status.OVERDUE,
-    customerName: "Mohamed",
-    paymentMethod: "Cash on delivery",
-    Actions: "Actions",
-  }));
-
-  const filteredData =
-    activeFilter === Status.VIEW_ALL
-      ? allData
-      : allData.filter((item) => item.status === activeFilter);
-
-  const handleFilterChange = (key: string) => {
-    setActiveFilter(key);
-  };
-
-  const handleDateFilterChange = (key: string) => {
-    setActiveDateFilter(key);
-  };
-
   return (
-    <main className={styles.container}>
-      <PageHeader title="Orders" />
-
-      <div className={styles.filterContainer}>
-        <FilterButtons
-          filters={dateFilters}
-          activeFilter={activeDateFilter}
-          onFilterChange={handleDateFilterChange}
-          isGrayButtons
-        />
-
-        <DatePicker titleOfBtn="Select dates" />
-      </div>
-
-      <div className={styles.staticticsContainer}>
-        {statistics[role].map((item) => (
-          <StaticticsCard label={item.label} value={item.value} />
-        ))}
-      </div>
-
-      <MainTableOrganism
-        columns={columns}
-        dataSource={filteredData}
-        filterBtn
-        showHeader
+    <div className={styles.container}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "space-between",
+          gap: 32,
+        }}
       >
-        <FilterButtons
-          filters={filters}
-          activeFilter={activeFilter}
-          onFilterChange={handleFilterChange}
-        />
-      </MainTableOrganism>
-    </main>
+        <div style={{ flex: 0.5 }}>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text fontSize={28}>Shopping Cart</Text>
+            <Text fontSize={28}>Items</Text>
+          </div>
+          <Divider />
+
+          {orders.map((order, index) => (
+            <div
+              key={index}
+              className={styles.card}
+              style={{
+                position: "relative",
+                width: "100%",
+                marginBottom: 16,
+                padding: 0,
+                borderRadius: 16,
+                display: "flex",
+                // justifyContent: "start",
+                gap: 16,
+                height: 200,
+              }}
+            >
+              <img
+                src={img}
+                alt="Product Image"
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  borderRadius: 16,
+                }}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                  paddingBlock: 20,
+                }}
+              >
+                <p>
+                  <strong>Product:</strong> {order.name}
+                </p>
+                <p>
+                  <strong>Category:</strong> {order.category}
+                </p>
+                <p>
+                  <strong>Price:</strong> {order.price}
+                </p>
+                <p>
+                  <strong>Date Ordered:</strong> {order.date_ordered}
+                </p>
+                <p>
+                  <strong>Date Delivered:</strong> {order.date_delivered}
+                </p>
+              </div>
+              <div style={{position: 'absolute', bottom: 0, right: 0, padding: 16}}>
+                <Button title="Remove" style={{ width: 100 }} />
+                {/* <button className={styles.cardButton}>Remove</button> */}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ flex: 0.4 }}>
+          <Text fontSize={28}>Checking out</Text>
+          <Divider />
+
+          <Card>
+            <p>
+              <strong>Subtotal:</strong> $30.00
+            </p>
+            <p>
+              <strong>Shipping:</strong> $5.00
+            </p>
+            <p>
+              <strong>Total:</strong> $35.00
+            </p>
+            <div className={styles.address} style={{ marginTop: 16 }}>
+              <p>
+                <strong>Address:</strong>
+              </p>
+              <p>John Doe</p>
+              <p>123 Main St</p>
+              <p>Springfield, IL 62701</p>
+              <p>USA</p>
+            </div>
+            <Button title="Checkout" style={{ width: 200 }} />
+            {/* <button className={styles.cardButton}>Checkout</button> */}
+          </Card>
+        </div>
+      </div>
+    </div>
   );
 }
 

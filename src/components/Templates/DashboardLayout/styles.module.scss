@@ -11,14 +11,13 @@
 }
 
 .mainContainer {
-  margin-inline-start: 20%;
+  // margin-inline: 3%;
   .headerStyle {
-    height: 88px;
-    padding: 0;
-    padding: 32px 24px;
-
+    // height: 88px;
     line-height: unset;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: $light;
     border-bottom: 1px solid $grey200;
   }

@@ -12,7 +12,7 @@ export default function Text({
   color = "dark",
   lineHeight,
   ...otherProps
-}: TextProps) {
+}: any) {
   const { t } = useAutoCompleteTranslation();
 
   const textStyle = {

@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 import Logo from "@/src/assets/images/Logo.png";
 import Image from "../../Atoms/Image";
+import Text from "../../Atoms/Text";
 
 function AuthLayout({
   children,
@@ -16,7 +17,9 @@ function AuthLayout({
       style={{ backgroundColor: "#fff", height: "100%", minHeight: "100vh" }}
     >
       <div className={`${styles.container} ${styles[spaceTop]}`}>
-        <Image src={Logo} alt="Logo" width={292} height={170} />
+        <Text className={styles.title} type="heading" fontSize={64} color="primary">
+          Yummy.
+        </Text>
         {children}
       </div>
     </Layout>
