@@ -17,7 +17,12 @@ function AuthLayout({
       style={{ backgroundColor: "#fff", height: "100%", minHeight: "100vh" }}
     >
       <div className={`${styles.container} ${styles[spaceTop]}`}>
-        <Text className={styles.title} type="heading" fontSize={64} color="primary">
+        <Text
+          className={styles.title}
+          type="heading"
+          fontSize={84}
+          color="primary"
+        >
           Yummy.
         </Text>
         {children}

@@ -23,7 +23,7 @@ const NavbarNotification = () => {
   return (
     <div className={styles.navbarNotificationContainer}>
       <div className={styles.cartIconContainer}>
-        <ShoppingCartOutlined style={{ fontSize: 24 }} />
+        <ShoppingCartOutlined style={{ fontSize: 28 }} />
         <div className={styles.notificationIndicator}>3</div>
       </div>
       <Dropdown overlay={loggedInMenu} trigger={["click"]}>

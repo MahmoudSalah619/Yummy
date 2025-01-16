@@ -10,7 +10,7 @@ function NavbarLink() {
         <Link to="/" className={styles.textStyle}>
           <Text
             fontFamily="font500"
-            fontSize={32}
+            fontSize={44}
             i18nKey="Yummy."
             color={COLORS.primary}
           />

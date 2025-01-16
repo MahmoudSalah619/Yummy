@@ -31,7 +31,7 @@ const orders = [
 
 function Orders() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} container`}>
       <div
         style={{
           flex: 1,

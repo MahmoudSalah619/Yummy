@@ -10,7 +10,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     <div className={styles.mainContainer}>
       {children}
 
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
   );
 }
