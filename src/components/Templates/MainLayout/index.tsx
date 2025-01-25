@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
+import { Toaster } from "react-hot-toast";
 import styles from "./styles.module.scss";
 import useAuth from "@/hooks/useAuth";
-import { Toaster } from "react-hot-toast";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   // useAuth();

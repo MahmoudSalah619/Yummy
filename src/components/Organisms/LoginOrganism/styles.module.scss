@@ -1,6 +1,21 @@
 @use "/styles/all" as *;
 
 .container {
+  display: flex;
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 50%;
+    background-color: $grey100;
+    border-radius: 8px 0 0 8px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
   .introText {
     margin-block: 32px;
 

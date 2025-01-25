@@ -1,4 +1,5 @@
 import Login from "@/src/components/Pages/Auth/Login";
+import Cart from "@/src/components/Pages/cart";
 import Home from "@/src/components/Pages/home";
 import Orders from "@/src/components/Pages/orders";
 import AuthLayout from "@/src/components/Templates/AuthLayout";
@@ -20,6 +21,14 @@ export default {
         <AuthLayout>
           <Login />
         </AuthLayout>
+      ),
+    },
+    {
+      path: "/cart",
+      element: (
+        <DashboardLayout>
+          <Cart />
+        </DashboardLayout>
       ),
     },
     {

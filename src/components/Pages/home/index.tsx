@@ -1,7 +1,7 @@
-import styles from "./styles.module.scss";
 import { Card, Input, Segmented } from "antd";
-import img from "../../../assets/images/pancakes.jpg";
 import toast from "react-hot-toast";
+import styles from "./styles.module.scss";
+import img from "../../../assets/images/pancakes.jpg";
 
 function Home() {
   const addToCart = (item: any) => {

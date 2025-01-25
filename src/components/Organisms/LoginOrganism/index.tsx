@@ -11,6 +11,7 @@ import styles from "./styles.module.scss";
 import loginHandler from "@/utils/loginHandler";
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import { User } from "@/src/apis/types/auth";
+import loginImage from "@/src/assets/images/pexels-shantanu-pal-938952-2802527.jpg";
 
 export default function LoginOrganism() {
   const { t } = useAutoCompleteTranslation();
@@ -40,51 +41,59 @@ export default function LoginOrganism() {
   };
   return (
     <div className={styles.container}>
-      <Text
-        className={styles.introText}
-        i18nKey="Welcome to Yummy, please sign in using your account to check our products and stuff"
-      />
-
-      <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-        <TextInput
-          containerStyle={styles.input}
-          label="email_or_phone_label"
-          status={errors.emailOrPhone?.message ? "error" : "default"}
-          reactHookFormProps={{
-            ...register("emailOrPhone", ValidationSchema.emailOrPhone),
-          }}
-          errorMsg={errors.emailOrPhone?.message}
+      <div>
+        <Text
+          className={styles.introText}
+          i18nKey="Welcome to Yummy, please sign in using your account to check our products and stuff"
         />
-        <TextInput
-          containerStyle={`${styles.input} ${styles.passwordContainer}`}
-          label="Password"
-          isPasswordInput
-          type="password"
-          labelStyle={styles.labelStyle}
-          inputStyle={styles.test}
-          status={errors.password?.message ? "error" : "default"}
-          reactHookFormProps={{
-            ...register("password", ValidationSchema.passwordLogin),
-          }}
-          errorMsg={errors.password?.message}
-        />
-        <div className={styles.rowContainer}>
-          <Checkbox className={styles.checkboxStyle} onChange={onChange}>
-            {t("remember_me")}
-          </Checkbox>
 
-          <HyperLink
-            to="/forget-password"
-            title={t("forgot_password")}
-            fontSize={12}
+        <form
+          className={styles.formContainer}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <TextInput
+            containerStyle={styles.input}
+            label="email_or_phone_label"
+            status={errors.emailOrPhone?.message ? "error" : "default"}
+            reactHookFormProps={{
+              ...register("emailOrPhone", ValidationSchema.emailOrPhone),
+            }}
+            errorMsg={errors.emailOrPhone?.message}
           />
-        </div>
-        {/* Buttton */}
+          <TextInput
+            containerStyle={`${styles.input} ${styles.passwordContainer}`}
+            label="Password"
+            isPasswordInput
+            type="password"
+            labelStyle={styles.labelStyle}
+            inputStyle={styles.test}
+            status={errors.password?.message ? "error" : "default"}
+            reactHookFormProps={{
+              ...register("password", ValidationSchema.passwordLogin),
+            }}
+            errorMsg={errors.password?.message}
+          />
+          <div className={styles.rowContainer}>
+            <Checkbox className={styles.checkboxStyle} onChange={onChange}>
+              {t("remember_me")}
+            </Checkbox>
 
-        <div className={styles.btnContainer}>
-          <Button title="Login" isFullWidth type="submit" />
-        </div>
-      </form>
+            <HyperLink
+              to="/forget-password"
+              title={t("forgot_password")}
+              fontSize={12}
+            />
+          </div>
+          {/* Buttton */}
+
+          <div className={styles.btnContainer}>
+            <Button title="Login" isFullWidth type="submit" />
+          </div>
+        </form>
+      </div>
+      {/* <div className={styles.imageContainer}>
+        <img src={loginImage} alt="login" />
+      </div> */}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Menu, Dropdown } from "antd";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-const NavbarNotification = () => {
+function NavbarNotification() {
   const loggedOutMenu = (
     <Menu>
       <Menu.Item>
@@ -14,16 +14,24 @@ const NavbarNotification = () => {
 
   const loggedInMenu = (
     <Menu>
-      <Menu.Item>Profile</Menu.Item>
-      <Menu.Item>My Orders</Menu.Item>
-      <Menu.Item>Sign Out</Menu.Item>
+      <Menu.Item>
+        <Link to="/profile">Profile</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link to="/my_orders">My Orders</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link>Sign Out</Link>
+      </Menu.Item>
     </Menu>
   );
 
   return (
     <div className={styles.navbarNotificationContainer}>
       <div className={styles.cartIconContainer}>
-        <ShoppingCartOutlined style={{ fontSize: 28 }} />
+        <Link to="/cart">
+          <ShoppingCartOutlined style={{ fontSize: 28 }} />
+        </Link>
         <div className={styles.notificationIndicator}>3</div>
       </div>
       <Dropdown overlay={loggedInMenu} trigger={["click"]}>
@@ -33,6 +41,6 @@ const NavbarNotification = () => {
       </Dropdown>
     </div>
   );
-};
+}
 
 export default NavbarNotification;

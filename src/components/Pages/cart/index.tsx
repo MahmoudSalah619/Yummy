@@ -1,11 +1,12 @@
 import React from "react";
-import { Card, Divider } from "antd";
+import { Card, Divider, Input } from "antd";
 import styles from "./styles.module.scss";
 import Text from "../../Atoms/Text";
 import img from "../../../assets/images/pancakes.jpg";
 import Button from "../../Atoms/Button";
+import TextInput from "../../Atoms/TextInput";
 
-const orders = [
+const cartItems = [
   {
     name: "Product 1",
     category: "Breakfast",
@@ -27,10 +28,10 @@ const orders = [
     date_delivered: "2023-10-06",
     price: "$20.00",
   },
-  // Add more orders as needed
+  // Add more cartItems as needed
 ];
 
-function Orders() {
+function Cart() {
   return (
     <div className={`${styles.container} container`}>
       <div
@@ -41,7 +42,7 @@ function Orders() {
           gap: 32,
         }}
       >
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 0.5 }}>
           <div
             style={{
               flex: 1,
@@ -49,11 +50,12 @@ function Orders() {
               justifyContent: "space-between",
             }}
           >
-            <Text fontSize={28}>Order History</Text>
+            <Text fontSize={28}>Shopping Cart</Text>
+            <Text fontSize={28}>3 Items</Text>
           </div>
           <Divider />
 
-          {orders.map((order, index) => (
+          {cartItems.map((order, index) => (
             <div
               key={index}
               className={styles.card}
@@ -64,7 +66,6 @@ function Orders() {
                 padding: 0,
                 borderRadius: 16,
                 display: "flex",
-                // justifyContent: "start",
                 gap: 16,
                 height: 200,
               }}
@@ -110,15 +111,82 @@ function Orders() {
                   padding: 16,
                 }}
               >
-                <Button title="Check Details" />
+                <Button title="Remove" style={{ width: 100 }} />
                 {/* <button className={styles.cardButton}>Remove</button> */}
               </div>
             </div>
           ))}
+        </div>
+        <div style={{ flex: 0.4 }}>
+          <Text fontSize={28}>Checking out</Text>
+          <Divider />
+
+          <Card style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
+            <h2>Shipping Information</h2>
+            <div className={styles.inputGroup}>
+              <TextInput placeholder="Name" label="Name" />
+            </div>
+            <div className={styles.inputGroup}>
+              <TextInput placeholder="Email" label="Email" />
+            </div>
+            <div className={styles.inputGroup}>
+              <TextInput placeholder="Phone" label="Phone" />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <TextInput placeholder="Address" label="Address" />
+            </div>
+            <div style={{ paddingBlock: 12 }} />
+            <h2>Order Summary</h2>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: 12,
+              }}
+            >
+              <strong style={{ width: 200 }}>Subtotal:</strong>{" "}
+              <span>$30.00</span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: 8,
+              }}
+            >
+              <strong style={{ width: 200 }}>Shipping:</strong>{" "}
+              <span>$5.00</span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: 8,
+              }}
+            >
+              <strong style={{ width: 200 }}>Tax:</strong> <span>$5.00</span>
+            </div>
+            <Divider />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBlock: 8,
+              }}
+            >
+              <strong style={{ width: 200 }}>Total:</strong> <span>$35.00</span>
+            </div>
+            <Button
+              title="Checkout"
+              style={{ width: "40%", marginInlineStart: "auto", marginTop: 24 }}
+            />
+            {/* <button className={styles.cardButton}>Checkout</button> */}
+          </Card>
         </div>
       </div>
     </div>
   );
 }
 
-export default Orders;
+export default Cart;
